@@ -1,0 +1,15 @@
+C:\Users\User\Saved Games\Desktop\Pictures\Pictures.Service\bin\Debug\net9.0\Pictures.Service.deps.json
+C:\Users\User\Saved Games\Desktop\Pictures\Pictures.Service\bin\Debug\net9.0\Pictures.Service.dll
+C:\Users\User\Saved Games\Desktop\Pictures\Pictures.Service\bin\Debug\net9.0\Pictures.Service.pdb
+C:\Users\User\Saved Games\Desktop\Pictures\Pictures.Service\bin\Debug\net9.0\Pictures.Core.dll
+C:\Users\User\Saved Games\Desktop\Pictures\Pictures.Service\bin\Debug\net9.0\Pictures.Core.pdb
+C:\Users\User\Saved Games\Desktop\Pictures\Pictures.Service\obj\Debug\net9.0\Pictures.Service.csproj.AssemblyReference.cache
+C:\Users\User\Saved Games\Desktop\Pictures\Pictures.Service\obj\Debug\net9.0\Pictures.Service.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Saved Games\Desktop\Pictures\Pictures.Service\obj\Debug\net9.0\Pictures.Service.AssemblyInfoInputs.cache
+C:\Users\User\Saved Games\Desktop\Pictures\Pictures.Service\obj\Debug\net9.0\Pictures.Service.AssemblyInfo.cs
+C:\Users\User\Saved Games\Desktop\Pictures\Pictures.Service\obj\Debug\net9.0\Pictures.Service.csproj.CoreCompileInputs.cache
+C:\Users\User\Saved Games\Desktop\Pictures\Pictures.Service\obj\Debug\net9.0\Pictures.3AFC6A55.Up2Date
+C:\Users\User\Saved Games\Desktop\Pictures\Pictures.Service\obj\Debug\net9.0\Pictures.Service.dll
+C:\Users\User\Saved Games\Desktop\Pictures\Pictures.Service\obj\Debug\net9.0\refint\Pictures.Service.dll
+C:\Users\User\Saved Games\Desktop\Pictures\Pictures.Service\obj\Debug\net9.0\Pictures.Service.pdb
+C:\Users\User\Saved Games\Desktop\Pictures\Pictures.Service\obj\Debug\net9.0\ref\Pictures.Service.dll
