@@ -1,34 +1,17 @@
 import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import '../styles/ImagesGallery.css';
 
-interface Photo {
-  Url: string;
-  Title: string;
-}
-
-interface AlbumModalProps {
-  uploadedPhotos: Photo[];
-  onClose: () => void;
-  onUpload: () => void;
-}
-
-const AlbumModal: React.FC<AlbumModalProps> = ({ uploadedPhotos, onClose, onUpload }) => {
+const AlbumModal: React.FC<{ onClose: () => void; onUpload: () => void; }> = ({ onClose, onUpload }) => {
+  const uploadedPhotos = useSelector((state: any) => state.uploadedPhotos);
   const [albumName, setAlbumName] = useState<string>('');
   const [albumDescription, setAlbumDescription] = useState<string>('');
-  const [imageErrors, setImageErrors] = useState<{ [key: number]: boolean }>({});
 
   const handleCreateAlbum = () => {
     console.log("Album Created: ", albumName, albumDescription);
-    
-    console.log("Uploaded Photos: ", uploadedPhotos); // הוסף את השורה הזו
-
-    onUpload(); // קריאה לפונקציה להעלאת התמונות
-    onClose(); // סגירת המודאל
-  };
-
-  const handleImageError = (index: number) => {
-    setImageErrors((prev) => ({ ...prev, [index]: true }));
-    console.error(`Failed to load image: ${uploadedPhotos[index].Url}`);
+    console.log("Uploaded Photos: ", uploadedPhotos);
+    onUpload();
+    onClose();
   };
 
   return (
@@ -37,15 +20,12 @@ const AlbumModal: React.FC<AlbumModalProps> = ({ uploadedPhotos, onClose, onUplo
         <span className="close" onClick={onClose}>&times;</span>
         <h2>בחר תמונות לאלבום</h2>
         <div className="image-gallery">
-          {uploadedPhotos.map((photo, index) => (
+          {uploadedPhotos.map((photo: any, index: number) => (
+              console.log(photo.Url),
             <div className="image-container" key={index}>
-              <img 
-                src={imageErrors[index] ? 'C:\Users\User\Saved Games\Desktop\פונטים חינמיים להעברה לתלמידות קבוצות פרימיום\Pictures\\888-10.jpg' : photo.Url} 
-                alt={photo.Title} 
-                className="gallery-image"
-                onError={() => handleImageError(index)} 
-              />
+              <img src={photo.Url} alt={photo.Title} className="gallery-image" />
               <div className="image-title">{photo.Title}</div>
+            
             </div>
           ))}
         </div>

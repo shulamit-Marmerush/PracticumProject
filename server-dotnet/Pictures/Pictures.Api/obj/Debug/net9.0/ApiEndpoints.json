@@ -21,32 +21,6 @@
   },
   {
     "ContainingType": "Pictures.Api.Controllers.AlbumController",
-    "Method": "Post",
-    "RelativePath": "api/Album",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "albumPostModel",
-        "Type": "Pictures.Api.Models.AlbumPostModel",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Pictures.Core.DTOs.AlbumDto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Pictures.Api.Controllers.AlbumController",
     "Method": "Get",
     "RelativePath": "api/Album/{id}",
     "HttpMethod": "GET",
@@ -107,6 +81,32 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Pictures.Api.Controllers.AlbumController",
+    "Method": "Post",
+    "RelativePath": "api/Album/album",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "albumPostModel",
+        "Type": "Pictures.Api.Models.AlbumPostModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Pictures.Core.DTOs.AlbumDto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "AuthServer.Controllers.AuthController",
@@ -259,6 +259,11 @@
     "Parameters": [
       {
         "Name": "fileName",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "albumName",
         "Type": "System.String",
         "IsRequired": false
       }

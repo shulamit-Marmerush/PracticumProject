@@ -9,11 +9,11 @@ namespace Pictures.Core.Models
     public class Album
     {
         public int AlbumId { get; private set; }
-        public int UserId { get; private set; }
+        public int UserId { get;  set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public DateTime Created_at { get; set; }//תאריך יצירה של האלבום
-        public DateTime Updated_at { get; set; }//תאריך עדכון אחרון
+        public DateTime Created_at { get; set; } = DateTime.Now;//תאריך יצירה של האלבום
+        public DateTime Updated_at { get; set; } = DateTime.Now;//תאריך עדכון אחרון
         public List<Photo>Photos { get; set; }
         public Album()
         {

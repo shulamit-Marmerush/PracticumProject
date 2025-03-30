@@ -8,9 +8,12 @@ import UserProvider from './context/UserContext'
 import Layout from './components/Layout';
 import FileUploader from './components/UploadFile';
 
+import FolderList from './components/Albums';
+import AddAlbum from './components/AddAlbum';
+
 
 function App() {
-  const [count, setCount] = useState(0)
+ 
 
   return (
     <UserProvider>
@@ -21,6 +24,8 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/UploadFile" element={<FileUploader />} /> 
+          <Route path="/AddAlbum" element={<AddAlbum />} />
+          <Route path="/Albums" element={<FolderList />} />
         </Routes>
       </Layout>
     </Router>

@@ -61,6 +61,12 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
                         <Button variant="text" className={classes.button} component={Link} to="/UploadFile">
                            העלאת קבצים
                         </Button>
+                        <Button variant="text" className={classes.button} component={Link} to="/AddAlbum">
+                         הוספת אלבום
+                        </Button>
+                        <Button variant="text" className={classes.button} component={Link} to="/Albums">
+                         צפיה באלבומים
+                        </Button>
                     </div>
                 </Toolbar>
             </AppBar>

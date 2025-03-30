@@ -37,7 +37,7 @@
   .image-container {
     margin: 10px;
     display: inline-block;
-    overflow: auto; /* הוספת גלילה */
+    /* overflow: auיto; הוספת גלילה */
 
   }
   

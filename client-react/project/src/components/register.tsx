@@ -1,5 +1,4 @@
 import { useForm, SubmitHandler } from "react-hook-form";
-import { User } from "../types/User";
 import { useUserContext } from "../context/UserContext";
 import axios from "axios";
 import { TextField, Button, Container, Typography } from '@mui/material';
@@ -20,10 +19,10 @@ const useStyles = makeStyles(() => ({
         alignItems: 'center',
     },
     formContainer: {
-        backgroundColor: 'rgba(255, 255, 255, 0.95)', // צבע רקע בהיר יותר
-        borderRadius: '15px', // פינות מעוגלות יותר
-        padding: '30px', // רווח פנימי גדול יותר
-        boxShadow: '0 8px 16px rgba(0, 0, 0, 0.3)', // צל רך יותר
+        backgroundColor: 'rgba(255, 255, 255, 0.95)',
+        borderRadius: '15px',
+        padding: '30px',
+        boxShadow: '0 8px 16px rgba(0, 0, 0, 0.3)',
         width: '100%', 
         maxWidth: '400px',
     },
@@ -35,50 +34,74 @@ const useStyles = makeStyles(() => ({
         },
     },
     textField: {
-        marginBottom: '16px', // רווח בין השדות
+        marginBottom: '16px',
     },
 }));
 
+// סכימת וואפ
 const validationSchema = object({
-    UserName: string().required("UserName is required").max(20, "Last Name cannot be more than 20 characters"),
+    UserName: string().required("UserName is required").max(20, "UserName cannot be more than 20 characters"),
     Password: string().required("Password is required").min(6, "Password must be at least 6 characters"),
     Phone: string().required("Phone is required"),
     Email: string().required("Email is required").email("Email is not valid"),
 });
 
+// סוג חדש עבור הטופס
+type RegisterForm = {
+    UserName: string; 
+    Password: string; 
+    Phone: string; 
+    Email: string;
+};
+
+// סוג User
+export type User = {
+    UserId: number;
+    UserName: string;
+    Email: string;
+    Phone: string;
+    Password: string;   
+};
+
 export default function Register() {
     const classes = useStyles();
     const navigate = useNavigate();
-    const { register, handleSubmit, formState: { errors } } = useForm<User>({
+    
+    const { register, handleSubmit, formState: { errors } } = useForm<RegisterForm>({
         resolver: yupResolver(validationSchema),
     });
+    
     const { setMyUser } = useUserContext();    
 
-    const onSubmit: SubmitHandler<User> = async (data) => {
+    const onSubmit: SubmitHandler<RegisterForm> = async (data) => {
         try {
             console.log("submitted");
             const response = await registerUser(data);
             console.log(response);
-            setMyUser(data);
+            localStorage.setItem('UserId', (response.UserId).toString());
+            setMyUser({ ...data, UserId: response.UserId });
             // navigate('/recipes');
         } catch (error) {
             console.error(error);
         }
     };
 
-    const registerUser = async (user: User) => {
+    const registerUser = async (user: RegisterForm): Promise<User> => {
         try {
-            const response = await axios.post<User>('https://localhost:7259/api/User/register', user, {
+            const response = await axios.post<{ userId: number }>('https://localhost:7259/api/User/register', user, {
                 headers: {
                     'Content-Type': 'application/json',
                 },
             });
-            return response.data;
+            
+            console.log("Registration response:", response.data);
+            return { UserId: response.data.userId, ...user }; // כאן מתקן את השם ל-userId
         } catch (error) {
             console.error("Registration error:", error);
-            throw new Error("Failed to register user."); // זרוק שגיאה כדי לטפל בה מאוחר יותר
+            throw new Error("Failed to register user.");
         }
     };
+    
     
     return (
         <div className={classes.backgroundImage}>
@@ -87,7 +110,6 @@ export default function Register() {
                     Registration
                 </Typography>
                 <form onSubmit={handleSubmit(onSubmit)}>
-                   
                     <TextField 
                         {...register("UserName")} 
                         label="UserName" 

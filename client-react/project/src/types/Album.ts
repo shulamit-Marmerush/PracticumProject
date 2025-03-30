@@ -1,5 +1,5 @@
 export type Album={
-    AlbumId?: number;
+    AlbumId: number;
     UserId: number;
     Title: string;
     Description: string;

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\Saved Games\\Desktop\\Pictures\\Pictures.Data\\Pictures.Data.csproj": {}
+    "C:\\Users\\User\\Saved Games\\Desktop\\פרויקט פרקטיקום\\server-dotnet\\Pictures\\Pictures.Data\\Pictures.Data.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\Saved Games\\Desktop\\Pictures\\Pictures.Core\\Pictures.Core.csproj": {
+    "C:\\Users\\User\\Saved Games\\Desktop\\פרויקט פרקטיקום\\server-dotnet\\Pictures\\Pictures.Core\\Pictures.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Saved Games\\Desktop\\Pictures\\Pictures.Core\\Pictures.Core.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Saved Games\\Desktop\\פרויקט פרקטיקום\\server-dotnet\\Pictures\\Pictures.Core\\Pictures.Core.csproj",
         "projectName": "Pictures.Core",
-        "projectPath": "C:\\Users\\User\\Saved Games\\Desktop\\Pictures\\Pictures.Core\\Pictures.Core.csproj",
+        "projectPath": "C:\\Users\\User\\Saved Games\\Desktop\\פרויקט פרקטיקום\\server-dotnet\\Pictures\\Pictures.Core\\Pictures.Core.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Saved Games\\Desktop\\Pictures\\Pictures.Core\\obj\\",
+        "outputPath": "C:\\Users\\User\\Saved Games\\Desktop\\פרויקט פרקטיקום\\server-dotnet\\Pictures\\Pictures.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -75,14 +75,14 @@
         }
       }
     },
-    "C:\\Users\\User\\Saved Games\\Desktop\\Pictures\\Pictures.Data\\Pictures.Data.csproj": {
+    "C:\\Users\\User\\Saved Games\\Desktop\\פרויקט פרקטיקום\\server-dotnet\\Pictures\\Pictures.Data\\Pictures.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\Saved Games\\Desktop\\Pictures\\Pictures.Data\\Pictures.Data.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Saved Games\\Desktop\\פרויקט פרקטיקום\\server-dotnet\\Pictures\\Pictures.Data\\Pictures.Data.csproj",
         "projectName": "Pictures.Data",
-        "projectPath": "C:\\Users\\User\\Saved Games\\Desktop\\Pictures\\Pictures.Data\\Pictures.Data.csproj",
+        "projectPath": "C:\\Users\\User\\Saved Games\\Desktop\\פרויקט פרקטיקום\\server-dotnet\\Pictures\\Pictures.Data\\Pictures.Data.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\Saved Games\\Desktop\\Pictures\\Pictures.Data\\obj\\",
+        "outputPath": "C:\\Users\\User\\Saved Games\\Desktop\\פרויקט פרקטיקום\\server-dotnet\\Pictures\\Pictures.Data\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -103,8 +103,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "C:\\Users\\User\\Saved Games\\Desktop\\Pictures\\Pictures.Core\\Pictures.Core.csproj": {
-                "projectPath": "C:\\Users\\User\\Saved Games\\Desktop\\Pictures\\Pictures.Core\\Pictures.Core.csproj"
+              "C:\\Users\\User\\Saved Games\\Desktop\\פרויקט פרקטיקום\\server-dotnet\\Pictures\\Pictures.Core\\Pictures.Core.csproj": {
+                "projectPath": "C:\\Users\\User\\Saved Games\\Desktop\\פרויקט פרקטיקום\\server-dotnet\\Pictures\\Pictures.Core\\Pictures.Core.csproj"
               }
             }
           }
