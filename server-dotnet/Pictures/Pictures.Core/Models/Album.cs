@@ -8,7 +8,7 @@ namespace Pictures.Core.Models
 {
     public class Album
     {
-        public int AlbumId { get; private set; }
+        public int AlbumId { get;  set; }
         public int UserId { get;  set; }
         public string Title { get; set; }
         public string Description { get; set; }

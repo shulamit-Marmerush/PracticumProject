@@ -1,81 +1,9 @@
-
-// const FolderList = () => {
-// const [folders, setFolders] = useState<any[]>([]);
-// const [loading, setLoading] = useState(true);
-// const [error, setError] = useState<string | null>(null);
-
-// useEffect(() => {
-// const fetchFolders = async () => {
-// const token = localStorage.getItem('token');
-// const userId = Number(localStorage.getItem('UserId')); // המרה למספר
-
-// if (!token) {
-// setError("User is not authenticated. Please log in.");
-// setLoading(false);
-// return;
-// }
-
-// try {
-// const response = await axios.get('https://localhost:7259/api/album', {
-// headers: {
-// 'Authorization': Bearer ${token}
-// }
-// });
-// console.log('Response Data:', response.data);
-
-// const userFolders = response.data.filter((folder: any) => {
-// console.log('Folder UserId:', folder.userId); // בדוק את השם
-// console.log('localStorage UserId:', userId);
-// return Number(folder.userId) === userId; // המרה למספר
-// });
-// console.log('User Folders:', userFolders);
-// setFolders(userFolders);
-// } catch (err: unknown) {
-// if (axios.isAxiosError(err) && err.message) {
-// setError(err.message);
-// } else {
-// setError('שגיאה לא ידועה');
-// }
-// } finally {
-// setLoading(false);
-// }
-// };
-
-// fetchFolders();
-// }, []);
-
-// if (loading) return <div>טוען תיקיות...</div>;
-// if (error) return <div>שגיאה: {error}</div>;
-
-// const openFolder = (folderTitle: string) => {
-// alert(פתחת את התיקיה: ${folderTitle});
-// };
-
-// return (
-// <div>
-// <h1>תיקיות של המשתמש</h1>
-// <div className="folder-container">
-// {folders.map((folder, index) => (
-// <div className="folder" key={index} onClick={() => openFolder(folder.title)}>
-// {/* <img
-// src="/path/to/folder-icon.png"
-// alt={תיקיה בשם ${folder.title}}
-// className="folder-icon"
-// /> */}
-// <span>{folder.title}</span>
-// </div>
-// ))}
-// </div>
-// </div>
-// );
-// };
-
-// export default FolderList;
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import { Grid, CircularProgress, Typography, Button, TextField } from '@mui/material';
-import EditIcon from '@mui/icons-material/Edit'; // אייקון עריכה
-import DeleteIcon from '@mui/icons-material/Delete'; // אייקון מחיקה
+import { Grid, CircularProgress, Typography, Button, TextField, Checkbox } from '@mui/material';
+import EditIcon from '@mui/icons-material/Edit';
+import DeleteIcon from '@mui/icons-material/Delete';
+import { useNavigate } from 'react-router-dom';
 
 interface Folder {
     albumId: number;
@@ -84,13 +12,23 @@ interface Folder {
     description: string;
 }
 
-const FolderList = () => {
+interface FolderListProps {
+    albums: Folder[];
+    onSelectAlbum: (albumId: number) => void;
+    showCheckboxes: boolean;
+    selectedAlbums: number[];
+    onToggleSelect: (albumId: number) => void;
+}
+
+const FolderList: React.FC<FolderListProps> = ({ onSelectAlbum, showCheckboxes, selectedAlbums, onToggleSelect }) => {
     const [folders, setFolders] = useState<Folder[]>([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState<string | null>(null);
     const [editingFolderId, setEditingFolderId] = useState<number | null>(null);
     const [newTitle, setNewTitle] = useState<string>('');
     const [currentDescription, setCurrentDescription] = useState<string>('');
+    
+    const navigate = useNavigate();
 
     useEffect(() => {
         const fetchFolders = async () => {
@@ -131,8 +69,8 @@ const FolderList = () => {
     if (loading) return <CircularProgress />;
     if (error) return <div>שגיאה: {error}</div>;
 
-    const openFolder = (folderTitle: string) => {
-        alert(`פתחת את התיקיה: ${folderTitle}`);
+    const openFolder = (albumId: number) => {
+        navigate(`/PhotoGallery/${albumId}`); // Navigate to the PhotoGallery component with the selected album ID
     };
 
     const deleteFolder = async (folderId: number) => {
@@ -220,12 +158,19 @@ const FolderList = () => {
                                 boxShadow: '0 2px 5px rgba(0,0,0,0.2)',
                                 transition: 'transform 0.2s',
                             }}
-                            onClick={() => openFolder(folder.title)}
+                          
                         >
+                            {showCheckboxes && (
+                                <Checkbox
+                                    checked={selectedAlbums.includes(folder.albumId)}
+                                    onChange={() => onToggleSelect(folder.albumId)}
+                                />
+                            )}
                             <img 
                                 src="./images/folder.jpg" 
                                 alt={`תיקיה בשם ${folder.title}`} 
                                 style={{ width: '60px', height: '60px' }} 
+                                onClick={() => openFolder(folder.albumId)}
                             />
                             {editingFolderId === folder.albumId ? (
                                 <>

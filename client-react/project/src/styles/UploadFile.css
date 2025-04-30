@@ -1,4 +1,4 @@
-.upload-container {
+/* .upload-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -96,4 +96,116 @@
 
 .upload-button:hover {
   background-color: #0056b3;
+} */
+ /* FileUploader.css */
+/* FileUploader.css */
+/* FileUploader.css */
+/* .upload-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  direction: ltr;
+  font-family: 'Rubik', 'Roboto', sans-serif;
+} */
+
+.upload-circle {
+  width: 300px;
+  height: 300px;
+  background-color: #e0f7fa; /* תכלת */
+  border-radius: 50%;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  position: relative;
+}
+
+.upload-tip {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+  line-height: 1.4;
+}
+
+.upload-icon img {
+  width: 60px;
+  height: auto;
+  margin-bottom: 12px;
+}
+
+.upload-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.upload-label {
+  background-color: #00bcd4;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.upload-label:hover {
+  background-color: #0097a7;
+}
+
+.upload-label input {
+  display: none;
+}
+.upload-icon img {
+  width: 60px;
+  height: auto;
+  margin-bottom: 12px;
+  animation: floatAndColor 3s ease-in-out infinite;
+}
+
+@keyframes floatAndColor {
+  0% {
+    transform: translateY(0px);
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px);
+    filter: hue-rotate(180deg);
+  }
+  100% {
+    transform: translateY(0px);
+    filter: hue-rotate(360deg);
+  }
+}
+.upload-container {
+  position: fixed; /* שיהיה מעל כל הדף */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6); /* שחור שקוף */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  direction: rtl;
+  z-index: 9999; /* מעל כל שאר האלמנטים */
+}
+
+.upload-circle {
+  background-color: #e0f7ff; /* תכלת בהיר כמו באתר */
+  border-radius: 50%;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 20px rgba(0, 170, 255, 0.6);
+  animation: pulseShadow 2.5s ease-in-out infinite;
+  position: relative;
 }

@@ -2,9 +2,8 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import axios from "axios";
 import { useUserContext } from "../context/UserContext";
 import { useNavigate } from "react-router-dom";
+import {jwtDecode} from "jwt-decode"; // תקן את הייבוא של jwtDecode
 import { User } from "../types/User";
-import { jwtDecode } from "jwt-decode";
-
 
 // ייבוא הממשק
 export interface LoginResponse {
@@ -13,7 +12,7 @@ export interface LoginResponse {
 }
 
 interface TokenPayload {
-    UserId: number; // או את סוג ה-ID הנכון
+    id: number; // או את סוג ה-ID הנכון
 }
 
 export default function Login() {
@@ -26,6 +25,7 @@ export default function Login() {
             const headers = {
                 'Content-Type': 'application/json',
             };
+
             const response = await axios.post<LoginResponse>('https://localhost:7259/api/Auth/login', user, { headers });
             return response.data; // החזר את התגובה עצמה
         } catch (error) {
@@ -41,13 +41,13 @@ export default function Login() {
                 alert("You must login to view user details");
                 return null; // החזר null אם הטוקן לא קיים
             }
-            
+
             const response = await axios.get<User>(`https://localhost:7259/api/User/${userId}`, {
                 headers: {
                     'Authorization': `Bearer ${token}` // הוספת הטוקן לכותרות הבקשה
                 }
             });
-    
+
             console.log("User details fetched:", response.data);
             return response.data; // החזר את התגובה עצמה
         } catch (error) {
@@ -55,25 +55,31 @@ export default function Login() {
             return null; // החזר null במקרה של שגיאה
         }
     };
-    
+
     const onSubmit: SubmitHandler<{ Email: string; Password: string }> = async (data) => {
         console.log("Form submitted with data:", data);
-        
+    
         try {
             const response = await loginUser(data);
             
             if (response) {
                 console.log("logged in");
+                alert("Login successful!");
                 const token = response.token; // גישה לטוקן
                 
                 if (token) {
                     localStorage.setItem('token', token); // שמור את הטוקן ב-local storage
                     console.log("Token saved:", token);
-    
-                    // שליפת ה-UserId מה-local storage
-                    const userId = localStorage.getItem('UserId');
-                    if (userId) {
-                        const userDetails = await fetchUserDetails(Number(userId));
+
+                    // פענח את הטוקן כדי לשלוף את ה-UserId
+                    const decodedToken: TokenPayload = jwtDecode(token);
+                    const userId = decodedToken.id; // שלוף את ה-UserId מהטוקן
+
+                    // בדוק אם userId קיים לפני השימוש בו
+                    if (userId !== undefined) {
+                        localStorage.setItem('UserId', userId.toString()); // שמור את ה-UserId ב-local storage
+
+                        const userDetails = await fetchUserDetails(userId);
                         if (userDetails) {
                             const user: User = {
                                 UserId: userDetails.UserId,
@@ -88,7 +94,7 @@ export default function Login() {
                             console.error("Failed to fetch user details.");
                         }
                     } else {
-                        console.error("UserId is undefined in local storage.");
+                        console.error("UserId is undefined in the decoded token.");
                     }
                 }
             } else {
@@ -99,8 +105,7 @@ export default function Login() {
             console.log("Error during login:", error);
         }
     };
-    
-    
+
     return (
         <div>
             <form onSubmit={handleSubmit(onSubmit)}>

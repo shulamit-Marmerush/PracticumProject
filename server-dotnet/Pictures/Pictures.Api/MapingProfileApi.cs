@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Pictures.Api.Models;
+using Pictures.Api.PutModel;
 using Pictures.Core.DTOs;
 using Pictures.Core.Models;
 
@@ -13,6 +14,7 @@ namespace Pictures.Api
             CreateMap<AlbumPostModel,Album>().ReverseMap();
       
             CreateMap<PhotoPostModel,Photo>().ReverseMap();
+            CreateMap<PhotoPutModel, Photo>().ReverseMap();
         }
     }
 }

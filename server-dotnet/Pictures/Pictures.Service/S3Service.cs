@@ -38,10 +38,19 @@ namespace Pictures.Service
                 Expires = DateTime.UtcNow.AddMinutes(10),
                 ContentType = contentType
             };
-            var url = _s3Client.GetPreSignedURL(request);
 
-            return url;
+            try
+            {
+                var url = _s3Client.GetPreSignedURL(request);
+                return url;
+            }
+            catch (AmazonS3Exception ex)
+            {
+                // טיפול בשגיאה
+                throw new Exception($"שגיאה ביצירת URL חתום: {ex.Message}");
+            }
         }
+
         public async Task<string> GetDownloadUrlAsync(string fileName)
         {
             var request = new GetPreSignedUrlRequest

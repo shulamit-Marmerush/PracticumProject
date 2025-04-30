@@ -1,8 +1,8 @@
 export type Photo={
-    PhotoId?: number;
-    AlbumId?: number;
+    PhotoId: number;
+    AlbumId: number;
     UserId: number;
-    Url?: string;
+    Url: string;
     Title: string;
     CreatedAt: string;
     UpdatedAt: string;

@@ -29,13 +29,38 @@ namespace Pictures.Api.Controllers
             }
 
 
+            //var request = new GetPreSignedUrlRequest
+            //{
+            //    BucketName = _bucketName,
+            //    Key = $"{albumName}/{fileName}", // קבצים נשמרים בתיקיית האלבום
+            //    Verb = HttpVerb.PUT,
+            //    Expires = DateTime.UtcNow.AddMinutes(10),
+            //    ContentType = "image/jpeg"
+            //};
+            string fileExtension = Path.GetExtension(fileName).ToLower();
+            string contentType;
+
+            switch (fileExtension)
+            {
+                case ".jpg":
+                case ".jpeg":
+                    contentType = "image/jpeg";
+                    break;
+                case ".png":
+                    contentType = "image/png";
+                    break;
+                default:
+                    contentType = "application/octet-stream"; // סוג ברירת מחדל
+                    break;
+            }
+
             var request = new GetPreSignedUrlRequest
             {
                 BucketName = _bucketName,
-                Key = $"{albumName}/{fileName}", // קבצים נשמרים בתיקיית האלבום
+                Key = $"{albumName}/{fileName}",
                 Verb = HttpVerb.PUT,
                 Expires = DateTime.UtcNow.AddMinutes(10),
-                ContentType = "image/jpeg"
+                ContentType = contentType
             };
 
             request.Headers["x-amz-acl"] = "bucket-owner-full-control";
@@ -44,7 +69,7 @@ namespace Pictures.Api.Controllers
             {
 
                 string url = _s3Client.GetPreSignedURL(request);
-                string fileUrl = $"https://{_bucketName}.s3.amazonaws.com/{albumName}/{fileName}"; // URL להורדת התמונה
+                string fileUrl = $"https://{_bucketName}.s3.ca-central-1.amazonaws.com/{albumName}/{fileName}"; // URL להורדת התמונה
 
                 return Ok(new { uploadUrl = url, fileUrl = fileUrl });
             }

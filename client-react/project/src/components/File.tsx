@@ -10,7 +10,7 @@
 //         if (event.target.files) {
 //             setSelectedFile(event.target.files[0]);
 //         }
-//     };
+//     };ז
 
 //     const handleUpload = async () => {
 //         if (!selectedFile) {

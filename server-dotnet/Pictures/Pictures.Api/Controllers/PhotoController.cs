@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Pictures.Api.Models;
+using Pictures.Api.PutModel;
 using Pictures.Core.DTOs;
 using Pictures.Core.Models;
 using Pictures.Core.Services;

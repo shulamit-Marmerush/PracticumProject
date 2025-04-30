@@ -40,6 +40,12 @@
     /* overflow: auיto; הוספת גלילה */
 
   }
+  .photo {
+    width: 100px; /* או כל גודל שתרצה */
+    height: auto; /* שומר על הפרופורציות */
+    margin: 5px; /* מרווח בין התמונות */
+}
+
   
   .gallery-image {
     width: 150px;
