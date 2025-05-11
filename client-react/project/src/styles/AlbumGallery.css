@@ -1,0 +1,144 @@
+.album-modal-paper {
+  border-radius: 16px !important;
+}
+
+.album-modal-title {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 16px !important;
+}
+
+.album-modal-heading {
+  font-weight: bold !important;
+  color: #264653 !important;
+}
+
+.album-modal-content {
+  padding-top: 24px !important;
+  padding-bottom: 24px !important;
+}
+
+.album-modal-alert {
+  margin-bottom: 24px !important;
+}
+
+.selected-files-container {
+  margin-bottom: 32px;
+}
+
+.section-heading {
+  margin-bottom: 16px !important;
+  font-weight: 500 !important;
+}
+
+.file-card {
+  height: 100%;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+.file-image {
+  object-fit: cover;
+}
+
+.file-content {
+  padding: 8px !important;
+}
+
+.file-name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.album-card {
+  height: 100%;
+  border-radius: 8px !important;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.album-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+.album-card.selected {
+  border: 2px solid #2a9d8f !important;
+}
+
+.album-checkbox {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+
+.album-checkbox-input {
+  color: #2a9d8f !important;
+}
+
+.album-content {
+  text-align: center;
+  padding-top: 24px !important;
+}
+
+.album-icon {
+  font-size: 48px !important;
+  color: #2a9d8f !important;
+}
+
+.album-title {
+  margin-top: 8px !important;
+  font-weight: 500 !important;
+}
+
+.album-preview-container {
+  margin-top: 32px;
+}
+
+.preview-loading {
+  display: flex;
+  justify-content: center;
+  padding: 32px 0;
+}
+
+.preview-spinner {
+  color: #2a9d8f !important;
+}
+
+.preview-card {
+  height: 100%;
+  border-radius: 8px !important;
+  overflow: hidden;
+}
+
+.preview-image {
+  object-fit: cover;
+}
+
+.album-modal-actions {
+  padding: 16px 24px !important;
+  border-top: 1px solid #eee;
+}
+
+.cancel-button {
+  color: #264653 !important;
+}
+
+.cancel-button:hover {
+  background-color: rgba(38, 70, 83, 0.1) !important;
+}
+
+.save-button {
+  background-color: #2a9d8f !important;
+}
+
+.save-button:hover {
+  background-color: #238b7e !important;
+}
+
+.save-button:disabled {
+  background-color: rgba(0, 0, 0, 0.12) !important;
+}

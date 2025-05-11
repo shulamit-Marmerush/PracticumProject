@@ -1,0 +1,129 @@
+.uploader-container {
+  padding: 16px 0;
+}
+
+.uploader-title {
+  font-weight: bold !important;
+  color: #264653 !important;
+  margin-bottom: 32px !important;
+  text-align: center;
+}
+
+.uploader-alert {
+  margin-bottom: 24px !important;
+}
+
+.upload-paper {
+  padding: 32px;
+  border-radius: 16px !important;
+  background: linear-gradient(120deg, rgba(42, 157, 143, 0.1), rgba(38, 70, 83, 0.05)) !important;
+  border: 2px dashed #2a9d8f !important;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.upload-circle {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background-color: rgba(42, 157, 143, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 24px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.upload-icon {
+  font-size: 64px !important;
+  color: #2a9d8f !important;
+  animation: floatUpDown 2s ease-in-out infinite;
+  position: relative;
+}
+
+@keyframes floatUpDown {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.upload-text {
+  margin-top: 16px !important;
+  color: #555 !important;
+  max-width: 80%;
+}
+
+.upload-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.upload-button {
+  background-color: #2a9d8f !important;
+  border-radius: 50px !important;
+  padding: 8px 24px !important;
+}
+
+.upload-button:hover {
+  background-color: #238b7e !important;
+}
+
+.folder-button {
+  color: #2a9d8f !important;
+  border-color: #2a9d8f !important;
+  border-radius: 50px !important;
+  padding: 8px 24px !important;
+}
+
+.folder-button:hover {
+  border-color: #2a9d8f !important;
+  background-color: rgba(42, 157, 143, 0.1) !important;
+}
+
+.uploading-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.uploading-paper {
+  padding: 32px;
+  border-radius: 16px !important;
+  text-align: center;
+}
+
+.uploading-spinner {
+  color: #2a9d8f !important;
+  margin-bottom: 16px !important;
+}
+
+@media (max-width: 600px) {
+  .upload-paper {
+    padding: 16px;
+  }
+
+  .upload-circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .upload-icon {
+    font-size: 48px !important;
+  }
+}
