@@ -28,7 +28,7 @@ namespace Pictures.Service
 
 
 
-        public async Task<string> GeneratePresignedUrlAsync(string fileName, string contentType)
+        public string GeneratePresignedUrlAsync(string fileName, string contentType)
         {
             var request = new GetPreSignedUrlRequest
             {

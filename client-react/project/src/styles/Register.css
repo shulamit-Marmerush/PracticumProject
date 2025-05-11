@@ -1,0 +1,63 @@
+.register-container {
+    padding: 32px 0;
+  }
+  
+  .register-paper {
+    padding: 40px;
+    border-radius: 16px !important;
+    background: white !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .register-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  
+  .register-title {
+    font-weight: bold !important;
+    color: #264653 !important;
+    margin-bottom: 8px !important;
+  }
+  
+  .register-subtitle {
+    color: rgba(0, 0, 0, 0.6) !important;
+  }
+  
+  .register-button {
+    margin-top: 24px !important;
+    margin-bottom: 16px !important;
+    background-color: #2a9d8f !important;
+    border-radius: 8px !important;
+    padding: 12px 0 !important;
+  }
+  
+  .register-button:hover {
+    background-color: #238b7e !important;
+  }
+  
+  .login-link-container {
+    text-align: center;
+    margin-top: 16px;
+  }
+  
+  .login-link-text {
+    color: rgba(0, 0, 0, 0.6) !important;
+  }
+  
+  .login-link {
+    color: #2a9d8f !important;
+    font-weight: bold !important;
+    cursor: pointer;
+  }
+  
+  .login-link:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 600px) {
+    .register-paper {
+      padding: 24px;
+    }
+  }
+  
