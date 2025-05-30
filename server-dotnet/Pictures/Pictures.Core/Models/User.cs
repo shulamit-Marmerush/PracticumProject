@@ -16,6 +16,9 @@ namespace Pictures.Core.Models
         public string Password { get; set; }
         public List<Roles> Roles { get; set; } // תפקידים של המשתמש
         public List<Album> Albums { get; set; } 
+        
+        //public bool IsEmailConfirmed { get; set; } = false; // האם האימייל אומת
+        //public string EmailVerificationCode { get; set; }
 
         public User() { }
 

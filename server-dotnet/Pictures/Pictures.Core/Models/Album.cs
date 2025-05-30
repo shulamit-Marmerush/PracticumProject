@@ -29,5 +29,6 @@ namespace Pictures.Core.Models
             Created_at = created_at;
             Updated_at = updated_at;
         }
+        
     }
 }

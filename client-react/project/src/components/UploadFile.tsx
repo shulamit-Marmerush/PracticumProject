@@ -3,13 +3,11 @@
 import type React from "react"
 import { useState, useEffect, type ChangeEvent } from "react"
 import axios from "axios"
+import { Box, Typography, Button, Paper, CircularProgress, Alert } from "@mui/material"
+import { CloudUpload, Folder } from "lucide-react"
 
-import { Box, Typography, Button, Paper, CircularProgress, Alert, useTheme } from "@mui/material"
-import CloudUploadIcon from "@mui/icons-material/CloudUpload"
-import FolderIcon from "@mui/icons-material/Folder"
 import "../styles/UploadFile.css"
 import AlbumModal from "./AlbumGallery"
-
 const FileUploader: React.FC = () => {
   const [showModal, setShowModal] = useState(false)
   const [selectedFiles, setSelectedFiles] = useState<File[]>([])
@@ -18,9 +16,7 @@ const FileUploader: React.FC = () => {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [uploading, setUploading] = useState(false)
-  const theme = useTheme()
 
-  // Fetch albums when component mounts
   useEffect(() => {
     const fetchAlbums = async () => {
       setLoading(true)
@@ -107,7 +103,6 @@ const FileUploader: React.FC = () => {
         },
       })
 
-      // Photo data to send to API
       const photoData = {
         AlbumId: albumId,
         UserId: localStorage.getItem("UserId"),
@@ -117,7 +112,6 @@ const FileUploader: React.FC = () => {
         UpdatedAt: new Date().toISOString(),
       }
 
-      // POST request to API to update database
       try {
         await axios.post("https://localhost:7259/api/photo", photoData, {
           headers: {
@@ -152,7 +146,7 @@ const FileUploader: React.FC = () => {
 
       <Paper elevation={0} className="upload-paper">
         <Box className="upload-circle">
-          <CloudUploadIcon className="upload-icon" />
+          <CloudUpload className="upload-icon" />
           <Typography variant="body2" className="upload-text">
             Click or drag your files here
             <br />
@@ -161,12 +155,12 @@ const FileUploader: React.FC = () => {
         </Box>
 
         <Box className="upload-buttons">
-          <Button variant="contained" component="label" startIcon={<CloudUploadIcon />} className="upload-button">
+          <Button variant="contained" component="label" startIcon={<CloudUpload />} className="upload-button">
             Select Files
             <input type="file" multiple onChange={handleFileChange} hidden />
           </Button>
 
-          <Button variant="outlined" component="label" startIcon={<FolderIcon />} className="folder-button">
+          <Button variant="outlined" component="label" startIcon={<Folder />} className="folder-button">
             Select Folder
             <input type="file" webkitdirectory="true" {...({} as any)} hidden />
           </Button>

@@ -1,4 +1,148 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿//using Microsoft.AspNetCore.Http;
+//using Microsoft.AspNetCore.Mvc;
+//using Microsoft.IdentityModel.Tokens;
+//using System.IdentityModel.Tokens.Jwt;
+//using System.Security.Claims;
+//using System.Text;
+//using Pictures.Core.Models;
+//using Pictures.Data;
+//using Microsoft.EntityFrameworkCore;
+//using System.Collections.Generic;
+//using System.Threading.Tasks;
+//using Pictures.Core.models;
+//using System;
+//using Pictures.Core.Services;  // <-- הוספת שימוש בשירות המייל
+
+//namespace AuthServer.Controllers
+//{
+//    [Route("api/[controller]")]
+//    [ApiController]
+//    public class AuthController : ControllerBase
+//    {
+//        private readonly IConfiguration _configuration;
+//        private readonly DataContext _dataContext;
+//        private readonly IEmailService _emailService;  // <-- שדה חדש לשירות המייל
+
+//        public AuthController(IConfiguration configuration, DataContext dataContext, IEmailService emailService)
+//        {
+//            _configuration = configuration;
+//            _dataContext = dataContext;
+//            _emailService = emailService;  // <-- הזרקה בקונסטרקטור
+//        }
+
+//        [HttpPost("login")]
+//        public async Task<IActionResult> Login([FromBody] LoginModel loginModel)
+//        {
+//            if (string.IsNullOrEmpty(loginModel.Email) || string.IsNullOrEmpty(loginModel.Password))
+//                return BadRequest("Email and password must not be empty.");
+
+//            var user = await _dataContext.Users.Include(u => u.Roles).FirstOrDefaultAsync(u => u.Email == loginModel.Email);
+
+//            if (user != null && user.Password == loginModel.Password)
+//            {
+//                if (!user.IsEmailConfirmed)
+//                    return Unauthorized("Email not verified.");
+
+//                var roles = user.Roles?.Select(r => r.RoleName).ToArray() ?? new string[0];
+//                var token = CreateJWT(user, roles);
+//                return Ok(new { Token = token });
+//            }
+
+//            return Unauthorized();
+//        }
+
+//        [HttpPost("register")]
+//        public async Task<IActionResult> Register([FromBody] LoginModel loginModel)
+//        {
+//            if (string.IsNullOrEmpty(loginModel.Email) || string.IsNullOrEmpty(loginModel.Password))
+//                return BadRequest("Email and password must not be empty.");
+
+//            var existingUser = await _dataContext.Users.FirstOrDefaultAsync(u => u.Email == loginModel.Email);
+//            if (existingUser != null)
+//                return Conflict("User already exists.");
+
+//            var verificationCode = Guid.NewGuid().ToString().Substring(0, 6).ToUpper();
+
+//            var newUser = new User
+//            {
+//                Email = loginModel.Email,
+//                Password = loginModel.Password,
+//                UserName = loginModel.Email.Split("@")[0],
+//                Roles = new List<Roles> { new Roles { RoleName = "temp_user" } },
+//                IsEmailConfirmed = false,
+//                EmailVerificationCode = verificationCode
+//            };
+
+//            _dataContext.Users.Add(newUser);
+//            await _dataContext.SaveChangesAsync();
+
+//            // שליחת המייל עם קוד האימות:
+//            await _emailService.SendEmailAsync(
+//                newUser.Email,
+//                "אימות כתובת המייל שלך",
+//                $"שלום {newUser.UserName},\n\nקוד האימות שלך הוא: {verificationCode}\n\nתודה שהצטרפת אלינו!"
+//            );
+
+//            return Ok(new { message = "Registration successful. Please check your email for the verification code." });
+//        }
+
+//        [HttpPost("verify-email")]
+//        public async Task<IActionResult> VerifyEmail([FromBody] EmailVerificationModel model)
+//        {
+//            var user = await _dataContext.Users.Include(u => u.Roles).FirstOrDefaultAsync(u => u.Email == model.Email);
+//            if (user == null) return NotFound("User not found.");
+
+//            if (user.EmailVerificationCode == model.Code)
+//            {
+//                user.IsEmailConfirmed = true;
+//                user.EmailVerificationCode = null;
+//                await _dataContext.SaveChangesAsync();
+
+//                var roles = user.Roles?.Select(r => r.RoleName).ToArray() ?? new string[0];
+//                var token = CreateJWT(user, roles);
+
+//                return Ok(new { Token = token });
+//            }
+
+//            return BadRequest("Invalid verification code.");
+//        }
+
+//        private string CreateJWT(User user, string[] roles)
+//        {
+//            var claims = new List<Claim>
+//            {
+//                new Claim("id", user.UserId.ToString()),
+//                new Claim("name", user.UserName),
+//                new Claim("email", user.Email),
+//                new Claim("role", string.Join(",", roles))
+//            };
+
+//            var secretKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_configuration["JWT:Key"]));
+//            var signinCredentials = new SigningCredentials(secretKey, SecurityAlgorithms.HmacSha256);
+//            var tokenOptions = new JwtSecurityToken(
+//                issuer: _configuration["JWT:Issuer"],
+//                audience: _configuration["JWT:Audience"],
+//                claims: claims,
+//                expires: DateTime.Now.AddDays(30),
+//                signingCredentials: signinCredentials
+//            );
+//            return new JwtSecurityTokenHandler().WriteToken(tokenOptions);
+//        }
+//    }
+
+//    public class LoginModel
+//    {
+//        public string Email { get; set; }
+//        public string Password { get; set; }
+//    }
+
+//    public class EmailVerificationModel
+//    {
+//        public string Email { get; set; }
+//        public string Code { get; set; }
+//    }
+//}
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;

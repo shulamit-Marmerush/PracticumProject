@@ -20,8 +20,8 @@ import {
   Alert,
   IconButton,
 } from "@mui/material"
-import CloseIcon from "@mui/icons-material/Close"
-import FolderIcon from "@mui/icons-material/Folder"
+import { X, FolderIcon } from "lucide-react"
+
 import "../styles/AlbumGallery.css"
 
 type Folder = {
@@ -72,7 +72,7 @@ const AlbumModal: React.FC<AlbumModalProps> = ({ albums = [], onClose, onUpload,
       })
       setPhotos(response.data)
     } catch (error) {
-      setError("Error loading photos")
+      console.log("Error loading photos")
     } finally {
       setLoading(false)
     }
@@ -85,13 +85,13 @@ const AlbumModal: React.FC<AlbumModalProps> = ({ albums = [], onClose, onUpload,
   }, [selectedAlbums])
 
   return (
-    <Dialog open={true} onClose={onClose} maxWidth="md" fullWidth classes={{ paper: "album-modal-paper" }}>
+    <Dialog open={true} onClose={onClose} maxWidth="md" fullWidth className="album-modal">
       <DialogTitle className="album-modal-title">
         <Typography variant="h6" component="div" className="album-modal-heading">
           Select Album
         </Typography>
         <IconButton edge="end" color="inherit" onClick={onClose} aria-label="close">
-          <CloseIcon />
+          <X />
         </IconButton>
       </DialogTitle>
 

@@ -1,42 +1,65 @@
-.album-modal-paper {
-  border-radius: 16px !important;
+.album-modal .MuiDialog-paper {
+  border-radius: 24px !important;
+  background: linear-gradient(135deg, #1a0b2e 0%, #2c0f42 50%, #1a0b2e 100%);
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
 }
 
 .album-modal-title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #eee;
-  padding-bottom: 16px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding-bottom: 1rem !important;
 }
 
 .album-modal-heading {
-  font-weight: bold !important;
-  color: #264653 !important;
+  font-weight: 700 !important;
+  background: linear-gradient(135deg, #f9a8d4, #c084fc, #a5b4fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .album-modal-content {
-  padding-top: 24px !important;
-  padding-bottom: 24px !important;
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
 }
 
 .album-modal-alert {
-  margin-bottom: 24px !important;
+  margin-bottom: 1.5rem !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(10px);
+}
+
+.album-modal-alert.MuiAlert-standardError {
+  background: rgba(239, 68, 68, 0.1) !important;
+  border: 1px solid rgba(239, 68, 68, 0.2) !important;
+}
+
+.album-modal-alert.MuiAlert-standardInfo {
+  background: rgba(59, 130, 246, 0.1) !important;
+  border: 1px solid rgba(59, 130, 246, 0.2) !important;
 }
 
 .selected-files-container {
-  margin-bottom: 32px;
+  margin-bottom: 2rem;
 }
 
 .section-heading {
-  margin-bottom: 16px !important;
-  font-weight: 500 !important;
+  margin-bottom: 1rem !important;
+  font-weight: 600 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .file-card {
   height: 100%;
-  border-radius: 8px !important;
+  border-radius: 12px !important;
   overflow: hidden;
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 .file-image {
@@ -44,74 +67,89 @@
 }
 
 .file-content {
-  padding: 8px !important;
+  padding: 0.5rem !important;
 }
 
 .file-name {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .album-card {
   height: 100%;
-  border-radius: 8px !important;
+  border-radius: 12px !important;
   cursor: pointer;
   border: 2px solid transparent;
-  transition: all 0.2s ease;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(10px) !important;
+  position: relative;
 }
 
 .album-card:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.2) !important;
+  transform: translateY(-2px);
 }
 
 .album-card.selected {
-  border: 2px solid #2a9d8f !important;
+  border: 2px solid #8b5cf6 !important;
+  background: rgba(139, 92, 246, 0.1) !important;
 }
 
 .album-checkbox {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 0.5rem;
+  right: 0.5rem;
+  z-index: 1;
 }
 
 .album-checkbox-input {
-  color: #2a9d8f !important;
+  color: #8b5cf6 !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 4px !important;
 }
 
 .album-content {
   text-align: center;
-  padding-top: 24px !important;
+  padding-top: 1.5rem !important;
 }
 
 .album-icon {
-  font-size: 48px !important;
-  color: #2a9d8f !important;
+  width: 3rem !important;
+  height: 3rem !important;
+  color: #8b5cf6 !important;
+  margin-bottom: 0.5rem;
 }
 
 .album-title {
-  margin-top: 8px !important;
+  margin-top: 0.5rem !important;
   font-weight: 500 !important;
+  color: rgba(255, 255, 255, 0.9) !important;
 }
 
 .album-preview-container {
-  margin-top: 32px;
+  margin-top: 2rem;
 }
 
 .preview-loading {
   display: flex;
   justify-content: center;
-  padding: 32px 0;
+  padding: 2rem 0;
 }
 
 .preview-spinner {
-  color: #2a9d8f !important;
+  color: #8b5cf6 !important;
 }
 
 .preview-card {
   height: 100%;
-  border-radius: 8px !important;
+  border-radius: 12px !important;
   overflow: hidden;
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
 .preview-image {
@@ -119,26 +157,37 @@
 }
 
 .album-modal-actions {
-  padding: 16px 24px !important;
-  border-top: 1px solid #eee;
+  padding: 1rem 1.5rem !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .cancel-button {
-  color: #264653 !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+  border-radius: 8px !important;
+  text-transform: none !important;
 }
 
 .cancel-button:hover {
-  background-color: rgba(38, 70, 83, 0.1) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
 }
 
 .save-button {
-  background-color: #2a9d8f !important;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899) !important;
+  border-radius: 8px !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
 }
 
 .save-button:hover {
-  background-color: #238b7e !important;
+  background: linear-gradient(135deg, #7c3aed, #db2777) !important;
 }
 
 .save-button:disabled {
-  background-color: rgba(0, 0, 0, 0.12) !important;
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: rgba(255, 255, 255, 0.4) !important;
 }
+.album-modal .MuiDialog-paper {
+  max-height: 100vh; /* הגבלת הגובה המקסימלי */
+  overflow: hidden; /* מניעת גלילה */
+}
+

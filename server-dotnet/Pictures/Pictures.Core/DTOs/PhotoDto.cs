@@ -8,7 +8,7 @@ namespace Pictures.Core.DTOs
 {
     public class PhotoDto
     {
-        public int PhotoId { get; private set; }
+        public int PhotoId { get; set; }
         public int AlbumId { get; set; }
         public int UserId { get; set; }
         public string Url { get; set; }

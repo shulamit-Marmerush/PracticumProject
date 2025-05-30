@@ -1,55 +1,123 @@
 .add-album-container {
-    padding: 32px 0;
-  }
-  
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a0b2e 0%, #2c0f42 50%, #1a0b2e 100%);
+  padding: 2rem 0;
+  position: relative;
+}
+
+.add-album-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(147, 51, 234, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.add-album-paper {
+  padding: 3rem !important;
+  border-radius: 24px !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+  position: relative;
+  z-index: 1;
+}
+
+.add-album-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.add-album-icon {
+  width: 3rem !important;
+  height: 3rem !important;
+  color: #8b5cf6 !important;
+  margin-bottom: 1rem;
+  filter: drop-shadow(0 0 10px rgba(139, 92, 246, 0.3));
+}
+
+.add-album-title {
+  font-weight: 700 !important;
+  background: linear-gradient(135deg, #f9a8d4, #c084fc, #a5b4fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  margin-top: 1rem !important;
+  margin-bottom: 0.5rem !important;
+}
+
+.add-album-subtitle {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.add-album-alert {
+  margin-bottom: 1.5rem !important;
+  border-radius: 12px !important;
+  backdrop-filter: blur(10px);
+}
+
+.add-album-alert.MuiAlert-standardError {
+  background: rgba(239, 68, 68, 0.1) !important;
+  border: 1px solid rgba(239, 68, 68, 0.2) !important;
+}
+
+.add-album-alert.MuiAlert-standardSuccess {
+  background: rgba(34, 197, 94, 0.1) !important;
+  border: 1px solid rgba(34, 197, 94, 0.2) !important;
+}
+
+.add-album-input .MuiOutlinedInput-root {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 12px !important;
+  color: white !important;
+}
+
+.add-album-input .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.add-album-input .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.add-album-input .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #8b5cf6 !important;
+}
+
+.add-album-input .MuiInputLabel-root {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+.add-album-input .MuiInputLabel-root.Mui-focused {
+  color: #8b5cf6 !important;
+}
+
+.add-album-button {
+  margin-top: 2rem !important;
+  margin-bottom: 1rem !important;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899) !important;
+  border-radius: 12px !important;
+  padding: 1rem 0 !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  font-size: 1.1rem !important;
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.3) !important;
+  transition: all 0.3s ease !important;
+}
+
+.add-album-button:hover {
+  background: linear-gradient(135deg, #7c3aed, #db2777) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(139, 92, 246, 0.4) !important;
+}
+
+@media (max-width: 600px) {
   .add-album-paper {
-    padding: 40px;
-    border-radius: 16px !important;
-    background: white !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+    padding: 2rem !important;
   }
-  
-  .add-album-header {
-    text-align: center;
-    margin-bottom: 32px;
-  }
-  
-  .add-album-icon {
-    font-size: 48px !important;
-    color: #2a9d8f !important;
-    margin-bottom: 16px;
-  }
-  
-  .add-album-title {
-    font-weight: bold !important;
-    color: #264653 !important;
-    margin-top: 16px !important;
-    margin-bottom: 8px !important;
-  }
-  
-  .add-album-subtitle {
-    color: rgba(0, 0, 0, 0.6) !important;
-  }
-  
-  .add-album-alert {
-    margin-bottom: 24px !important;
-  }
-  
-  .add-album-button {
-    margin-top: 24px !important;
-    margin-bottom: 16px !important;
-    background-color: #2a9d8f !important;
-    border-radius: 8px !important;
-    padding: 12px 0 !important;
-  }
-  
-  .add-album-button:hover {
-    background-color: #238b7e !important;
-  }
-  
-  @media (max-width: 600px) {
-    .add-album-paper {
-      padding: 24px;
-    }
-  }
-  
+}

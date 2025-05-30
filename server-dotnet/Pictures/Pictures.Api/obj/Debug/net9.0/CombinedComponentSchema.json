@@ -145,5 +145,5 @@
     }
   },
   "type": "object",
-  "SourceSegments": "C:\\Users\\User\\.nuget\\packages\\awssdk.extensions.netcore.setup\\4.0.0-preview.10\\ConfigurationSchema.json"
+  "SourceSegments": "C:\\Users\\User\\.nuget\\packages\\awssdk.extensions.netcore.setup\\4.0.1\\ConfigurationSchema.json"
 }

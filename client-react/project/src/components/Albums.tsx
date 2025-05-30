@@ -25,17 +25,88 @@ import {
   Fade,
   Zoom,
   Container,
+  InputAdornment,
 } from "@mui/material"
+import { styled } from "@mui/material/styles"
 import EditIcon from "@mui/icons-material/Edit"
 import DeleteIcon from "@mui/icons-material/Delete"
 import FolderIcon from "@mui/icons-material/Folder"
 import CheckIcon from "@mui/icons-material/Check"
 import CloseIcon from "@mui/icons-material/Close"
 import AddIcon from "@mui/icons-material/Add"
+import SearchIcon from "@mui/icons-material/Search"
+import PhotoLibraryIcon from "@mui/icons-material/PhotoLibrary"
 import { useNavigate } from "react-router-dom"
-import "../styles/Albums.css"
 
-interface Folder {
+const GradientBackground = styled(Box)(({ theme }) => ({
+  minHeight: "100vh",
+  background: "linear-gradient(135deg, #1A0B2E 0%, #2C0F42 50%, #1A0B2E 100%)",
+  position: "relative",
+  "&::before": {
+    content: '""',
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    background:
+      "radial-gradient(circle at 20% 80%, rgba(147, 51, 234, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 50%)",
+    pointerEvents: "none",
+  },
+}))
+
+const AlbumCard = styled(Card)(({ theme }) => ({
+  borderRadius: "20px",
+  background: "rgba(255, 255, 255, 0.05)",
+  backdropFilter: "blur(20px)",
+  border: "1px solid rgba(255, 255, 255, 0.1)",
+  transition: "all 0.3s ease",
+  cursor: "pointer",
+  overflow: "hidden",
+  position: "relative",
+  boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
+  "&:hover": {
+    transform: "translateY(-8px) scale(1.02)",
+    boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)",
+  },
+}))
+
+const AlbumIcon = styled(Box)(({ theme }) => ({
+  height: 160,
+  background: "linear-gradient(135deg, #8b5cf6, #ec4899)",
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  position: "relative",
+  overflow: "hidden",
+  "&::before": {
+    content: '""',
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    background: "radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 70%)",
+  },
+  "& svg": {
+    fontSize: 64,
+    color: "white",
+    zIndex: 1,
+    position: "relative",
+  },
+}))
+
+const HeaderCard = styled(Paper)(({ theme }) => ({
+  background: "rgba(255, 255, 255, 0.05)",
+  backdropFilter: "blur(20px)",
+  borderRadius: "24px",
+  border: "1px solid rgba(255, 255, 255, 0.1)",
+  padding: "32px",
+  marginBottom: "32px",
+  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+}))
+
+interface IFolder {
   albumId: number
   title: string
   userId: number
@@ -43,7 +114,7 @@ interface Folder {
 }
 
 interface FolderListProps {
-  albums: Folder[]
+  albums: IFolder[]
   onSelectAlbum: (albumId: number) => void
   showCheckboxes: boolean
   selectedAlbums: number[]
@@ -51,7 +122,7 @@ interface FolderListProps {
 }
 
 const FolderList: React.FC<FolderListProps> = ({ onSelectAlbum, showCheckboxes, selectedAlbums, onToggleSelect }) => {
-  const [folders, setFolders] = useState<Folder[]>([])
+  const [folders, setFolders] = useState<IFolder[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [editingFolderId, setEditingFolderId] = useState<number | null>(null)
@@ -59,8 +130,15 @@ const FolderList: React.FC<FolderListProps> = ({ onSelectAlbum, showCheckboxes, 
   const [currentDescription, setCurrentDescription] = useState<string>("")
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false)
   const [folderToDelete, setFolderToDelete] = useState<number | null>(null)
+  const [searchTerm, setSearchTerm] = useState("")
 
   const navigate = useNavigate()
+
+  const filteredFolders = folders.filter(
+    (folder) =>
+      folder.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      folder.description.toLowerCase().includes(searchTerm.toLowerCase()),
+  )
 
   useEffect(() => {
     const fetchFolders = async () => {
@@ -80,7 +158,7 @@ const FolderList: React.FC<FolderListProps> = ({ onSelectAlbum, showCheckboxes, 
           },
         })
 
-        const userFolders = response.data.filter((folder: Folder) => {
+        const userFolders = response.data.filter((folder: IFolder) => {
           return Number(folder.userId) === userId
         })
         setFolders(userFolders)
@@ -136,7 +214,7 @@ const FolderList: React.FC<FolderListProps> = ({ onSelectAlbum, showCheckboxes, 
     }
   }
 
-  const startEditing = (folder: Folder, event: React.MouseEvent) => {
+  const startEditing = (folder: IFolder, event: React.MouseEvent) => {
     event.stopPropagation()
     setEditingFolderId(folder.albumId)
     setNewTitle(folder.title)
@@ -192,74 +270,186 @@ const FolderList: React.FC<FolderListProps> = ({ onSelectAlbum, showCheckboxes, 
 
   if (loading)
     return (
-      <Box className="albums-page loading-container">
-        <CircularProgress size={60} thickness={4} className="loading-spinner" />
-      </Box>
+      <GradientBackground>
+        <Container maxWidth="lg" sx={{ pt: 4 }}>
+          <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "60vh" }}>
+            <CircularProgress size={60} sx={{ color: "#8B5CF6" }} />
+          </Box>
+        </Container>
+      </GradientBackground>
     )
 
   return (
-    <Box className="albums-page">
-      <div className="albums-background"></div>
-      <Container maxWidth={false} className="albums-container">
-        <Box className="albums-header">
-          <Typography variant="h4" component="h1" className="albums-title">
-            Your Albums
-          </Typography>
-          <Button
-            variant="contained"
-            startIcon={<AddIcon />}
-            onClick={() => navigate("/AddAlbum")}
-            className="add-album-button"
-          >
-            Create New Album
-          </Button>
-        </Box>
+    <GradientBackground>
+      <Container maxWidth="lg" sx={{ pt: 4, pb: 4, position: "relative", zIndex: 1 }}>
+        <HeaderCard elevation={0}>
+          <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: 3 }}>
+            <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
+              <PhotoLibraryIcon sx={{ fontSize: 40, color: "#8B5CF6" }} />
+              <Box>
+                <Typography
+                  variant="h4"
+                  component="h1"
+                  sx={{
+                    fontWeight: 700,
+                    background: "linear-gradient(135deg, #f9a8d4, #c084fc, #a5b4fc)",
+                    WebkitBackgroundClip: "text",
+                    backgroundClip: "text",
+                    color: "transparent",
+                  }}
+                >
+                  Your Albums
+                </Typography>
+                <Typography variant="body1" sx={{ color: "rgba(255, 255, 255, 0.8)" }}>
+                  Organize and manage your photo collections
+                </Typography>
+              </Box>
+            </Box>
+            <Button
+              variant="contained"
+              startIcon={<AddIcon />}
+              onClick={() => navigate("/AddAlbum")}
+              sx={{
+                borderRadius: "12px",
+                px: 3,
+                py: 1.5,
+                background: "linear-gradient(135deg, #8b5cf6, #ec4899)",
+                textTransform: "none",
+                fontWeight: 600,
+                boxShadow: "0 10px 25px rgba(139, 92, 246, 0.3)",
+                transition: "all 0.3s ease",
+                "&:hover": {
+                  background: "linear-gradient(135deg, #7c3aed, #db2777)",
+                  transform: "translateY(-2px)",
+                  boxShadow: "0 15px 35px rgba(139, 92, 246, 0.4)",
+                },
+              }}
+            >
+              Create New Album
+            </Button>
+          </Box>
+
+          <TextField
+            fullWidth
+            placeholder="Search albums..."
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            InputProps={{
+              startAdornment: (
+                <InputAdornment position="start">
+                  <SearchIcon sx={{ color: "#8B5CF6" }} />
+                </InputAdornment>
+              ),
+            }}
+            sx={{
+              "& .MuiOutlinedInput-root": {
+                borderRadius: "12px",
+                background: "rgba(255, 255, 255, 0.05)",
+                color: "white",
+                "& .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "rgba(255, 255, 255, 0.2)",
+                },
+                "&:hover .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "rgba(255, 255, 255, 0.4)",
+                },
+                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                  borderColor: "#8b5cf6",
+                },
+              },
+              "& .MuiInputBase-input::placeholder": {
+                color: "rgba(255, 255, 255, 0.6)",
+              },
+            }}
+          />
+        </HeaderCard>
 
         {error && (
-          <Alert severity="error" className="albums-alert">
+          <Alert
+            severity="error"
+            sx={{
+              mb: 3,
+              borderRadius: "12px",
+              background: "rgba(239, 68, 68, 0.1)",
+              backdropFilter: "blur(10px)",
+              border: "1px solid rgba(239, 68, 68, 0.2)",
+            }}
+          >
             {error}
           </Alert>
         )}
 
         {folders.length === 0 ? (
           <Fade in={true} timeout={1000}>
-            <Paper className="empty-albums">
-              <FolderIcon className="empty-icon" />
-              <Typography variant="h6" className="empty-albums-text">
-                You don't have any albums yet
+            <Paper
+              sx={{
+                p: 6,
+                textAlign: "center",
+                borderRadius: "24px",
+                background: "rgba(255, 255, 255, 0.05)",
+                backdropFilter: "blur(20px)",
+                border: "1px solid rgba(255, 255, 255, 0.1)",
+                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
+              }}
+            >
+              <FolderIcon sx={{ fontSize: 80, color: "#8B5CF6", mb: 2 }} />
+              <Typography variant="h5" sx={{ fontWeight: 700, color: "white", mb: 2 }}>
+                No albums yet
               </Typography>
-              <Typography variant="body1" className="empty-albums-subtext">
+              <Typography variant="body1" sx={{ color: "rgba(255, 255, 255, 0.8)", mb: 4 }}>
                 Create your first album to start organizing your photos
               </Typography>
-              <Button variant="contained" onClick={() => navigate("/AddAlbum")} className="create-album-button">
+              <Button
+                variant="contained"
+                onClick={() => navigate("/AddAlbum")}
+                sx={{
+                  borderRadius: "12px",
+                  px: 4,
+                  py: 1.5,
+                  background: "linear-gradient(135deg, #8b5cf6, #ec4899)",
+                  textTransform: "none",
+                  fontWeight: 600,
+                  fontSize: "1rem",
+                  boxShadow: "0 10px 25px rgba(139, 92, 246, 0.3)",
+                  transition: "all 0.3s ease",
+                  "&:hover": {
+                    background: "linear-gradient(135deg, #7c3aed, #db2777)",
+                    transform: "translateY(-2px)",
+                    boxShadow: "0 15px 35px rgba(139, 92, 246, 0.4)",
+                  },
+                }}
+              >
                 Create Your First Album
               </Button>
             </Paper>
           </Fade>
         ) : (
-          <Grid container spacing={3}>
-            {folders.map((folder, index) => (
+          <Grid container spacing={4}>
+            {filteredFolders.map((folder, index) => (
               <Grid  key={folder.albumId}>
                 <Zoom in={true} style={{ transitionDelay: `${index * 100}ms` }}>
-                  <Card className="album-card" onClick={() => openFolder(folder.albumId)}>
+                  <AlbumCard onClick={() => openFolder(folder.albumId)}>
                     {showCheckboxes && (
-                      <Box className="album-checkbox">
+                      <Box sx={{ position: "absolute", top: 12, right: 12, zIndex: 2 }}>
                         <Checkbox
                           checked={selectedAlbums.includes(folder.albumId)}
                           onChange={() => onToggleSelect(folder.albumId)}
                           onClick={(e) => e.stopPropagation()}
+                          sx={{
+                            color: "white",
+                            background: "rgba(139, 92, 246, 0.2)",
+                            borderRadius: "8px",
+                          }}
                         />
                       </Box>
                     )}
 
-                    <Box className="album-image-container">
-                      <div className="album-glow"></div>
-                      <FolderIcon className="album-icon" />
-                    </Box>
+                    <AlbumIcon>
+                      <FolderIcon />
+                    </AlbumIcon>
 
-                    <CardContent className="album-content">
+                    <CardContent sx={{ p: 3 }}>
                       {editingFolderId === folder.albumId ? (
-                        <Box className="album-edit-form" onClick={(e) => e.stopPropagation()}>
+                        <Box onClick={(e) => e.stopPropagation()}>
                           <TextField
                             value={newTitle}
                             onChange={(e) => setNewTitle(e.target.value)}
@@ -267,7 +457,20 @@ const FolderList: React.FC<FolderListProps> = ({ onSelectAlbum, showCheckboxes, 
                             size="small"
                             fullWidth
                             label="Album Title"
-                            className="album-edit-title"
+                            sx={{
+                              mb: 2,
+                              "& .MuiOutlinedInput-root": {
+                                background: "rgba(255, 255, 255, 0.05)",
+                                borderRadius: "8px",
+                                color: "white",
+                                "& .MuiOutlinedInput-notchedOutline": {
+                                  borderColor: "rgba(255, 255, 255, 0.2)",
+                                },
+                              },
+                              "& .MuiInputLabel-root": {
+                                color: "rgba(255, 255, 255, 0.7)",
+                              },
+                            }}
                           />
                           <TextField
                             value={currentDescription}
@@ -278,15 +481,38 @@ const FolderList: React.FC<FolderListProps> = ({ onSelectAlbum, showCheckboxes, 
                             label="Description"
                             multiline
                             rows={2}
+                            sx={{
+                              "& .MuiOutlinedInput-root": {
+                                background: "rgba(255, 255, 255, 0.05)",
+                                borderRadius: "8px",
+                                color: "white",
+                                "& .MuiOutlinedInput-notchedOutline": {
+                                  borderColor: "rgba(255, 255, 255, 0.2)",
+                                },
+                              },
+                              "& .MuiInputLabel-root": {
+                                color: "rgba(255, 255, 255, 0.7)",
+                              },
+                            }}
                           />
                         </Box>
                       ) : (
-                        <Box className="album-info">
-                          <Typography variant="h6" className="album-title">
+                        <Box>
+                          <Typography variant="h6" sx={{ fontWeight: 700, color: "white", mb: 1 }}>
                             {folder.title}
                           </Typography>
                           {folder.description && (
-                            <Typography variant="body2" className="album-description">
+                            <Typography
+                              variant="body2"
+                              sx={{
+                                color: "rgba(255, 255, 255, 0.7)",
+                                display: "-webkit-box",
+                                WebkitLineClamp: 2,
+                                WebkitBoxOrient: "vertical",
+                                overflow: "hidden",
+                                textOverflow: "ellipsis",
+                              }}
+                            >
                               {folder.description}
                             </Typography>
                           )}
@@ -294,25 +520,43 @@ const FolderList: React.FC<FolderListProps> = ({ onSelectAlbum, showCheckboxes, 
                       )}
                     </CardContent>
 
-                    <CardActions className="album-actions">
+                    <CardActions sx={{ p: 3, pt: 0, justifyContent: "flex-end" }}>
                       {editingFolderId === folder.albumId ? (
                         <>
                           <IconButton
                             size="small"
-                            color="primary"
                             onClick={(e) => saveTitle(folder.albumId, e)}
-                            className="action-button save-button"
+                            sx={{
+                              margin: "0 0.25rem",
+                              transition: "all 0.3s ease",
+                              borderRadius: "8px",
+                              background: "linear-gradient(135deg, #10b981, #059669)",
+                              color: "white",
+                              "&:hover": {
+                                background: "linear-gradient(135deg, #059669, #047857)",
+                                transform: "translateY(-2px)",
+                              },
+                            }}
                           >
                             <CheckIcon fontSize="small" />
                           </IconButton>
                           <IconButton
                             size="small"
-                            color="error"
                             onClick={(e) => {
                               e.stopPropagation()
                               cancelEditing()
                             }}
-                            className="action-button cancel-button"
+                            sx={{
+                              margin: "0 0.25rem",
+                              transition: "all 0.3s ease",
+                              borderRadius: "8px",
+                              background: "linear-gradient(135deg, #ef4444, #dc2626)",
+                              color: "white",
+                              "&:hover": {
+                                background: "linear-gradient(135deg, #dc2626, #b91c1c)",
+                                transform: "translateY(-2px)",
+                              },
+                            }}
                           >
                             <CloseIcon fontSize="small" />
                           </IconButton>
@@ -321,56 +565,96 @@ const FolderList: React.FC<FolderListProps> = ({ onSelectAlbum, showCheckboxes, 
                         <>
                           <IconButton
                             size="small"
-                            color="primary"
                             onClick={(e) => startEditing(folder, e)}
-                            className="action-button edit-button"
+                            sx={{
+                              margin: "0 0.25rem",
+                              transition: "all 0.3s ease",
+                              borderRadius: "8px",
+                              background: "linear-gradient(135deg, #8b5cf6, #ec4899)",
+                              color: "white",
+                              "&:hover": {
+                                background: "linear-gradient(135deg, #7c3aed, #db2777)",
+                                transform: "translateY(-2px)",
+                              },
+                            }}
                           >
                             <EditIcon fontSize="small" />
                           </IconButton>
                           <IconButton
                             size="small"
-                            color="error"
                             onClick={(e) => handleDeleteClick(folder.albumId, e)}
-                            className="action-button delete-button"
+                            sx={{
+                              margin: "0 0.25rem",
+                              transition: "all 0.3s ease",
+                              borderRadius: "8px",
+                              background: "linear-gradient(135deg, #ef4444, #dc2626)",
+                              color: "white",
+                              "&:hover": {
+                                background: "linear-gradient(135deg, #dc2626, #b91c1c)",
+                                transform: "translateY(-2px)",
+                              },
+                            }}
                           >
                             <DeleteIcon fontSize="small" />
                           </IconButton>
                         </>
                       )}
                     </CardActions>
-                  </Card>
+                  </AlbumCard>
                 </Zoom>
               </Grid>
             ))}
           </Grid>
         )}
 
-        {/* Delete Confirmation Dialog */}
         <Dialog
           open={deleteDialogOpen}
           onClose={() => setDeleteDialogOpen(false)}
           PaperProps={{
-            className: "delete-dialog",
+            sx: {
+              borderRadius: "16px",
+              background: "rgba(26, 11, 46, 0.95)",
+              backdropFilter: "blur(20px)",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
+            },
           }}
         >
-          <DialogTitle>Delete Album</DialogTitle>
+          <DialogTitle sx={{ fontWeight: "bold", color: "white" }}>Delete Album</DialogTitle>
           <DialogContent>
-            <DialogContentText>
+            <DialogContentText sx={{ color: "rgba(255, 255, 255, 0.8)" }}>
               Are you sure you want to delete this album? This action cannot be undone and all photos in this album will
               be lost.
             </DialogContentText>
           </DialogContent>
-          <DialogActions>
-            <Button onClick={() => setDeleteDialogOpen(false)} color="primary">
+          <DialogActions sx={{ p: 3 }}>
+            <Button
+              onClick={() => setDeleteDialogOpen(false)}
+              sx={{
+                borderRadius: "8px",
+                textTransform: "none",
+                color: "rgba(255, 255, 255, 0.8)",
+              }}
+            >
               Cancel
             </Button>
-            <Button onClick={deleteFolder} color="error" variant="contained">
+            <Button
+              onClick={deleteFolder}
+              variant="contained"
+              sx={{
+                borderRadius: "8px",
+                background: "linear-gradient(135deg, #ef4444, #dc2626)",
+                textTransform: "none",
+                "&:hover": {
+                  background: "linear-gradient(135deg, #dc2626, #b91c1c)",
+                },
+              }}
+            >
               Delete
             </Button>
           </DialogActions>
         </Dialog>
       </Container>
-    </Box>
+    </GradientBackground>
   )
 }
 

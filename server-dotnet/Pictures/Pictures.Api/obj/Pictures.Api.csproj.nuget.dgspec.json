@@ -62,11 +62,11 @@
           "dependencies": {
             "AWSSDK.Extensions.NETCore.Setup": {
               "target": "Package",
-              "version": "[4.0.0-preview.10, )"
+              "version": "[4.0.1, )"
             },
             "AWSSDK.S3": {
               "target": "Package",
-              "version": "[4.0.0-preview.10, )"
+              "version": "[4.0.0.5, )"
             },
             "Amazon.S3": {
               "target": "Package",
@@ -92,11 +92,21 @@
               "target": "Package",
               "version": "[9.0.3, )"
             },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.3, )"
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.5, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",
@@ -105,6 +115,14 @@
             "Swashbuckle.AspNetCore.Swagger": {
               "target": "Package",
               "version": "[8.0.0, )"
+            },
+            "System.Runtime": {
+              "target": "Package",
+              "version": "[4.3.1, )"
+            },
+            "dotenv-vault.net": {
+              "target": "Package",
+              "version": "[0.0.4, )"
             }
           },
           "imports": [
@@ -179,6 +197,34 @@
             "AutoMapper": {
               "target": "Package",
               "version": "[12.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "Azure.AI.OpenAI": {
+              "target": "Package",
+              "version": "[2.2.0-beta.4, )"
+            },
+            "Azure.AI.Vision.ImageAnalysis": {
+              "target": "Package",
+              "version": "[1.0.0, )"
+            },
+            "OpenAI": {
+              "target": "Package",
+              "version": "[2.2.0-beta.4, )"
+            },
+            "SixLabors.ImageSharp": {
+              "target": "Package",
+              "version": "[3.1.8, )"
+            },
+            "SixLabors.ImageSharp.Drawing": {
+              "target": "Package",
+              "version": "[2.1.6, )"
+            },
+            "System.Drawing.Common": {
+              "target": "Package",
+              "version": "[9.0.0, )"
             }
           },
           "imports": [
@@ -251,19 +297,27 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
+              "target": "Package",
+              "version": "[12.0.1, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[9.0.3, )"
+              "version": "[9.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[9.0.3, )"
+              "version": "[9.0.5, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[9.0.3, )"
+              "version": "[9.0.5, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
@@ -320,6 +374,9 @@
             "projectReferences": {
               "C:\\Users\\User\\Saved Games\\Desktop\\פרויקט פרקטיקום\\server-dotnet\\Pictures\\Pictures.Core\\Pictures.Core.csproj": {
                 "projectPath": "C:\\Users\\User\\Saved Games\\Desktop\\פרויקט פרקטיקום\\server-dotnet\\Pictures\\Pictures.Core\\Pictures.Core.csproj"
+              },
+              "C:\\Users\\User\\Saved Games\\Desktop\\פרויקט פרקטיקום\\server-dotnet\\Pictures\\Pictures.Data\\Pictures.Data.csproj": {
+                "projectPath": "C:\\Users\\User\\Saved Games\\Desktop\\פרויקט פרקטיקום\\server-dotnet\\Pictures\\Pictures.Data\\Pictures.Data.csproj"
               }
             }
           }
@@ -342,27 +399,41 @@
           "dependencies": {
             "AWSSDK.S3": {
               "target": "Package",
-              "version": "[4.0.0-preview.10, )"
+              "version": "[4.0.0.5, )"
             },
-            "Microsoft.Extensions.Configuration": {
+            "AutoMapper": {
               "target": "Package",
-              "version": "[10.0.0-preview.2.25163.2, )"
+              "version": "[12.0.1, )"
             },
-            "Microsoft.Extensions.Configuration.Json": {
+            "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
-              "version": "[10.0.0-preview.2.25163.2, )"
+              "version": "[12.0.1, )"
             },
-            "Microsoft.Extensions.DependencyInjection": {
+            "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[10.0.0-preview.2.25163.2, )"
+              "version": "[9.0.5, )"
             },
-            "Microsoft.IdentityModel.Tokens": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
               "target": "Package",
-              "version": "[8.6.1, )"
+              "version": "[9.0.5, )"
             },
-            "System.IdentityModel.Tokens.Jwt": {
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
               "target": "Package",
-              "version": "[8.6.1, )"
+              "version": "[9.0.5, )"
+            },
+            "Microsoft.Extensions.Http": {
+              "target": "Package",
+              "version": "[9.0.5, )"
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[13.0.3, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[9.0.0-preview.3.efcore.9.0.0, )"
             }
           },
           "imports": [

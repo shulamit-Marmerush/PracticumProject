@@ -11,6 +11,9 @@ import AddAlbum from "./components/AddAlbum"
 import FolderList from "./components/Albums"
 import PhotoGallery from "./components/PhotoGallery"
 import "./styles/Global.css"
+import SimpleCollageCreator from "./components/College"
+import Chat from "./components/Chat"
+import AiImageGenerator from "./components/AiImageGenerator"
 
 export default function Home() {
   return (
@@ -23,6 +26,14 @@ export default function Home() {
             <Route path="/login" element={<Login />} />
             <Route path="/UploadFile" element={<FileUploader />} />
             <Route path="/AddAlbum" element={<AddAlbum />} />
+             <Route path="/College" element={<SimpleCollageCreator />} />
+             <Route path="/Chat"element={<Chat/>} />
+            <Route
+              path="/AiImageGenerator"
+              element={<AiImageGenerator/>}
+              
+            />
+
             <Route
               path="/Albums"
               element={

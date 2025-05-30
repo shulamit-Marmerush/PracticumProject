@@ -17,7 +17,7 @@ namespace Pictures.Data.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "9.0.3")
+                .HasAnnotation("ProductVersion", "9.0.5")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
@@ -67,6 +67,179 @@ namespace Pictures.Data.Migrations
                     b.HasIndex("UserId");
 
                     b.ToTable("Albums");
+                });
+
+            modelBuilder.Entity("Pictures.Core.Models.Collage", b =>
+                {
+                    b.Property<int>("CollageId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("CollageId"));
+
+                    b.Property<bool>("AddBorder")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<bool>("AddShadow")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<int?>("AlbumId")
+                        .HasColumnType("int");
+
+                    b.Property<bool>("AllowRotation")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("BackgroundColor")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("BorderColor")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("BorderWidth")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<int>("Height")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Layout")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("Padding")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Theme")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("ThumbnailUrl")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Url")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Width")
+                        .HasColumnType("int");
+
+                    b.HasKey("CollageId");
+
+                    b.HasIndex("AlbumId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Collages");
+                });
+
+            modelBuilder.Entity("Pictures.Core.Models.CollagePhoto", b =>
+                {
+                    b.Property<int>("CollagePhotoId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("CollagePhotoId"));
+
+                    b.Property<int>("CollageId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Height")
+                        .HasColumnType("int");
+
+                    b.Property<int?>("ImageProcessingResultId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PhotoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PositionX")
+                        .HasColumnType("int");
+
+                    b.Property<int>("PositionY")
+                        .HasColumnType("int");
+
+                    b.Property<double>("Rotation")
+                        .HasColumnType("double");
+
+                    b.Property<int>("Width")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ZIndex")
+                        .HasColumnType("int");
+
+                    b.HasKey("CollagePhotoId");
+
+                    b.HasIndex("CollageId");
+
+                    b.HasIndex("ImageProcessingResultId");
+
+                    b.HasIndex("PhotoId");
+
+                    b.ToTable("CollagePhotos");
+                });
+
+            modelBuilder.Entity("Pictures.Core.Models.ImageProcessingResult", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Caption")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.PrimitiveCollection<string>("DetectedObjects")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.PrimitiveCollection<string>("DominantColors")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<bool>("IsFromFallback")
+                        .HasColumnType("tinyint(1)");
+
+                    b.Property<string>("OriginalImageUrl")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("PhotoId")
+                        .HasColumnType("int");
+
+                    b.Property<DateTime>("ProcessedAt")
+                        .HasColumnType("datetime(6)");
+
+                    b.Property<string>("ProcessedImageUrl")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.PrimitiveCollection<string>("Tags")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("PhotoId")
+                        .IsUnique();
+
+                    b.ToTable("ImageProcessingResults");
                 });
 
             modelBuilder.Entity("Pictures.Core.Models.Photo", b =>
@@ -220,13 +393,66 @@ namespace Pictures.Data.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("Pictures.Core.Models.Collage", b =>
+                {
+                    b.HasOne("Pictures.Core.Models.Album", "Album")
+                        .WithMany()
+                        .HasForeignKey("AlbumId");
+
+                    b.HasOne("Pictures.Core.Models.User", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Album");
+
+                    b.Navigation("User");
+                });
+
+            modelBuilder.Entity("Pictures.Core.Models.CollagePhoto", b =>
+                {
+                    b.HasOne("Pictures.Core.Models.Collage", "Collage")
+                        .WithMany("CollagePhotos")
+                        .HasForeignKey("CollageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Pictures.Core.Models.ImageProcessingResult", null)
+                        .WithMany("CollagePhotos")
+                        .HasForeignKey("ImageProcessingResultId");
+
+                    b.HasOne("Pictures.Core.Models.Photo", "Photo")
+                        .WithMany("CollagePhotos")
+                        .HasForeignKey("PhotoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Collage");
+
+                    b.Navigation("Photo");
+                });
+
+            modelBuilder.Entity("Pictures.Core.Models.ImageProcessingResult", b =>
+                {
+                    b.HasOne("Pictures.Core.Models.Photo", "Photo")
+                        .WithOne("ImageProcessingResult")
+                        .HasForeignKey("Pictures.Core.Models.ImageProcessingResult", "PhotoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Photo");
+                });
+
             modelBuilder.Entity("Pictures.Core.Models.Photo", b =>
                 {
-                    b.HasOne("Pictures.Core.Models.Album", null)
+                    b.HasOne("Pictures.Core.Models.Album", "Album")
                         .WithMany("Photos")
                         .HasForeignKey("AlbumId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Album");
                 });
 
             modelBuilder.Entity("RolesUser", b =>
@@ -247,6 +473,24 @@ namespace Pictures.Data.Migrations
             modelBuilder.Entity("Pictures.Core.Models.Album", b =>
                 {
                     b.Navigation("Photos");
+                });
+
+            modelBuilder.Entity("Pictures.Core.Models.Collage", b =>
+                {
+                    b.Navigation("CollagePhotos");
+                });
+
+            modelBuilder.Entity("Pictures.Core.Models.ImageProcessingResult", b =>
+                {
+                    b.Navigation("CollagePhotos");
+                });
+
+            modelBuilder.Entity("Pictures.Core.Models.Photo", b =>
+                {
+                    b.Navigation("CollagePhotos");
+
+                    b.Navigation("ImageProcessingResult")
+                        .IsRequired();
                 });
 
             modelBuilder.Entity("Pictures.Core.Models.User", b =>

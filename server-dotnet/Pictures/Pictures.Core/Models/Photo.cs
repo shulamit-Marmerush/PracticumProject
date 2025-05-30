@@ -1,4 +1,5 @@
 ﻿using System;
+using static Pictures.Core.Models.Collage;
 
 namespace Pictures.Core.Models
 {
@@ -11,6 +12,12 @@ namespace Pictures.Core.Models
         public string Title { get; set; } // שם התמונה
         public DateTime CreatedAt { get; set; }  // תאריך יצירה של התמונה
         public DateTime UpdatedAt { get; set; } // תאריך עדכון אחרון
+
+
+        // קשרים
+        public Album Album { get; set; }
+        public List<CollagePhoto> CollagePhotos { get; set; } = new List<CollagePhoto>();
+        public ImageProcessingResult ImageProcessingResult { get; set; }
 
         public Photo() { }
 

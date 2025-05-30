@@ -1,140 +1,21 @@
-.gallery-container {
-    padding: 16px 0;
-  }
-  
-  .breadcrumbs {
-    margin-bottom: 24px !important;
-  }
-  
-  .breadcrumb-link {
-    display: flex;
-    align-items: center;
-    color: #2a9d8f !important;
-    text-decoration: none;
-  }
-  
-  .breadcrumb-icon {
-    font-size: 16px !important;
-    margin-right: 4px;
-  }
-  
-  .gallery-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 32px;
-  }
-  
-  .gallery-title {
-    font-weight: bold !important;
-    color: #264653 !important;
-  }
-  
-  .back-button {
-    color: #2a9d8f !important;
-    border-color: #2a9d8f !important;
-  }
-  
-  .back-button:hover {
-    border-color: #2a9d8f !important;
-    background-color: rgba(42, 157, 143, 0.1) !important;
-  }
-  
-  .gallery-alert {
-    margin-bottom: 24px !important;
-  }
-  
-  .loading-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50vh;
-  }
-  
-  .loading-spinner {
-    color: #2a9d8f !important;
-  }
-  
-  .empty-gallery {
-    text-align: center;
-    padding: 48px 0;
-  }
-  
-  .empty-gallery-text {
-    color: rgba(0, 0, 0, 0.6) !important;
-    margin-bottom: 16px !important;
-  }
-  
-  .upload-photos-button {
-    background-color: #2a9d8f !important;
-  }
-  
-  .upload-photos-button:hover {
-    background-color: #238b7e !important;
-  }
-  
+.photo-image {
+  object-fit: cover;
+  width: 100%; /* רוחב 100% כדי להתאים לשטח */
+  height: 200px; /* גובה קבוע */
+}
+
+.photo-overlay {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.PhotoCard:hover .photo-overlay {
+  opacity: 1; /* הצגת overlay בעת ריחוף */
+}
+
+@media (min-width: 600px) {
   .photo-card {
-    height: 100%;
-    border-radius: 12px !important;
-    overflow: hidden;
-    transition: all 0.3s ease;
+    flex: 0 0 25%; /* 25% רוחב לכל כרטיס, 4 בשורה */
+    max-width: 25%; /* הגבלת רוחב מקסימלי */
   }
-  
-  .photo-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1) !important;
-  }
-  
-  .photo-image {
-    object-fit: cover;
-  }
-  
-  .photo-content {
-    padding: 16px;
-  }
-  
-  .photo-title {
-    font-weight: 500 !important;
-  }
-  
-  .photo-edit-title {
-    margin-bottom: 8px !important;
-  }
-  
-  .photo-actions {
-    padding: 16px !important;
-    padding-top: 0 !important;
-    justify-content: flex-end !important;
-  }
-  
-  .action-button {
-    margin-left: 8px !important;
-  }
-  
-  .edit-button {
-    background-color: rgba(42, 157, 143, 0.1) !important;
-  }
-  
-  .delete-button {
-    background-color: rgba(231, 111, 81, 0.1) !important;
-  }
-  
-  .save-button {
-    background-color: rgba(42, 157, 143, 0.1) !important;
-  }
-  
-  .cancel-button {
-    background-color: rgba(231, 111, 81, 0.1) !important;
-  }
-  
-  @media (max-width: 600px) {
-    .gallery-header {
-      flex-direction: column;
-      align-items: flex-start;
-    }
-  
-    .back-button {
-      margin-top: 16px;
-    }
-  }
-  
+}

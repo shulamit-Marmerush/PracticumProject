@@ -1,8 +1,8 @@
 {
   "openapi": "3.0.4",
   "info": {
-    "title": "Pictures.Api",
-    "version": "1.0"
+    "title": "Pictures API",
+    "version": "v1"
   },
   "paths": {
     "/api/Album": {
@@ -18,7 +18,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/AlbumDto"
+                    "$ref": "#/components/schemas/Pictures.Core.DTOs.AlbumDto"
                   }
                 }
               },
@@ -26,7 +26,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/AlbumDto"
+                    "$ref": "#/components/schemas/Pictures.Core.DTOs.AlbumDto"
                   }
                 }
               },
@@ -34,7 +34,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/AlbumDto"
+                    "$ref": "#/components/schemas/Pictures.Core.DTOs.AlbumDto"
                   }
                 }
               }
@@ -65,17 +65,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/AlbumDto"
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.AlbumDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AlbumDto"
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.AlbumDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AlbumDto"
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.AlbumDto"
                 }
               }
             }
@@ -101,17 +101,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AlbumPostModel"
+                "$ref": "#/components/schemas/Pictures.Api.Models.AlbumPostModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AlbumPostModel"
+                "$ref": "#/components/schemas/Pictures.Api.Models.AlbumPostModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AlbumPostModel"
+                "$ref": "#/components/schemas/Pictures.Api.Models.AlbumPostModel"
               }
             }
           }
@@ -153,17 +153,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/AlbumPostModel"
+                "$ref": "#/components/schemas/Pictures.Api.Models.AlbumPostModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/AlbumPostModel"
+                "$ref": "#/components/schemas/Pictures.Api.Models.AlbumPostModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/AlbumPostModel"
+                "$ref": "#/components/schemas/Pictures.Api.Models.AlbumPostModel"
               }
             }
           }
@@ -174,17 +174,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/AlbumDto"
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.AlbumDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AlbumDto"
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.AlbumDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/AlbumDto"
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.AlbumDto"
                 }
               }
             }
@@ -201,17 +201,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/LoginModel"
+                "$ref": "#/components/schemas/AuthServer.Controllers.LoginModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/LoginModel"
+                "$ref": "#/components/schemas/AuthServer.Controllers.LoginModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/LoginModel"
+                "$ref": "#/components/schemas/AuthServer.Controllers.LoginModel"
               }
             }
           }
@@ -232,21 +232,209 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/LoginModel"
+                "$ref": "#/components/schemas/AuthServer.Controllers.LoginModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/LoginModel"
+                "$ref": "#/components/schemas/AuthServer.Controllers.LoginModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/LoginModel"
+                "$ref": "#/components/schemas/AuthServer.Controllers.LoginModel"
               }
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Chat/send": {
+      "post": {
+        "tags": [
+          "Chat"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatController+ChatRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatController+ChatRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ChatController+ChatRequest"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Collage/create": {
+      "post": {
+        "tags": [
+          "Collage"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Pictures.Core.DTOs.CollageRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Pictures.Core.DTOs.CollageRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Pictures.Core.DTOs.CollageRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.CollageResultDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.CollageResultDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.CollageResultDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Collage/theme-suggestions": {
+      "post": {
+        "tags": [
+          "Collage"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Pictures.Core.DTOs.AIThemeRequestDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Pictures.Core.DTOs.AIThemeRequestDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Pictures.Core.DTOs.AIThemeRequestDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.AIThemeResponseDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.AIThemeResponseDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.AIThemeResponseDto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Collage/{id}": {
+      "get": {
+        "tags": [
+          "Collage"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.CollageResultDto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.CollageResultDto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.CollageResultDto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Collage"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
+        ],
         "responses": {
           "200": {
             "description": "OK"
@@ -267,7 +455,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/PhotoDto"
+                    "$ref": "#/components/schemas/Pictures.Core.DTOs.PhotoDto"
                   }
                 }
               },
@@ -275,7 +463,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/PhotoDto"
+                    "$ref": "#/components/schemas/Pictures.Core.DTOs.PhotoDto"
                   }
                 }
               },
@@ -283,7 +471,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/PhotoDto"
+                    "$ref": "#/components/schemas/Pictures.Core.DTOs.PhotoDto"
                   }
                 }
               }
@@ -299,17 +487,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PhotoPostModel"
+                "$ref": "#/components/schemas/Pictures.Api.Models.PhotoPostModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/PhotoPostModel"
+                "$ref": "#/components/schemas/Pictures.Api.Models.PhotoPostModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/PhotoPostModel"
+                "$ref": "#/components/schemas/Pictures.Api.Models.PhotoPostModel"
               }
             }
           }
@@ -320,17 +508,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PhotoDto"
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.PhotoDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PhotoDto"
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.PhotoDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PhotoDto"
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.PhotoDto"
                 }
               }
             }
@@ -360,17 +548,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/PhotoDto"
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.PhotoDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PhotoDto"
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.PhotoDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/PhotoDto"
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.PhotoDto"
                 }
               }
             }
@@ -396,17 +584,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/PhotoPostModel"
+                "$ref": "#/components/schemas/Pictures.Api.Models.PhotoPostModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/PhotoPostModel"
+                "$ref": "#/components/schemas/Pictures.Api.Models.PhotoPostModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/PhotoPostModel"
+                "$ref": "#/components/schemas/Pictures.Api.Models.PhotoPostModel"
               }
             }
           }
@@ -432,6 +620,37 @@
             }
           }
         ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/TextGenerator/generate-description": {
+      "post": {
+        "tags": [
+          "TextGenerator"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HuggingFaceRequest"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/HuggingFaceRequest"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/HuggingFaceRequest"
+              }
+            }
+          }
+        },
         "responses": {
           "200": {
             "description": "OK"
@@ -511,7 +730,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/UserDto"
+                    "$ref": "#/components/schemas/Pictures.Core.DTOs.UserDto"
                   }
                 }
               },
@@ -519,7 +738,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/UserDto"
+                    "$ref": "#/components/schemas/Pictures.Core.DTOs.UserDto"
                   }
                 }
               },
@@ -527,7 +746,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/UserDto"
+                    "$ref": "#/components/schemas/Pictures.Core.DTOs.UserDto"
                   }
                 }
               }
@@ -558,17 +777,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserDto"
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.UserDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserDto"
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.UserDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserDto"
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.UserDto"
                 }
               }
             }
@@ -594,17 +813,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserPostModel"
+                "$ref": "#/components/schemas/Pictures.Api.Models.UserPostModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserPostModel"
+                "$ref": "#/components/schemas/Pictures.Api.Models.UserPostModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UserPostModel"
+                "$ref": "#/components/schemas/Pictures.Api.Models.UserPostModel"
               }
             }
           }
@@ -615,17 +834,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserDto"
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.UserDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserDto"
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.UserDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserDto"
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.UserDto"
                 }
               }
             }
@@ -663,17 +882,17 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserPostModel"
+                "$ref": "#/components/schemas/Pictures.Api.Models.UserPostModel"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/UserPostModel"
+                "$ref": "#/components/schemas/Pictures.Api.Models.UserPostModel"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/UserPostModel"
+                "$ref": "#/components/schemas/Pictures.Api.Models.UserPostModel"
               }
             }
           }
@@ -684,17 +903,17 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserDto"
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.UserDto"
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserDto"
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.UserDto"
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/UserDto"
+                  "$ref": "#/components/schemas/Pictures.Core.DTOs.UserDto"
                 }
               }
             }
@@ -705,7 +924,179 @@
   },
   "components": {
     "schemas": {
-      "AlbumDto": {
+      "AuthServer.Controllers.LoginModel": {
+        "type": "object",
+        "properties": {
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChatController+ChatMessage": {
+        "type": "object",
+        "properties": {
+          "role": {
+            "type": "string",
+            "nullable": true
+          },
+          "content": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ChatController+ChatRequest": {
+        "type": "object",
+        "properties": {
+          "messages": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ChatController+ChatMessage"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "HuggingFaceRequest": {
+        "type": "object",
+        "properties": {
+          "generatedText": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Pictures.Api.Models.AlbumPostModel": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "description": {
+            "type": "string",
+            "nullable": true
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Pictures.Api.Models.PhotoPostModel": {
+        "type": "object",
+        "properties": {
+          "albumId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "userId": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "url": {
+            "type": "string",
+            "nullable": true
+          },
+          "title": {
+            "type": "string",
+            "nullable": true
+          },
+          "createdAt": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "updatedAt": {
+            "type": "string",
+            "format": "date-time"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Pictures.Api.Models.UserPostModel": {
+        "type": "object",
+        "properties": {
+          "userName": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "phone": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Pictures.Core.DTOs.AIThemeRequestDto": {
+        "type": "object",
+        "properties": {
+          "imageCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "imageNames": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "nullable": true
+          },
+          "useFallback": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Pictures.Core.DTOs.AIThemeResponseDto": {
+        "type": "object",
+        "properties": {
+          "suggestions": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Pictures.Core.DTOs.ThemeSuggestionDto"
+            },
+            "nullable": true
+          },
+          "isFromFallback": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Pictures.Core.DTOs.AlbumDto": {
         "type": "object",
         "properties": {
           "albumId": {
@@ -735,53 +1126,119 @@
         },
         "additionalProperties": false
       },
-      "AlbumPostModel": {
+      "Pictures.Core.DTOs.CollageRequestDto": {
         "type": "object",
         "properties": {
-          "title": {
-            "type": "string",
+          "photoIds": {
+            "type": "array",
+            "items": {
+              "type": "integer",
+              "format": "int32"
+            },
             "nullable": true
           },
-          "description": {
-            "type": "string",
-            "nullable": true
+          "settings": {
+            "$ref": "#/components/schemas/Pictures.Core.DTOs.CollageSettingsDto"
           },
-          "userId": {
+          "useFallback": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Pictures.Core.DTOs.CollageResultDto": {
+        "type": "object",
+        "properties": {
+          "collageId": {
             "type": "integer",
             "format": "int32"
+          },
+          "name": {
+            "type": "string",
+            "nullable": true
+          },
+          "url": {
+            "type": "string",
+            "nullable": true
+          },
+          "thumbnailUrl": {
+            "type": "string",
+            "nullable": true
           },
           "createdAt": {
             "type": "string",
             "format": "date-time"
           },
-          "updatedAt": {
-            "type": "string",
-            "format": "date-time"
+          "isFromFallback": {
+            "type": "boolean"
+          },
+          "photos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Pictures.Core.DTOs.PhotoDto"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "LoginModel": {
+      "Pictures.Core.DTOs.CollageSettingsDto": {
         "type": "object",
         "properties": {
-          "email": {
+          "name": {
             "type": "string",
             "nullable": true
           },
-          "password": {
+          "width": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "height": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "backgroundColor": {
             "type": "string",
             "nullable": true
+          },
+          "layout": {
+            "type": "string",
+            "nullable": true
+          },
+          "theme": {
+            "type": "string",
+            "nullable": true
+          },
+          "padding": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "allowRotation": {
+            "type": "boolean"
+          },
+          "addShadow": {
+            "type": "boolean"
+          },
+          "addBorder": {
+            "type": "boolean"
+          },
+          "borderColor": {
+            "type": "string",
+            "nullable": true
+          },
+          "borderWidth": {
+            "type": "integer",
+            "format": "int32"
           }
         },
         "additionalProperties": false
       },
-      "PhotoDto": {
+      "Pictures.Core.DTOs.PhotoDto": {
         "type": "object",
         "properties": {
           "photoId": {
             "type": "integer",
-            "format": "int32",
-            "readOnly": true
+            "format": "int32"
           },
           "albumId": {
             "type": "integer",
@@ -810,54 +1267,33 @@
         },
         "additionalProperties": false
       },
-      "PhotoPostModel": {
+      "Pictures.Core.DTOs.ThemeSuggestionDto": {
         "type": "object",
         "properties": {
-          "albumId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "userId": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "url": {
+          "name": {
             "type": "string",
             "nullable": true
           },
-          "title": {
+          "description": {
             "type": "string",
             "nullable": true
           },
-          "createdAt": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "updatedAt": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "UploadRequest": {
-        "type": "object",
-        "properties": {
-          "folderName": {
+          "layout": {
             "type": "string",
             "nullable": true
           },
-          "fileNames": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
+          "theme": {
+            "type": "string",
+            "nullable": true
+          },
+          "backgroundColor": {
+            "type": "string",
             "nullable": true
           }
         },
         "additionalProperties": false
       },
-      "UserDto": {
+      "Pictures.Core.DTOs.UserDto": {
         "type": "object",
         "properties": {
           "userId": {
@@ -884,23 +1320,18 @@
         },
         "additionalProperties": false
       },
-      "UserPostModel": {
+      "UploadRequest": {
         "type": "object",
         "properties": {
-          "userName": {
+          "folderName": {
             "type": "string",
             "nullable": true
           },
-          "email": {
-            "type": "string",
-            "nullable": true
-          },
-          "phone": {
-            "type": "string",
-            "nullable": true
-          },
-          "password": {
-            "type": "string",
+          "fileNames": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
             "nullable": true
           }
         },
