@@ -38,7 +38,7 @@ import {
 } from "lucide-react"
 import '../styles/Layout.css'; // Import the CSS file
 
-const StyledAppBar = styled(AppBar)(({ theme }) => ({
+const StyledAppBar = styled(AppBar)(({  }) => ({
   background: "rgba(26, 11, 46, 0.8)",
   backdropFilter: "blur(20px)",
   boxShadow: "none",
@@ -50,7 +50,7 @@ const StyledAppBar = styled(AppBar)(({ theme }) => ({
   },
 }));
 
-const StyledDrawer = styled(Drawer)(({ theme }) => ({
+const StyledDrawer = styled(Drawer)(({ }) => ({
   "& .MuiDrawer-paper": {
     width: 280,
     background: "rgba(26, 11, 46, 0.95)",
@@ -89,7 +89,7 @@ const NavButton = styled(
       </Button>
     </RouterLink>
   )
-)(({ theme }) => ({
+)(({  }) => ({
   "& .MuiButton-root": {
     color: "rgba(255, 255, 255, 0.9)",
     fontWeight: 500,
@@ -114,27 +114,6 @@ const NavButton = styled(
   },
 }));
 
-const DrawerItem = styled(ListItem)(({ theme }) => ({
-  textDecoration: "none",
-  color: "rgba(255, 255, 255, 0.9)",
-  padding: "1rem 1.5rem",
-  margin: "0.25rem 1rem",
-  borderRadius: "12px",
-  transition: "all 0.3s ease",
-  borderLeft: "3px solid transparent",
-  cursor: "pointer",
-  "&:hover": {
-    background: "rgba(139, 92, 246, 0.2)",
-    borderLeftColor: "#8b5cf6",
-    transform: "translateX(5px)",
-  },
-  "&.active": {
-    background: "linear-gradient(135deg, rgba(139, 92, 246, 0.3), rgba(236, 72, 153, 0.3))",
-    color: "white",
-    fontWeight: 600,
-    borderLeftColor: "#ec4899",
-  },
-}));
 
 interface LayoutProps {
   children: ReactNode
@@ -263,7 +242,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         color: "white",
         overflowX: "hidden",
         height: "100vh", // Ensure full height
-        overflowY: "hidden", // Prevent vertical scrolling
+        // overflowY: "hidden", // Prevent vertical scrolling
         display: "flex",
         flexDirection: "column",
         width: "100%",

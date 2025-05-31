@@ -38,7 +38,7 @@ import SearchIcon from "@mui/icons-material/Search"
 import PhotoLibraryIcon from "@mui/icons-material/PhotoLibrary"
 import { useNavigate } from "react-router-dom"
 
-const GradientBackground = styled(Box)(({ theme }) => ({
+const GradientBackground = styled(Box)(({  }) => ({
   minHeight: "100vh",
   background: "linear-gradient(135deg, #1A0B2E 0%, #2C0F42 50%, #1A0B2E 100%)",
   position: "relative",
@@ -55,7 +55,7 @@ const GradientBackground = styled(Box)(({ theme }) => ({
   },
 }))
 
-const AlbumCard = styled(Card)(({ theme }) => ({
+const AlbumCard = styled(Card)(({ }) => ({
   borderRadius: "20px",
   background: "rgba(255, 255, 255, 0.05)",
   backdropFilter: "blur(20px)",
@@ -71,7 +71,7 @@ const AlbumCard = styled(Card)(({ theme }) => ({
   },
 }))
 
-const AlbumIcon = styled(Box)(({ theme }) => ({
+const AlbumIcon = styled(Box)(({ }) => ({
   height: 160,
   background: "linear-gradient(135deg, #8b5cf6, #ec4899)",
   display: "flex",
@@ -96,7 +96,7 @@ const AlbumIcon = styled(Box)(({ theme }) => ({
   },
 }))
 
-const HeaderCard = styled(Paper)(({ theme }) => ({
+const HeaderCard = styled(Paper)(({  }) => ({
   background: "rgba(255, 255, 255, 0.05)",
   backdropFilter: "blur(20px)",
   borderRadius: "24px",
@@ -121,7 +121,7 @@ interface FolderListProps {
   onToggleSelect: (albumId: number) => void
 }
 
-const FolderList: React.FC<FolderListProps> = ({ onSelectAlbum, showCheckboxes, selectedAlbums, onToggleSelect }) => {
+const FolderList: React.FC<FolderListProps> = ({  showCheckboxes, selectedAlbums, onToggleSelect }) => {
   const [folders, setFolders] = useState<IFolder[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)

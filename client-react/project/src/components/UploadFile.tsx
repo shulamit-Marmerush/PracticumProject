@@ -13,7 +13,7 @@ const FileUploader: React.FC = () => {
   const [selectedFiles, setSelectedFiles] = useState<File[]>([])
   const [selectedAlbum, setSelectedAlbum] = useState<number | null>(null)
   const [albums, setAlbums] = useState<any[]>([])
-  const [loading, setLoading] = useState(false)
+  const [_loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [uploading, setUploading] = useState(false)
 

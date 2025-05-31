@@ -50,13 +50,13 @@ const AnalysisResultCard = styled(Paper)(({ theme }) => ({
   marginBottom: theme.spacing(2),
 }));
 
-const GradientBackground = styled(Box)(({ theme }) => ({
+const GradientBackground = styled(Box)(({  }) => ({
   minHeight: "100vh",
   background: "linear-gradient(135deg, #1A0B2E 0%, #2C0F42 50%, #1A0B2E 100%)",
   position: "relative",
 }));
 
-const PhotoCard = styled(Card)(({ theme }) => ({
+const PhotoCard = styled(Card)(({ }) => ({
   borderRadius: "16px",
   background: "rgba(255, 255, 255, 0.05)",
   backdropFilter: "blur(20px)",
@@ -75,7 +75,7 @@ const PhotoCard = styled(Card)(({ theme }) => ({
   },
 }));
 
-const PhotoOverlay = styled(Box)(({ theme }) => ({
+const PhotoOverlay = styled(Box)(({ }) => ({
   position: "absolute",
   top: 0,
   left: 0,
@@ -91,7 +91,7 @@ const PhotoOverlay = styled(Box)(({ theme }) => ({
   zIndex: 2,
 }));
 
-const HeaderCard = styled(Paper)(({ theme }) => ({
+const HeaderCard = styled(Paper)(({ }) => ({
   background: "rgba(255, 255, 255, 0.05)",
   backdropFilter: "blur(20px)",
   borderRadius: "24px",
@@ -108,7 +108,7 @@ interface Photo {
   url: string;
 }
 
-const PhotoGallery: React.FC<{ onClose: () => void }> = ({ onClose }) => {
+const PhotoGallery: React.FC<{ onClose: () => void }> = ({ }) => {
   const { albumId } = useParams<{ albumId: string }>();
   const navigate = useNavigate();
 
@@ -116,10 +116,7 @@ const PhotoGallery: React.FC<{ onClose: () => void }> = ({ onClose }) => {
   const [filteredPhotos, setFilteredPhotos] = useState<Photo[]>([]);
   const [albumTitle, setAlbumTitle] = useState<string>("");
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-  const [editingPhotoId, setEditingPhotoId] = useState<number | null>(null);
-  const [newTitle, setNewTitle] = useState<string>("");
-  const [newUrl, setNewUrl] = useState<string>("");
+  const [error, setError] = useState<string | null>(null)
   const [deleteDialogOpen, setDeleteDialogOpen] = useState(false);
   const [photoToDelete, setPhotoToDelete] = useState<number | null>(null);
   const [searchTerm, setSearchTerm] = useState("");
@@ -227,65 +224,57 @@ const PhotoGallery: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     }
   };
 
-  const startEditing = async (photo: Photo) => {
-    const photoDetails = await fetchPhotoDetails(photo.photoId);
-    if (photoDetails) {
-      setEditingPhotoId(photoDetails.photoId);
-      setNewTitle(photoDetails.title);
-      setNewUrl(photoDetails.url);
-    }
-  };
 
-  const fetchPhotoDetails = async (photoId: number) => {
-    try {
-      const token = localStorage.getItem("token");
-      const response = await axios.get(`https://localhost:7259/api/photo/${photoId}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
-      return response.data;
-    } catch (err) {
-      setError("Error loading photo details");
-      return null;
-    }
-  };
+  // const fetchPhotoDetails = async (photoId: number) => {
+  //   try {
+  //     const token = localStorage.getItem("token");
+  //     const response = await axios.get(`https://localhost:7259/api/photo/${photoId}`, {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //       },
+  //     });
+  //     return response.data;
+  //   } catch (err) {
+  //     setError("Error loading photo details");
+  //     return null;
+  //   }
+  // };
 
-  const saveTitle = async (photoId: number) => {
-    try {
-      const token = localStorage.getItem("token");
-      const updatedPhoto = {
-        photoId: photoId,
-        albumId: Number(albumId),
-        title: newTitle,
-        url: newUrl,
-      };
+  // const _saveTitle = async (photoId: number) => {
+  //   try {
+  //     const token = localStorage.getItem("token");
+  //     const updatedPhoto = {
+  //       photoId: photoId,
+  //       albumId: Number(albumId),
+  //       title: newTitle,
+  //       url: newUrl,
+  //     };
 
-      await axios.put(`https://localhost:7259/api/photo/${photoId}`, updatedPhoto, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-          "Content-Type": "application/json",
-        },
-      });
+  //     await axios.put(`https://localhost:7259/api/photo/${photoId}`, updatedPhoto, {
+  //       headers: {
+  //         Authorization: `Bearer ${token}`,
+  //         "Content-Type": "application/json",
+  //       },
+  //     });
 
-      setPhotos((prevPhotos) =>
-        prevPhotos.map((photo) => (photo.photoId === photoId ? { ...photo, title: newTitle, url: newUrl } : photo)),
-      );
+  //     setPhotos((prevPhotos) =>
+  //       prevPhotos.map((photo) => (photo.photoId === photoId ? { ...photo, title: newTitle, url: newUrl } : photo)),
+  //     );
 
-      setEditingPhotoId(null);
-      setNewTitle("");
-      setNewUrl("");
-      setSnackbarMessage("Photo updated successfully!");
-      setSnackbarOpen(true);
-    } catch (err) {
-      setError("Error updating photo");
-    }
-  };
+  //     setEditingPhotoId(null);
+  //     setNewTitle("");
+  //     setNewUrl("");
+  //     setSnackbarMessage("Photo updated successfully!");
+  //     setSnackbarOpen(true);
+  //   } catch (err) {
+  //     setError("Error updating photo");
+  //   }
+  // };
 
-  const handleDeleteClick = (photoId: number) => {
-    setPhotoToDelete(photoId);
-    setDeleteDialogOpen(true);
-  };
+  // const _handleDeleteClick = (photoId: number) => {
+  //   setPhotoToDelete(photoId);
+  //   setDeleteDialogOpen(true);
+  // };
 
   const deletePhoto = async () => {
     if (!photoToDelete) return;
@@ -308,11 +297,11 @@ const PhotoGallery: React.FC<{ onClose: () => void }> = ({ onClose }) => {
     }
   };
 
-  const cancelEditing = () => {
-    setEditingPhotoId(null);
-    setNewTitle("");
-    setNewUrl("");
-  };
+  // const _cancelEditing = () => {
+  //   setEditingPhotoId(null);
+  //   setNewTitle("");
+  //   setNewUrl("");
+  // };
 
   if (loading)
     return (

@@ -31,7 +31,7 @@ import {
 
 import '../styles/AiImageGenerator.css'; // Import the CSS file
 
-const GradientBackground = styled(Box)(({ theme }) => ({
+const GradientBackground = styled(Box)(({  }) => ({
   minHeight: "100vh",
   background: "linear-gradient(135deg, #1A0B2E 0%, #2C0F42 50%, #1A0B2E 100%)",
   position: "relative",
@@ -48,7 +48,7 @@ const GradientBackground = styled(Box)(({ theme }) => ({
   },
 }))
 
-const HeaderCard = styled(Paper)(({ theme }) => ({
+const HeaderCard = styled(Paper)(({ }) => ({
   background: "rgba(255, 255, 255, 0.05)",
   backdropFilter: "blur(20px)",
   borderRadius: "24px",
@@ -58,7 +58,7 @@ const HeaderCard = styled(Paper)(({ theme }) => ({
   boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
 }))
 
-const MainCard = styled(Paper)(({ theme }) => ({
+const MainCard = styled(Paper)(({ }) => ({
   background: "rgba(255, 255, 255, 0.05)",
   backdropFilter: "blur(20px)",
   borderRadius: "20px",
@@ -70,7 +70,7 @@ const MainCard = styled(Paper)(({ theme }) => ({
   overflow: "hidden",
 }))
 
-const ImagePreviewCard = styled(Card)(({ theme }) => ({
+const ImagePreviewCard = styled(Card)(({ }) => ({
   borderRadius: "16px",
   background: "rgba(255, 255, 255, 0.05)",
   backdropFilter: "blur(20px)",
@@ -83,7 +83,7 @@ const ImagePreviewCard = styled(Card)(({ theme }) => ({
   },
 }))
 
-const GenerateButton = styled(Button)(({ theme }) => ({
+const GenerateButton = styled(Button)(({}) => ({
   position: "relative",
   overflow: "hidden",
   transition: "all 0.3s ease",
@@ -114,7 +114,7 @@ const GenerateButton = styled(Button)(({ theme }) => ({
   },
 }))
 
-const InspirationChip = styled(Chip)(({ theme }) => ({
+const InspirationChip = styled(Chip)(({}) => ({
   borderRadius: "16px",
   margin: "4px",
   background: "rgba(255, 255, 255, 0.1)",

@@ -21,7 +21,4 @@
   transform: translateY(-5px);
   background: #3b5998; /* Change this for different icons */
 }
-html, body {
-  height: 100%; /* Ensure the body takes the full height */
-  overflow: hidden !important /* Prevent scrolling */
-}
+
