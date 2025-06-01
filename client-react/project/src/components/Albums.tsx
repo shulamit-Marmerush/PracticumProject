@@ -426,7 +426,7 @@ const FolderList: React.FC<FolderListProps> = ({
         ) : (
           <Grid container spacing={4}>
             {filteredFolders.map((folder, index) => (
-              <Grid item key={folder.albumId}>
+              <Grid  key={folder.albumId}>
                 <Zoom in={true} style={{ transitionDelay: `${index * 100}ms` }}>
                   <AlbumCard onClick={() => openFolder(folder.albumId)}>
                     {showCheckboxes && (
