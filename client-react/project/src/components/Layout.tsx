@@ -1,6 +1,7 @@
 "use client"
 
-import React, { type ReactNode, useState, useEffect } from "react"
+import * as React from "react";
+import { type ReactNode, useState, useEffect } from "react";
 import { Link, useLocation, Link as RouterLink } from "react-router-dom"
 import {
   AppBar,
