@@ -14,7 +14,11 @@ const defaultContextValue: userContextType = {
 
 const UserContext = createContext<userContextType>(defaultContextValue);
 
-const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+interface UserProviderProps {
+    children: ReactNode;
+}
+
+const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
     const [user, setUser] = useState<User | null>(null);
 
     const setMyUser = (newUser: User) => {
