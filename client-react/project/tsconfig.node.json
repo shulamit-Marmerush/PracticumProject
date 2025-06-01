@@ -14,7 +14,10 @@
     "noEmit": true,
 
     /* JSX */
-    "jsx": "react-jsx", // הוסף את השורה הזו
+    "jsx": "react-jsx", // שורה זו קיימת
+
+    /* Allow synthetic default imports */
+    "allowSyntheticDefaultImports": true, // הוסף את השורה הזו
 
     /* Linting */
     "strict": true,
