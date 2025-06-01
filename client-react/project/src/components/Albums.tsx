@@ -1,6 +1,5 @@
 "use client"
 
-import type React from "react"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import {
@@ -114,14 +113,16 @@ interface IFolder {
 }
 
 interface FolderListProps {
-  albums: IFolder[]
-  onSelectAlbum: (albumId: number) => void
   showCheckboxes: boolean
   selectedAlbums: number[]
   onToggleSelect: (albumId: number) => void
 }
 
-const FolderList: React.FC<FolderListProps> = ({  showCheckboxes, selectedAlbums, onToggleSelect }) => {
+const FolderList: React.FC<FolderListProps> = ({
+  showCheckboxes,
+  selectedAlbums,
+  onToggleSelect,
+}) => {
   const [folders, setFolders] = useState<IFolder[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -134,7 +135,7 @@ const FolderList: React.FC<FolderListProps> = ({  showCheckboxes, selectedAlbums
 
   const navigate = useNavigate()
 
-  const filteredFolders = folders.filter(
+  const filteredFolders: IFolder[] = folders.filter(
     (folder) =>
       folder.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
       folder.description.toLowerCase().includes(searchTerm.toLowerCase()),
@@ -425,7 +426,7 @@ const FolderList: React.FC<FolderListProps> = ({  showCheckboxes, selectedAlbums
         ) : (
           <Grid container spacing={4}>
             {filteredFolders.map((folder, index) => (
-              <Grid  key={folder.albumId}>
+              <Grid item key={folder.albumId}>
                 <Zoom in={true} style={{ transitionDelay: `${index * 100}ms` }}>
                   <AlbumCard onClick={() => openFolder(folder.albumId)}>
                     {showCheckboxes && (
