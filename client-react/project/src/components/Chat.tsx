@@ -1,6 +1,5 @@
 "use client"
 
-import type React from "react"
 import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import "../styles/Chat.css"
@@ -79,7 +78,7 @@ const ChatPage = () => {
       const botResponse: Message = {
         id: (Date.now() + 1).toString(),
         type: "bot",
-        content: data.reply, // השתנה לשדה הנכון
+        content: data.reply,
         timestamp: new Date(),
       };
 
