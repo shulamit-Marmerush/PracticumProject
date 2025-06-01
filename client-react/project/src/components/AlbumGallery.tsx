@@ -122,7 +122,7 @@ const AlbumModal = ({
           </Typography>
           <Grid container spacing={2}>
             {selectedFiles.map((file: File, index: number) => (
-              <Grid item key={index}>
+              <Grid  key={index}>
                 <Card className="file-card">
                   <CardMedia
                     component="img"
@@ -151,7 +151,7 @@ const AlbumModal = ({
         ) : (
           <Grid container spacing={2}>
             {albums.map((album: Folder) => (
-              <Grid item key={album.albumId}>
+              <Grid  key={album.albumId}>
                 <Card
                   className={`album-card ${selectedAlbums.includes(album.albumId) ? "selected" : ""}`}
                   onClick={() => handleToggleSelect(album.albumId)}
@@ -189,7 +189,7 @@ const AlbumModal = ({
             ) : photos.length > 0 ? (
               <Grid container spacing={2}>
                 {photos.map((photo: Photo) => (
-                  <Grid item key={photo.photoId}>
+                  <Grid  key={photo.photoId}>
                     <Card className="preview-card">
                       <CardMedia
                         component="img"
