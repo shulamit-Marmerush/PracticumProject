@@ -47,11 +47,6 @@
     "globals": "^15.15.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.24.1",
-<<<<<<< HEAD
-   "vite": "^4.0.0" 
-
-=======
     "vite": "^4.0.0"
->>>>>>> 134cd57858198e6ab003016d23e557df07db85eb
   }
 }
