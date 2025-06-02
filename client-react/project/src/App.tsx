@@ -26,20 +26,16 @@ export default function Home() {
             <Route path="/login" element={<Login />} />
             <Route path="/UploadFile" element={<FileUploader />} />
             <Route path="/AddAlbum" element={<AddAlbum />} />
-             <Route path="/College" element={<SimpleCollageCreator />} />
-             <Route path="/Chat"element={<Chat/>} />
+            <Route path="/College" element={<SimpleCollageCreator />} />
+            <Route path="/Chat" element={<Chat />} />
             <Route
               path="/AiImageGenerator"
-              element={<AiImageGenerator/>}
-              
+              element={<AiImageGenerator />}
             />
-
             <Route
               path="/Albums"
               element={
                 <FolderList
-                  albums={[]}
-                  onSelectAlbum={() => {}}
                   showCheckboxes={false}
                   selectedAlbums={[]}
                   onToggleSelect={() => {}}

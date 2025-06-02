@@ -1,6 +1,7 @@
 "use client"
 
-import React, { type ReactNode, useState, useEffect } from "react"
+import * as React from "react";
+import { type ReactNode, useState, useEffect } from "react";
 import { Link, useLocation, Link as RouterLink } from "react-router-dom"
 import {
   AppBar,
@@ -119,7 +120,7 @@ interface LayoutProps {
   children: ReactNode
 }
 
-const Layout: React.FC<LayoutProps> = ({ children }) => {
+const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const theme = useTheme()
@@ -241,8 +242,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
         background: "linear-gradient(135deg, #1a0b2e 0%, #2c0f42 50%, #1a0b2e 100%)",
         color: "white",
         overflowX: "hidden",
-        height: "100vh", // Ensure full height
-        // overflowY: "hidden", // Prevent vertical scrolling
+        height: "100vh",
         display: "flex",
         flexDirection: "column",
         width: "100%",

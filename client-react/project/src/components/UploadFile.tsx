@@ -1,6 +1,7 @@
 "use client"
 
-import type React from "react"
+// import type React from "react"
+import * as React from "react"
 import { useState, useEffect, type ChangeEvent } from "react"
 import axios from "axios"
 import { Box, Typography, Button, Paper, CircularProgress, Alert } from "@mui/material"

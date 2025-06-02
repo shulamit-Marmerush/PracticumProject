@@ -1,5 +1,6 @@
+import * as React from 'react';
+import { createContext, useContext, useState, ReactNode } from 'react';
 import { User } from "../types/User";
-import React, { createContext, useContext, useState, ReactNode } from 'react';
 
 type userContextType = {
     user: User | null;
@@ -14,7 +15,11 @@ const defaultContextValue: userContextType = {
 
 const UserContext = createContext<userContextType>(defaultContextValue);
 
-const UserProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
+interface UserProviderProps {
+    children: ReactNode;
+}
+
+const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
     const [user, setUser] = useState<User | null>(null);
 
     const setMyUser = (newUser: User) => {

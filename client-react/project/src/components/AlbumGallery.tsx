@@ -1,6 +1,5 @@
 "use client"
 
-import type React from "react"
 import { useState, useEffect } from "react"
 import axios from "axios"
 import {
@@ -39,21 +38,36 @@ interface AlbumModalProps {
   selectedFiles: File[]
 }
 
-const AlbumModal: React.FC<AlbumModalProps> = ({ albums = [], onClose, onUpload, onSelectAlbum, selectedFiles }) => {
+type Photo = {
+  photoId: number
+  url: string
+  title: string
+  // הוסף כאן שדות נוספים אם צריך
+}
+
+const AlbumModal = ({
+  albums = [],
+  onClose,
+  onUpload,
+  onSelectAlbum,
+  selectedFiles,
+}: AlbumModalProps) => {
   const [selectedAlbums, setSelectedAlbums] = useState<number[]>([])
-  const [photos, setPhotos] = useState<any[]>([])
+  const [photos, setPhotos] = useState<Photo[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
 
   const handleToggleSelect = (albumId: number) => {
-    setSelectedAlbums((prev) => (prev.includes(albumId) ? prev.filter((id) => id !== albumId) : [...prev, albumId]))
+    setSelectedAlbums((prev) =>
+      prev.includes(albumId) ? prev.filter((id) => id !== albumId) : [...prev, albumId]
+    )
     onSelectAlbum(albumId)
   }
 
   const handleSave = () => {
     if (selectedFiles.length > 0 && selectedAlbums.length > 0) {
       const albumId = selectedAlbums[0]
-      selectedFiles.forEach((file) => {
+      selectedFiles.forEach((file: File) => {
         onUpload(file, albumId)
       })
     } else {
@@ -107,7 +121,7 @@ const AlbumModal: React.FC<AlbumModalProps> = ({ albums = [], onClose, onUpload,
             Selected Files ({selectedFiles.length})
           </Typography>
           <Grid container spacing={2}>
-            {selectedFiles.map((file, index) => (
+            {selectedFiles.map((file: File, index: number) => (
               <Grid  key={index}>
                 <Card className="file-card">
                   <CardMedia
@@ -136,7 +150,7 @@ const AlbumModal: React.FC<AlbumModalProps> = ({ albums = [], onClose, onUpload,
           <Alert severity="info">You don't have any albums yet. Please create an album first.</Alert>
         ) : (
           <Grid container spacing={2}>
-            {albums.map((album) => (
+            {albums.map((album: Folder) => (
               <Grid  key={album.albumId}>
                 <Card
                   className={`album-card ${selectedAlbums.includes(album.albumId) ? "selected" : ""}`}
@@ -174,7 +188,7 @@ const AlbumModal: React.FC<AlbumModalProps> = ({ albums = [], onClose, onUpload,
               </Box>
             ) : photos.length > 0 ? (
               <Grid container spacing={2}>
-                {photos.map((photo) => (
+                {photos.map((photo: Photo) => (
                   <Grid  key={photo.photoId}>
                     <Card className="preview-card">
                       <CardMedia
