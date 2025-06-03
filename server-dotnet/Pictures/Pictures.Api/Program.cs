@@ -18,11 +18,14 @@ using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// øéùåí ùéøåúé AWS
+builder.Configuration.AddJsonFile("secret.json", optional: true, reloadOnChange: true);
+
+
+// Ã¸Ã©Ã¹Ã¥Ã­ Ã¹Ã©Ã¸Ã¥ÃºÃ© AWS
 builder.Services.AddDefaultAWSOptions(builder.Configuration.GetAWSOptions());
 builder.Services.AddAWSService<IAmazonS3>();
 
-// äåñôú HttpClientFactory
+// Ã¤Ã¥Ã±Ã´Ãº HttpClientFactory
 builder.Services.AddHttpClient("AIService", client =>
 {
     client.Timeout = TimeSpan.FromSeconds(30);
@@ -54,7 +57,7 @@ builder.Services.AddCors(opt => opt.AddPolicy("MyPolicy", policy =>
     policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
 }));
 
-// øéùåí äùéøåúéí
+// Ã¸Ã©Ã¹Ã¥Ã­ Ã¤Ã¹Ã©Ã¸Ã¥ÃºÃ©Ã­
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<AuthService>();
@@ -70,7 +73,7 @@ builder.Services.AddScoped<IEmailService, EmailService>();
 
 builder.Services.AddDbContext<DataContext>();
 
-// øéùåí AutoMapper
+// Ã¸Ã©Ã¹Ã¥Ã­ AutoMapper
 builder.Services.AddAutoMapper(cfg =>
 {
     cfg.AddProfile<MappingProfile>();
@@ -78,7 +81,7 @@ builder.Services.AddAutoMapper(cfg =>
 });
 builder.Services.AddSingleton<S3Service>();
 
-// øéùåí S3 Client
+// Ã¸Ã©Ã¹Ã¥Ã­ S3 Client
 builder.Services.AddSingleton<IAmazonS3>(sp =>
 {
     var configuration = sp.GetRequiredService<IConfiguration>();
@@ -93,7 +96,7 @@ builder.Services.AddSingleton<IAmazonS3>(sp =>
     return new AmazonS3Client(credentials, clientConfig);
 });
 
-// øéùåí OpenRouterService
+// Ã¸Ã©Ã¹Ã¥Ã­ OpenRouterService
 builder.Services.AddScoped<IOpenRouterService>(sp =>
 {
     var httpClient = sp.GetRequiredService<IHttpClientFactory>().CreateClient("AIService");
@@ -108,7 +111,7 @@ builder.Services.AddScoped<IChatService>(sp =>
     return new ChatService(httpClient, configuration);
 });
 
-// äåñôú JWT Authentication
+// Ã¤Ã¥Ã±Ã´Ãº JWT Authentication
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
