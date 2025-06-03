@@ -17,15 +17,14 @@ using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
-
 builder.Configuration.AddJsonFile("secret.json", optional: true, reloadOnChange: true);
 
 
-// øéùåí ùéøåúé AWS
+// רישום שירותי AWS
 builder.Services.AddDefaultAWSOptions(builder.Configuration.GetAWSOptions());
 builder.Services.AddAWSService<IAmazonS3>();
 
-// äåñôú HttpClientFactory
+// הוספת HttpClientFactory
 builder.Services.AddHttpClient("AIService", client =>
 {
     client.Timeout = TimeSpan.FromSeconds(30);
@@ -57,7 +56,7 @@ builder.Services.AddCors(opt => opt.AddPolicy("MyPolicy", policy =>
     policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
 }));
 
-// øéùåí äùéøåúéí
+// רישום השירותים
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<AuthService>();
@@ -73,7 +72,7 @@ builder.Services.AddScoped<IEmailService, EmailService>();
 
 builder.Services.AddDbContext<DataContext>();
 
-// øéùåí AutoMapper
+// רישום AutoMapper
 builder.Services.AddAutoMapper(cfg =>
 {
     cfg.AddProfile<MappingProfile>();
@@ -81,7 +80,7 @@ builder.Services.AddAutoMapper(cfg =>
 });
 builder.Services.AddSingleton<S3Service>();
 
-// øéùåí S3 Client
+// רישום S3 Client
 builder.Services.AddSingleton<IAmazonS3>(sp =>
 {
     var configuration = sp.GetRequiredService<IConfiguration>();
@@ -96,7 +95,7 @@ builder.Services.AddSingleton<IAmazonS3>(sp =>
     return new AmazonS3Client(credentials, clientConfig);
 });
 
-// øéùåí OpenRouterService
+// רישום OpenRouterService
 builder.Services.AddScoped<IOpenRouterService>(sp =>
 {
     var httpClient = sp.GetRequiredService<IHttpClientFactory>().CreateClient("AIService");
@@ -111,7 +110,7 @@ builder.Services.AddScoped<IChatService>(sp =>
     return new ChatService(httpClient, configuration);
 });
 
-// äåñôú JWT Authentication
+// הוספת JWT Authentication
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -137,15 +136,15 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("EditorOrAdmin", policy => policy.RequireRole("Editor", "Admin"));
     options.AddPolicy("ViewerOnly", policy => policy.RequireRole("Viewer"));
 });
+builder.Services.AddApplicationInsightsTelemetry();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+
 
 app.UseHttpsRedirection();
 app.UseCors("MyPolicy");
