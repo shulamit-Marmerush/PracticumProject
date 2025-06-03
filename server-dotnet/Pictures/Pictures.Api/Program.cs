@@ -15,6 +15,7 @@ using Pictures.Core;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.ApplicationInsights.AspNetCore.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddJsonFile("secret.json", optional: true, reloadOnChange: true);
