@@ -1,69 +1,116 @@
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Configuration;
-using Amazon.S3;
-using Amazon.Extensions.NETCore.Setup;
-using AutoMapper;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+using Amazon.S3;
+using Amazon.Runtime;
+using Amazon;
+using Pictures.Api;
+using Pictures.Core.Services;
+using Pictures.Service;
+using Pictures.Core.Repositories;
+using Pictures.Data.Repositories;
+using Pictures.Data;
+using Pictures.Core;
+using Microsoft.OpenApi.Models;
+using System.Reflection;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Load configuration
 builder.Configuration.AddJsonFile("secret.json", optional: true, reloadOnChange: true);
 
-// AWS
+
+// רישום שירותי AWS
 builder.Services.AddDefaultAWSOptions(builder.Configuration.GetAWSOptions());
 builder.Services.AddAWSService<IAmazonS3>();
 
-// HttpClientFactory for AIService
+// הוספת HttpClientFactory
 builder.Services.AddHttpClient("AIService", client =>
 {
     client.Timeout = TimeSpan.FromSeconds(30);
 });
 
-// Add CORS policy (adjust the policy name and rules as needed)
-builder.Services.AddCors(options =>
+// Add services to the container.
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddSwaggerGen(c =>
 {
-    options.AddPolicy("MyPolicy", policy =>
+    c.SwaggerDoc("v1", new OpenApiInfo { Title = "Pictures API", Version = "v1" });
+    c.OperationFilter<FileUploadOperationFilter>();
+    c.CustomSchemaIds(type => type.FullName);
+    c.DescribeAllParametersInCamelCase();
+    c.IgnoreObsoleteActions();
+    c.IgnoreObsoleteProperties();
+
+    var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+    var xmlPath = Path.Combine(AppContext.BaseDirectory, xmlFile);
+    if (File.Exists(xmlPath))
     {
-        policy.AllowAnyOrigin()
-              .AllowAnyHeader()
-              .AllowAnyMethod();
-    });
+        c.IncludeXmlComments(xmlPath);
+    }
 });
 
-// Dependency Injection registrations
+builder.Services.AddCors(opt => opt.AddPolicy("MyPolicy", policy =>
+{
+    policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+}));
+
+// רישום השירותים
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<AuthService>();
+builder.Services.AddScoped<IManagerRepository, ManagerRepository>();
+builder.Services.AddScoped<IAlbumRepository, AlbumRepository>();
+builder.Services.AddScoped<IAlbumService, AlbumService>();
+builder.Services.AddScoped<IPhotoService, PhotoService>();
+builder.Services.AddScoped<IPhotoRepository, PhotoRepository>();
+builder.Services.AddScoped<IAIService, AIService>();
+builder.Services.AddScoped<IImageProcessingService, ImageProcessingService>();
+builder.Services.AddScoped<ICollageService, CollageService>();
+builder.Services.AddScoped<IEmailService, EmailService>();
+
 builder.Services.AddDbContext<DataContext>();
 
-// AutoMapper profiles
+// רישום AutoMapper
 builder.Services.AddAutoMapper(cfg =>
 {
     cfg.AddProfile<MappingProfile>();
-    cfg.AddProfile<MapingProfileApi>(); // Note: Is this a typo? Should it be MappingProfileApi?
+    cfg.AddProfile<MapingProfileApi>();
 });
-
-// S3 Service (singleton)
 builder.Services.AddSingleton<S3Service>();
+
+// רישום S3 Client
 builder.Services.AddSingleton<IAmazonS3>(sp =>
 {
     var configuration = sp.GetRequiredService<IConfiguration>();
-    // You need to provide valid credentials and config here
-    var awsOptions = configuration.GetAWSOptions();
-    return awsOptions.CreateServiceClient<IAmazonS3>();
+    var credentials = new BasicAWSCredentials(
+        configuration["AWS:AccessKey"],
+        configuration["AWS:SecretKey"]
+    );
+    var clientConfig = new AmazonS3Config
+    {
+        RegionEndpoint = RegionEndpoint.GetBySystemName(configuration["AWS:Region"])
+    };
+    return new AmazonS3Client(credentials, clientConfig);
 });
 
-// OpenRouterService
+// רישום OpenRouterService
 builder.Services.AddScoped<IOpenRouterService>(sp =>
+{
+    var httpClient = sp.GetRequiredService<IHttpClientFactory>().CreateClient("AIService");
+    var configuration = sp.GetRequiredService<IConfiguration>();
+    return new OpenRouterService(httpClient, configuration);
+});
+
+builder.Services.AddScoped<IChatService>(sp =>
 {
     var httpClient = sp.GetRequiredService<IHttpClientFactory>().CreateClient("AIService");
     var configuration = sp.GetRequiredService<IConfiguration>();
     return new ChatService(httpClient, configuration);
 });
 
-// JWT Authentication (configure as needed)
+// הוספת JWT Authentication
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
@@ -71,31 +118,39 @@ builder.Services.AddAuthentication(options =>
 })
 .AddJwtBearer(options =>
 {
-    // configure JWT validation here
-    // options.TokenValidationParameters = ...
+    options.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = builder.Configuration["Jwt:Issuer"],
+        ValidAudience = builder.Configuration["Jwt:Audience"],
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]))
+    };
 });
 
-// Authorization policies
 builder.Services.AddAuthorization(options =>
 {
+    options.AddPolicy("AdminOnly", policy => policy.RequireRole("Admin"));
     options.AddPolicy("EditorOrAdmin", policy => policy.RequireRole("Editor", "Admin"));
     options.AddPolicy("ViewerOnly", policy => policy.RequireRole("Viewer"));
 });
+builder.Services.AddApplicationInsightsTelemetry();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+
 
 app.UseHttpsRedirection();
 app.UseCors("MyPolicy");
 app.UseAuthentication();
 app.UseAuthorization();
 
-app.MapControllers(); // Only if you use controllers
+app.MapControllers();
 
 app.Run();
