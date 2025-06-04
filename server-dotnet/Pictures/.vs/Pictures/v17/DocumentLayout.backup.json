@@ -345,7 +345,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 8,
           "Children": [
             {
               "$type": "Document",
@@ -363,18 +363,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\appsettings.json",
-              "RelativeDocumentMoniker": "Pictures.Api\\appsettings.json",
-              "ToolTip": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\appsettings.json",
-              "RelativeToolTip": "Pictures.Api\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-03-18T13:57:31.398Z"
             },
             {
               "$type": "Document",
@@ -457,10 +445,22 @@
               "RelativeDocumentMoniker": "Pictures.Api\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Controllers\\AuthController.cs",
               "RelativeToolTip": "Pictures.Api\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAANUAAAAAAAAAAAAmwOAAAAA7AAAAAAAAAA==",
+              "ViewState": "AgIAANUAAAAAAAAAAAAmwOEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-18T20:59:27.234Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\appsettings.json",
+              "RelativeDocumentMoniker": "Pictures.Api\\appsettings.json",
+              "ToolTip": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\appsettings.json",
+              "RelativeToolTip": "Pictures.Api\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-18T13:57:31.398Z"
             },
             {
               "$type": "Document",

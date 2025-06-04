@@ -15,16 +15,18 @@ using Pictures.Core;
 using Microsoft.OpenApi.Models;
 using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.ApplicationInsights.AspNetCore.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Configuration.AddJsonFile("secret.json", optional: true, reloadOnChange: true);
 
 
-// ψιωεν ωιψεϊι AWS
+
+// Χ¨Χ™Χ©Χ•Χ Χ©Χ™Χ¨Χ•ΧªΧ™ AWS
 builder.Services.AddDefaultAWSOptions(builder.Configuration.GetAWSOptions());
 builder.Services.AddAWSService<IAmazonS3>();
 
-// δερτϊ HttpClientFactory
+// Χ”Χ•Χ΅Χ¤Χª HttpClientFactory
 builder.Services.AddHttpClient("AIService", client =>
 {
     client.Timeout = TimeSpan.FromSeconds(30);
@@ -56,7 +58,7 @@ builder.Services.AddCors(opt => opt.AddPolicy("MyPolicy", policy =>
     policy.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
 }));
 
-// ψιωεν δωιψεϊιν
+// Χ¨Χ™Χ©Χ•Χ Χ”Χ©Χ™Χ¨Χ•ΧªΧ™Χ
 builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<IUserRepository, UserRepository>();
 builder.Services.AddScoped<AuthService>();
@@ -72,7 +74,7 @@ builder.Services.AddScoped<IEmailService, EmailService>();
 
 builder.Services.AddDbContext<DataContext>();
 
-// ψιωεν AutoMapper
+// Χ¨Χ™Χ©Χ•Χ AutoMapper
 builder.Services.AddAutoMapper(cfg =>
 {
     cfg.AddProfile<MappingProfile>();
@@ -80,7 +82,7 @@ builder.Services.AddAutoMapper(cfg =>
 });
 builder.Services.AddSingleton<S3Service>();
 
-// ψιωεν S3 Client
+// Χ¨Χ™Χ©Χ•Χ S3 Client
 builder.Services.AddSingleton<IAmazonS3>(sp =>
 {
     var configuration = sp.GetRequiredService<IConfiguration>();
@@ -95,7 +97,7 @@ builder.Services.AddSingleton<IAmazonS3>(sp =>
     return new AmazonS3Client(credentials, clientConfig);
 });
 
-// ψιωεν OpenRouterService
+// Χ¨Χ™Χ©Χ•Χ OpenRouterService
 builder.Services.AddScoped<IOpenRouterService>(sp =>
 {
     var httpClient = sp.GetRequiredService<IHttpClientFactory>().CreateClient("AIService");
@@ -110,7 +112,7 @@ builder.Services.AddScoped<IChatService>(sp =>
     return new ChatService(httpClient, configuration);
 });
 
-// δερτϊ JWT Authentication
+// Χ”Χ•Χ΅Χ¤Χª JWT Authentication
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
