@@ -17,6 +17,8 @@ using System.Reflection;
 using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
+builder.Configuration.AddJsonFile("secret.json", optional: true, reloadOnChange: true);
+
 
 // רישום שירותי AWS
 builder.Services.AddDefaultAWSOptions(builder.Configuration.GetAWSOptions());
@@ -134,15 +136,15 @@ builder.Services.AddAuthorization(options =>
     options.AddPolicy("EditorOrAdmin", policy => policy.RequireRole("Editor", "Admin"));
     options.AddPolicy("ViewerOnly", policy => policy.RequireRole("Viewer"));
 });
+builder.Services.AddApplicationInsightsTelemetry();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
-{
+
     app.UseSwagger();
     app.UseSwaggerUI();
-}
+
 
 app.UseHttpsRedirection();
 app.UseCors("MyPolicy");

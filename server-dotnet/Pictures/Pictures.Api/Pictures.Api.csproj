@@ -14,8 +14,10 @@
 		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
 		<PackageReference Include="AWSSDK.Extensions.NETCore.Setup" Version="4.0.1" />
 		<PackageReference Include="AWSSDK.S3" Version="4.0.0.5" />
+		<PackageReference Include="Azure.Identity" Version="1.13.0" />
 		<PackageReference Include="BCrypt.Net-Next" Version="4.0.3" />
 		<PackageReference Include="dotenv-vault.net" Version="0.0.4" />
+		<PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.23.0" />
 		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="9.0.3" />
 		<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="9.0.3" />
 		<PackageReference Include="Microsoft.EntityFrameworkCore" Version="9.0.5" />
