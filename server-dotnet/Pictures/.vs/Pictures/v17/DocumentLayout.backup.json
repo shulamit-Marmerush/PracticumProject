@@ -3,38 +3,18 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|solutionrelative:pictures.api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|solutionrelative:pictures.api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pictures.Api\\Program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{99B5D4E2-6B5C-40F2-9B01-7B667D96BDEE}|Pictures.Core\\Pictures.Core.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.core\\pictures.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{99B5D4E2-6B5C-40F2-9B01-7B667D96BDEE}|Pictures.Core\\Pictures.Core.csproj|solutionrelative:pictures.core\\pictures.core.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.api\\pictures.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|solutionrelative:pictures.api\\pictures.api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.api\\controllers\\imageprocessingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|solutionrelative:pictures.api\\controllers\\imageprocessingcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\AppData\\Roaming\\Microsoft\\UserSecrets\\40c4434f-002f-4d20-9075-759e38d4b041\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.21.0\\build\\Container.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|solutionrelative:pictures.api\\dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|solutionrelative:pictures.api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FED32280-DBE6-4F98-B678-F2A6362ABD93}|Pictures.Service\\Pictures.Service.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.service\\chatservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -81,16 +61,8 @@
       "RelativeMoniker": "D:0:0:{FED32280-DBE6-4F98-B678-F2A6362ABD93}|Pictures.Service\\Pictures.Service.csproj|solutionrelative:pictures.service\\aiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.api\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|solutionrelative:pictures.api\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{99B5D4E2-6B5C-40F2-9B01-7B667D96BDEE}|Pictures.Core\\Pictures.Core.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.core\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99B5D4E2-6B5C-40F2-9B01-7B667D96BDEE}|Pictures.Core\\Pictures.Core.csproj|solutionrelative:pictures.core\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.api\\controllers\\descriptioncontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|solutionrelative:pictures.api\\controllers\\descriptioncontroller .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{99B5D4E2-6B5C-40F2-9B01-7B667D96BDEE}|Pictures.Core\\Pictures.Core.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.core\\services\\iemailservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -125,32 +97,12 @@
       "RelativeMoniker": "D:0:0:{99B5D4E2-6B5C-40F2-9B01-7B667D96BDEE}|Pictures.Core\\Pictures.Core.csproj|solutionrelative:pictures.core\\services\\ialbumservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.api\\postmodels\\userpostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|solutionrelative:pictures.api\\postmodels\\userpostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{68DBCB40-7B1D-4579-9D42-FFBE580D4F4E}|Pictures.Data\\Pictures.Data.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.data\\repositories\\albumrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{68DBCB40-7B1D-4579-9D42-FFBE580D4F4E}|Pictures.Data\\Pictures.Data.csproj|solutionrelative:pictures.data\\repositories\\albumrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{68DBCB40-7B1D-4579-9D42-FFBE580D4F4E}|Pictures.Data\\Pictures.Data.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.data\\repositories\\photorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{68DBCB40-7B1D-4579-9D42-FFBE580D4F4E}|Pictures.Data\\Pictures.Data.csproj|solutionrelative:pictures.data\\repositories\\photorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.api\\filters\\fileuploadoperationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|solutionrelative:pictures.api\\filters\\fileuploadoperationfilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|solutionrelative:pictures.api\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.api\\controllers\\photocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|solutionrelative:pictures.api\\controllers\\photocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.api\\controllers\\uploadfoldercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|solutionrelative:pictures.api\\controllers\\uploadfoldercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Data\\Migrations\\20250519192505_db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -180,14 +132,6 @@
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\Pictures\\Pictures.Data\\Migrations\\20250318192511_db.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.api\\controllers\\collagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|solutionrelative:pictures.api\\controllers\\collagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|solutionrelative:pictures.api\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FED32280-DBE6-4F98-B678-F2A6362ABD93}|Pictures.Service\\Pictures.Service.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.service\\collageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -220,10 +164,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{99B5D4E2-6B5C-40F2-9B01-7B667D96BDEE}|Pictures.Core\\Pictures.Core.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.core\\models\\album.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99B5D4E2-6B5C-40F2-9B01-7B667D96BDEE}|Pictures.Core\\Pictures.Core.csproj|solutionrelative:pictures.core\\models\\album.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|solutionrelative:pictures.api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{99B5D4E2-6B5C-40F2-9B01-7B667D96BDEE}|Pictures.Core\\Pictures.Core.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.core\\models\\collagephotocs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -286,18 +226,6 @@
       "RelativeMoniker": "D:0:0:{68DBCB40-7B1D-4579-9D42-FFBE580D4F4E}|Pictures.Data\\Pictures.Data.csproj|solutionrelative:pictures.data\\repositories\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.api\\mapingprofileapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|solutionrelative:pictures.api\\mapingprofileapi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.api\\pictures.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|solutionrelative:pictures.api\\pictures.api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.api\\fileuploadoperationfilter .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|solutionrelative:pictures.api\\fileuploadoperationfilter .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{99B5D4E2-6B5C-40F2-9B01-7B667D96BDEE}|Pictures.Core\\Pictures.Core.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.core\\dtos\\collageresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99B5D4E2-6B5C-40F2-9B01-7B667D96BDEE}|Pictures.Core\\Pictures.Core.csproj|solutionrelative:pictures.core\\dtos\\collageresultdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -314,28 +242,100 @@
       "RelativeMoniker": "D:0:0:{99B5D4E2-6B5C-40F2-9B01-7B667D96BDEE}|Pictures.Core\\Pictures.Core.csproj|solutionrelative:pictures.core\\dtos\\collagerequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.api\\controllers\\uploadfilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|solutionrelative:pictures.api\\controllers\\uploadfilecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.api\\controllers\\albumcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|solutionrelative:pictures.api\\controllers\\albumcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{99B5D4E2-6B5C-40F2-9B01-7B667D96BDEE}|Pictures.Core\\Pictures.Core.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.core\\dtos\\albumdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{99B5D4E2-6B5C-40F2-9B01-7B667D96BDEE}|Pictures.Core\\Pictures.Core.csproj|solutionrelative:pictures.core\\dtos\\albumdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.api\\postmodels\\photopostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|solutionrelative:pictures.api\\postmodels\\photopostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Controllers\\ImageProcessingController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pictures.Api\\Controllers\\ImageProcessingController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.api\\putmodel\\photoputmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|solutionrelative:pictures.api\\putmodel\\photoputmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Pictures.Api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pictures.Api\\Pictures.Api.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|c:\\users\\user\\saved games\\desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\pictures\\pictures.api\\postmodels\\albumpostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8B4C31A6-33B4-4514-BC63-FBC695586636}|Pictures.Api\\Pictures.Api.csproj|solutionrelative:pictures.api\\postmodels\\albumpostmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Controllers\\AuthController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pictures.Api\\Controllers\\AuthController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pictures.Api\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pictures.Api\\Dockerfile||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Controllers\\DescriptionController .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pictures.Api\\Controllers\\DescriptionController .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Controllers\\ChatController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pictures.Api\\Controllers\\ChatController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Filters\\FileUploadOperationFilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pictures.Api\\Filters\\FileUploadOperationFilter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\PostModels\\UserPostModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pictures.Api\\PostModels\\UserPostModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Controllers\\PhotoController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pictures.Api\\Controllers\\PhotoController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Controllers\\UploadFolderController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pictures.Api\\Controllers\\UploadFolderController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Controllers\\UserController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pictures.Api\\Controllers\\UserController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Properties\\launchSettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pictures.Api\\Properties\\launchSettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Controllers\\CollageController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pictures.Api\\Controllers\\CollageController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\appsettings.Development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pictures.Api\\appsettings.Development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\MapingProfileApi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pictures.Api\\MapingProfileApi.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Pictures.Api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pictures.Api\\Pictures.Api.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\FileUploadOperationFilter .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pictures.Api\\FileUploadOperationFilter .cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Controllers\\UploadFileController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pictures.Api\\Controllers\\UploadFileController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Controllers\\AlbumController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pictures.Api\\Controllers\\AlbumController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\PostModels\\PhotoPostModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pictures.Api\\PostModels\\PhotoPostModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\PutModel\\PhotoPutModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pictures.Api\\PutModel\\PhotoPutModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\PostModels\\AlbumPostModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Pictures.Api\\PostModels\\AlbumPostModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -345,11 +345,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 11,
               "Title": "Pictures.Data.csproj",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Data\\Pictures.Data.csproj",
               "RelativeDocumentMoniker": "Pictures.Data\\Pictures.Data.csproj",
@@ -366,7 +366,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "secrets.json",
               "DocumentMoniker": "C:\\Users\\User\\AppData\\Roaming\\Microsoft\\UserSecrets\\40c4434f-002f-4d20-9075-759e38d4b041\\secrets.json",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\40c4434f-002f-4d20-9075-759e38d4b041\\secrets.json",
@@ -378,20 +378,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Program.cs",
               "RelativeDocumentMoniker": "Pictures.Api\\Program.cs",
               "ToolTip": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Program.cs",
               "RelativeToolTip": "Pictures.Api\\Program.cs",
-              "ViewState": "AgIAAHQAAAAAAAAAAAAmwJwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAHgAAAAAAAAAAAAUwJ4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-03-18T13:58:05.952Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 63,
               "Title": "ImageProcessingController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Controllers\\ImageProcessingController.cs",
               "RelativeDocumentMoniker": "Pictures.Api\\Controllers\\ImageProcessingController.cs",
@@ -403,19 +403,19 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 64,
               "Title": "Pictures.Api.csproj",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Pictures.Api.csproj",
               "RelativeDocumentMoniker": "Pictures.Api\\Pictures.Api.csproj",
               "ToolTip": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Pictures.Api.csproj",
               "RelativeToolTip": "Pictures.Api\\Pictures.Api.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAABbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2025-03-18T13:59:37.063Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Pictures.Core.csproj",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\Pictures.Core.csproj",
               "RelativeDocumentMoniker": "Pictures.Core\\Pictures.Core.csproj",
@@ -427,7 +427,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 6,
               "Title": "HuggingFaceService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Service\\HuggingFaceService.cs",
               "RelativeDocumentMoniker": "Pictures.Service\\HuggingFaceService.cs",
@@ -439,7 +439,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 65,
               "Title": "AuthController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Controllers\\AuthController.cs",
               "RelativeDocumentMoniker": "Pictures.Api\\Controllers\\AuthController.cs",
@@ -447,12 +447,11 @@
               "RelativeToolTip": "Pictures.Api\\Controllers\\AuthController.cs",
               "ViewState": "AgIAANUAAAAAAAAAAAAmwOEAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-03-18T20:59:27.234Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-03-18T20:59:27.234Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 66,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\appsettings.json",
               "RelativeDocumentMoniker": "Pictures.Api\\appsettings.json",
@@ -464,7 +463,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 5,
               "Title": "EmailService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Service\\EmailService.cs",
               "RelativeDocumentMoniker": "Pictures.Service\\EmailService.cs",
@@ -476,7 +475,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "Container.targets",
               "DocumentMoniker": "C:\\Users\\User\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.21.0\\build\\Container.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\.nuget\\packages\\microsoft.visualstudio.azure.containers.tools.targets\\1.21.0\\build\\Container.targets",
@@ -488,7 +487,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 67,
               "Title": "Dockerfile",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Dockerfile",
               "RelativeDocumentMoniker": "Pictures.Api\\Dockerfile",
@@ -500,7 +499,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 4,
               "Title": "ChatService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Service\\ChatService.cs",
               "RelativeDocumentMoniker": "Pictures.Service\\ChatService.cs",
@@ -512,7 +511,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 7,
               "Title": "ImageProcessingService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Service\\ImageProcessingService.cs",
               "RelativeDocumentMoniker": "Pictures.Service\\ImageProcessingService.cs",
@@ -524,7 +523,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 8,
               "Title": "PhotoService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Service\\PhotoService.cs",
               "RelativeDocumentMoniker": "Pictures.Service\\PhotoService.cs",
@@ -536,7 +535,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 10,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Service\\UserService.cs",
               "RelativeDocumentMoniker": "Pictures.Service\\UserService.cs",
@@ -548,7 +547,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 12,
               "Title": "EmailVerificationModel.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\Models\\EmailVerificationModel.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\Models\\EmailVerificationModel.cs",
@@ -560,7 +559,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 9,
               "Title": "S3Service.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Service\\S3Service.cs",
               "RelativeDocumentMoniker": "Pictures.Service\\S3Service.cs",
@@ -572,7 +571,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 14,
               "Title": "AIService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Service\\AIService.cs",
               "RelativeDocumentMoniker": "Pictures.Service\\AIService.cs",
@@ -584,7 +583,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 68,
               "Title": "DescriptionController .cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Controllers\\DescriptionController .cs",
               "RelativeDocumentMoniker": "Pictures.Api\\Controllers\\DescriptionController .cs",
@@ -596,7 +595,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 13,
               "Title": "DataContext.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Data\\DataContext.cs",
               "RelativeDocumentMoniker": "Pictures.Data\\DataContext.cs",
@@ -608,7 +607,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 15,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\Models\\User.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\Models\\User.cs",
@@ -620,7 +619,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 69,
               "Title": "ChatController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Controllers\\ChatController.cs",
               "RelativeDocumentMoniker": "Pictures.Api\\Controllers\\ChatController.cs",
@@ -632,7 +631,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 16,
               "Title": "IEmailService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\Services\\IEmailService.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\Services\\IEmailService.cs",
@@ -644,7 +643,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 20,
               "Title": "IImageProcessingService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\Services\\IImageProcessingService.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\Services\\IImageProcessingService.cs",
@@ -656,7 +655,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 19,
               "Title": "IOpenRouterService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\Services\\IOpenRouterService.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\Services\\IOpenRouterService.cs",
@@ -668,7 +667,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 17,
               "Title": "Pictures.Service.csproj",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Service\\Pictures.Service.csproj",
               "RelativeDocumentMoniker": "Pictures.Service\\Pictures.Service.csproj",
@@ -680,7 +679,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 18,
               "Title": "IChatService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\Services\\IChatService.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\Services\\IChatService.cs",
@@ -692,7 +691,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 22,
               "Title": "ICollegeService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\Services\\ICollegeService.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\Services\\ICollegeService.cs",
@@ -704,7 +703,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 21,
               "Title": "HuggingFaceRequest.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\Models\\HuggingFaceRequest.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\Models\\HuggingFaceRequest.cs",
@@ -716,7 +715,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 23,
               "Title": "IAlbumService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\Services\\IAlbumService.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\Services\\IAlbumService.cs",
@@ -728,7 +727,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 70,
               "Title": "FileUploadOperationFilter.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Filters\\FileUploadOperationFilter.cs",
               "RelativeDocumentMoniker": "Pictures.Api\\Filters\\FileUploadOperationFilter.cs",
@@ -740,7 +739,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 71,
               "Title": "UserPostModel.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\PostModels\\UserPostModel.cs",
               "RelativeDocumentMoniker": "Pictures.Api\\PostModels\\UserPostModel.cs",
@@ -752,7 +751,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 25,
               "Title": "PhotoRepository.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Data\\Repositories\\PhotoRepository.cs",
               "RelativeDocumentMoniker": "Pictures.Data\\Repositories\\PhotoRepository.cs",
@@ -764,7 +763,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 24,
               "Title": "AlbumRepository.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Data\\Repositories\\AlbumRepository.cs",
               "RelativeDocumentMoniker": "Pictures.Data\\Repositories\\AlbumRepository.cs",
@@ -776,7 +775,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 72,
               "Title": "PhotoController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Controllers\\PhotoController.cs",
               "RelativeDocumentMoniker": "Pictures.Api\\Controllers\\PhotoController.cs",
@@ -788,7 +787,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 73,
               "Title": "UploadFolderController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Controllers\\UploadFolderController.cs",
               "RelativeDocumentMoniker": "Pictures.Api\\Controllers\\UploadFolderController.cs",
@@ -800,7 +799,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 74,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Pictures.Api\\Controllers\\UserController.cs",
@@ -812,7 +811,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 49,
+              "DocumentIndex": 35,
               "Title": "CollageService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Service\\CollageService.cs",
               "RelativeDocumentMoniker": "Pictures.Service\\CollageService.cs",
@@ -824,7 +823,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 48,
+              "DocumentIndex": 75,
               "Title": "launchSettings.json",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Properties\\launchSettings.json",
               "RelativeDocumentMoniker": "Pictures.Api\\Properties\\launchSettings.json",
@@ -836,7 +835,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 47,
+              "DocumentIndex": 76,
               "Title": "CollageController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Controllers\\CollageController.cs",
               "RelativeDocumentMoniker": "Pictures.Api\\Controllers\\CollageController.cs",
@@ -848,7 +847,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 50,
+              "DocumentIndex": 36,
               "Title": "20250519231116_ll.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Data\\Migrations\\20250519231116_ll.cs",
               "RelativeDocumentMoniker": "Pictures.Data\\Migrations\\20250519231116_ll.cs",
@@ -860,7 +859,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 51,
+              "DocumentIndex": 37,
               "Title": "ImageProcessingResult.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\Models\\ImageProcessingResult.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\Models\\ImageProcessingResult.cs",
@@ -872,7 +871,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 52,
+              "DocumentIndex": 38,
               "Title": "ImageProcessingRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\DTOs\\ImageProcessingRequestDto.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\DTOs\\ImageProcessingRequestDto.cs",
@@ -884,7 +883,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
+              "DocumentIndex": 28,
               "Title": "Pictures.Api.xsd",
               "DocumentMoniker": "C:\\Users\\User\\AppData\\Local\\Temp\\Pictures.Api.xsd",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Local\\Temp\\Pictures.Api.xsd",
@@ -895,7 +894,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
+              "DocumentIndex": 27,
               "Title": "20250519192238_p.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Data\\Migrations\\20250519192238_p.cs",
               "RelativeDocumentMoniker": "Pictures.Data\\Migrations\\20250519192238_p.cs",
@@ -906,7 +905,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 26,
               "Title": "20250519192505_db.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Data\\Migrations\\20250519192505_db.cs",
               "RelativeDocumentMoniker": "Pictures.Data\\Migrations\\20250519192505_db.cs",
@@ -917,7 +916,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 53,
+              "DocumentIndex": 39,
               "Title": "ImageProcessingResultDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\DTOs\\ImageProcessingResultDto.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\DTOs\\ImageProcessingResultDto.cs",
@@ -929,7 +928,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 54,
+              "DocumentIndex": 40,
               "Title": "PhotoDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\DTOs\\PhotoDto.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\DTOs\\PhotoDto.cs",
@@ -941,7 +940,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 55,
+              "DocumentIndex": 41,
               "Title": "UserDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\DTOs\\UserDto.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\DTOs\\UserDto.cs",
@@ -953,7 +952,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 56,
+              "DocumentIndex": 42,
               "Title": "Album.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\Models\\Album.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\Models\\Album.cs",
@@ -965,7 +964,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 57,
+              "DocumentIndex": 77,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\appsettings.Development.json",
               "RelativeDocumentMoniker": "Pictures.Api\\appsettings.Development.json",
@@ -977,7 +976,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 58,
+              "DocumentIndex": 43,
               "Title": "CollagePhotocs.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\Models\\CollagePhotocs.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\Models\\CollagePhotocs.cs",
@@ -989,7 +988,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 59,
+              "DocumentIndex": 44,
               "Title": "College.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\Models\\College.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\Models\\College.cs",
@@ -1001,7 +1000,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 60,
+              "DocumentIndex": 45,
               "Title": "Permissions.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\Models\\Permissions.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\Models\\Permissions.cs",
@@ -1013,7 +1012,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 61,
+              "DocumentIndex": 46,
               "Title": "Photo.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\Models\\Photo.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\Models\\Photo.cs",
@@ -1025,7 +1024,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 62,
+              "DocumentIndex": 47,
               "Title": "Roles.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\Models\\Roles.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\Models\\Roles.cs",
@@ -1037,7 +1036,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 63,
+              "DocumentIndex": 48,
               "Title": "IAlbumRepository.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\Repositories\\IAlbumRepository.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\Repositories\\IAlbumRepository.cs",
@@ -1049,7 +1048,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 64,
+              "DocumentIndex": 49,
               "Title": "IManagerRepository.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\Repositories\\IManagerRepository.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\Repositories\\IManagerRepository.cs",
@@ -1061,7 +1060,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 65,
+              "DocumentIndex": 50,
               "Title": "IPhotoRepository.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\Repositories\\IPhotoRepository.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\Repositories\\IPhotoRepository.cs",
@@ -1073,7 +1072,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 66,
+              "DocumentIndex": 51,
               "Title": "IUserRepository.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\Repositories\\IUserRepository.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\Repositories\\IUserRepository.cs",
@@ -1085,7 +1084,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 67,
+              "DocumentIndex": 52,
               "Title": "IAIService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\Services\\IAIService.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\Services\\IAIService.cs",
@@ -1097,7 +1096,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 68,
+              "DocumentIndex": 53,
               "Title": "IPhotoService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\Services\\IPhotoService.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\Services\\IPhotoService.cs",
@@ -1109,7 +1108,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 69,
+              "DocumentIndex": 54,
               "Title": "IUserService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\Services\\IUserService.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\Services\\IUserService.cs",
@@ -1121,7 +1120,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 70,
+              "DocumentIndex": 55,
               "Title": "MappingProfile.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\MappingProfile.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\MappingProfile.cs",
@@ -1133,7 +1132,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 71,
+              "DocumentIndex": 56,
               "Title": "ManagerRepository.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Data\\Repositories\\ManagerRepository.cs",
               "RelativeDocumentMoniker": "Pictures.Data\\Repositories\\ManagerRepository.cs",
@@ -1145,7 +1144,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 72,
+              "DocumentIndex": 57,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Data\\Repositories\\UserRepository.cs",
               "RelativeDocumentMoniker": "Pictures.Data\\Repositories\\UserRepository.cs",
@@ -1157,7 +1156,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
+              "DocumentIndex": 29,
               "Title": "Microsoft.NET.Sdk.Razor.MvcApplicationPartsDiscovery.targets",
               "DocumentMoniker": "C:\\Program Files\\dotnet\\sdk\\9.0.201\\Sdks\\Microsoft.NET.Sdk.Razor\\targets\\Microsoft.NET.Sdk.Razor.MvcApplicationPartsDiscovery.targets",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\Program Files\\dotnet\\sdk\\9.0.201\\Sdks\\Microsoft.NET.Sdk.Razor\\targets\\Microsoft.NET.Sdk.Razor.MvcApplicationPartsDiscovery.targets",
@@ -1169,7 +1168,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 73,
+              "DocumentIndex": 78,
               "Title": "MapingProfileApi.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\MapingProfileApi.cs",
               "RelativeDocumentMoniker": "Pictures.Api\\MapingProfileApi.cs",
@@ -1181,8 +1180,8 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 74,
-              "Title": "Pictures.Api",
+              "DocumentIndex": 79,
+              "Title": "Pictures.Api.csproj",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Pictures.Api.csproj",
               "RelativeDocumentMoniker": "Pictures.Api\\Pictures.Api.csproj",
               "ToolTip": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Pictures.Api.csproj",
@@ -1192,7 +1191,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 30,
               "Title": "GitHubController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05EA\u05DB\u05E0\u05D5\u05EA\\\u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05D35\\GitHubPortfolioAPI\\GitHub\\GitHub.Api\\Controllers\\GitHubController.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\\u05EA\u05DB\u05E0\u05D5\u05EA\\\u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05D35\\GitHubPortfolioAPI\\GitHub\\GitHub.Api\\Controllers\\GitHubController.cs",
@@ -1204,7 +1203,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 31,
               "Title": "GitHubService.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05EA\u05DB\u05E0\u05D5\u05EA\\\u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05D35\\GitHubService\\GItHubService\\GitHubService.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\\u05EA\u05DB\u05E0\u05D5\u05EA\\\u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05D35\\GitHubService\\GItHubService\\GitHubService.cs",
@@ -1216,7 +1215,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 75,
+              "DocumentIndex": 80,
               "Title": "FileUploadOperationFilter .cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\FileUploadOperationFilter .cs",
               "RelativeDocumentMoniker": "Pictures.Api\\FileUploadOperationFilter .cs",
@@ -1228,7 +1227,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 76,
+              "DocumentIndex": 58,
               "Title": "CollageResultDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\DTOs\\CollageResultDto.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\DTOs\\CollageResultDto.cs",
@@ -1240,7 +1239,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 77,
+              "DocumentIndex": 59,
               "Title": "AIThemeRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\DTOs\\AIThemeRequestDto.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\DTOs\\AIThemeRequestDto.cs",
@@ -1252,7 +1251,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 78,
+              "DocumentIndex": 60,
               "Title": "AIThemeResponseDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\DTOs\\AIThemeResponseDto.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\DTOs\\AIThemeResponseDto.cs",
@@ -1264,7 +1263,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 79,
+              "DocumentIndex": 61,
               "Title": "CollageRequestDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\DTOs\\CollageRequestDto.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\DTOs\\CollageRequestDto.cs",
@@ -1276,7 +1275,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 80,
+              "DocumentIndex": 81,
               "Title": "UploadFileController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Controllers\\UploadFileController.cs",
               "RelativeDocumentMoniker": "Pictures.Api\\Controllers\\UploadFileController.cs",
@@ -1288,7 +1287,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 81,
+              "DocumentIndex": 82,
               "Title": "AlbumController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Api\\Controllers\\AlbumController.cs",
               "RelativeDocumentMoniker": "Pictures.Api\\Controllers\\AlbumController.cs",
@@ -1300,7 +1299,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 82,
+              "DocumentIndex": 62,
               "Title": "AlbumDto.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\\u05E4\u05E8\u05D5\u05D9\u05E7\u05D8 \u05E4\u05E8\u05E7\u05D8\u05D9\u05E7\u05D5\u05DD\\server-dotnet\\Pictures\\Pictures.Core\\DTOs\\AlbumDto.cs",
               "RelativeDocumentMoniker": "Pictures.Core\\DTOs\\AlbumDto.cs",
@@ -1348,7 +1347,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 32,
               "Title": "nr2kdcxl..sql",
               "DocumentMoniker": "C:\\Users\\User\\AppData\\Local\\Temp\\nr2kdcxl..sql",
               "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\AppData\\Local\\Temp\\nr2kdcxl..sql",
@@ -1359,7 +1358,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 45,
+              "DocumentIndex": 33,
               "Title": "20250318194317_updatedb.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\Pictures\\Pictures.Data\\Migrations\\20250318194317_updatedb.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Pictures\\Pictures.Data\\Migrations\\20250318194317_updatedb.cs",
@@ -1370,7 +1369,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 46,
+              "DocumentIndex": 34,
               "Title": "20250318192511_db.cs",
               "DocumentMoniker": "C:\\Users\\User\\Saved Games\\Desktop\\Pictures\\Pictures.Data\\Migrations\\20250318192511_db.cs",
               "RelativeDocumentMoniker": "..\\..\\..\\Pictures\\Pictures.Data\\Migrations\\20250318192511_db.cs",
