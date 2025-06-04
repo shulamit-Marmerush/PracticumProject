@@ -39,7 +39,7 @@ const AddAlbum = () => {
     try {
       console.log("Album data:", albumData)
 
-      const response = await axios.post("https://localhost:7259/api/album/album", albumData, {
+      const response = await axios.post("https://practicumproject-server.onrender.com/api/album/album", albumData, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

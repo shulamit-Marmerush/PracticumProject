@@ -31,7 +31,7 @@ const FileUploader: React.FC = () => {
       }
 
       try {
-        const response = await axios.get("https://localhost:7259/api/album", {
+        const response = await axios.get("https://practicumproject-server.onrender.com/api/album", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -70,7 +70,7 @@ const FileUploader: React.FC = () => {
     setUploading(true)
 
     try {
-      const response = await axios.get(`https://localhost:7259/api/album/${albumId}`, {
+      const response = await axios.get(`https://practicumproject-server.onrender.com/api/album/${albumId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -84,7 +84,7 @@ const FileUploader: React.FC = () => {
 
       const albumName = response.data.title
 
-      const presignedResponse = await axios.get("https://localhost:7259/api/UploadFile/presigned-url", {
+      const presignedResponse = await axios.get("https://practicumproject-server.onrender.com/api/UploadFile/presigned-url", {
         params: {
           fileName: file.name,
           albumName: albumName,
@@ -114,7 +114,7 @@ const FileUploader: React.FC = () => {
       }
 
       try {
-        await axios.post("https://localhost:7259/api/photo", photoData, {
+        await axios.post("https://practicumproject-server.onrender.com/api/photo", photoData, {
           headers: {
             Authorization: `Bearer ${token}`,
             "Content-Type": "application/json",

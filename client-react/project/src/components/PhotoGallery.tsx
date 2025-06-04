@@ -145,7 +145,7 @@ const PhotoGallery: React.FC<{ onClose: () => void }> = ({ }) => {
           return;
         }
 
-        const albumResponse = await axios.get(`https://localhost:7259/api/album/${albumId}`, {
+        const albumResponse = await axios.get(`https://practicumproject-server.onrender.com/api/album/${albumId}`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -153,7 +153,7 @@ const PhotoGallery: React.FC<{ onClose: () => void }> = ({ }) => {
 
         setAlbumTitle(albumResponse.data.title);
 
-        const photosResponse = await axios.get(`https://localhost:7259/api/photo`, {
+        const photosResponse = await axios.get(`https://practicumproject-server.onrender.com/api/photo`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -213,7 +213,7 @@ const PhotoGallery: React.FC<{ onClose: () => void }> = ({ }) => {
 
   const analyzePhotoTitle = async (title: string) => {
     try {
-      const response = await axios.post("https://localhost:7259/api/TextGenerator/generate-description", {
+      const response = await axios.post("https://practicumproject-server.onrender.com/api/TextGenerator/generate-description", {
         GeneratedText: title,
       });
       setAnalysisResult(response.data.description || "Analysis completed successfully!");
@@ -281,7 +281,7 @@ const PhotoGallery: React.FC<{ onClose: () => void }> = ({ }) => {
 
     try {
       const token = localStorage.getItem("token");
-      await axios.delete(`https://localhost:7259/api/photo/${photoToDelete}`, {
+      await axios.delete(`https://practicumproject-server.onrender.com/api/photo/${photoToDelete}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -153,7 +153,7 @@ const FolderList: React.FC<FolderListProps> = ({
       }
 
       try {
-        const response = await axios.get("https://localhost:7259/api/album", {
+        const response = await axios.get("https://practicumproject-server.onrender.com/api/album", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -197,7 +197,7 @@ const FolderList: React.FC<FolderListProps> = ({
     }
 
     try {
-      await axios.delete(`https://localhost:7259/api/album/${folderToDelete}`, {
+      await axios.delete(`https://practicumproject-server.onrender.com/api/album/${folderToDelete}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -238,7 +238,7 @@ const FolderList: React.FC<FolderListProps> = ({
 
     try {
       await axios.put(
-        `https://localhost:7259/api/album/${folderId}`,
+        `https://practicumproject-server.onrender.com/api/album/${folderId}`,
         {
           albumId: folderId,
           title: newTitle,

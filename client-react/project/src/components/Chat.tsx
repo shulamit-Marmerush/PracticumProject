@@ -55,7 +55,7 @@ const ChatPage = () => {
     setIsTyping(true)
 
     try {
-      const response = await fetch('https://localhost:7259/api/Chat/send', {
+      const response = await fetch('https://practicumproject-server.onrender.com/api/Chat/send', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
