@@ -1,238 +1,384 @@
+/* Albums Page */
 .albums-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #f0f4f8 0%, #e8f4f8 100%);
+  background: transparent;
+  position: relative;
 }
 
-.albums-header-card {
-  padding: 32px !important;
-  border-radius: 20px !important;
-  margin-bottom: 32px !important;
-  background: rgba(255, 255, 255, 0.9) !important;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
-}
-
+/* Header */
 .albums-header {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.albums-header-content {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
-  gap: 16px;
+  justify-content: space-between;
 }
 
 .albums-title {
-  font-weight: 700 !important;
-  color: #264653 !important;
-  margin-bottom: 8px !important;
+  font-weight: 300 !important;
+  background: linear-gradient(135deg, #f9a8d4 0%, #c084fc 25%, #a5b4fc 50%, #3b82f6 75%, #8b5cf6 100%);
+  background-size: 300% 300%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: gradient-shift 4s ease-in-out infinite;
 }
 
-.add-album-button {
-  background-color: #2a9d8f !important;
-  border-radius: 12px !important;
-  padding: 12px 24px !important;
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.add-album-btn {
+  border-radius: 50px !important;
+  padding: 0.75rem 2rem !important;
+  background: linear-gradient(135deg, #c93687 0%, #7121c1 25%, #a5b4fc 50%, #3b82f6 75%, #8b5cf6 100%) !important;
+  background-size: 300% 300% !important;
+  animation: gradient-shift 4s ease-in-out infinite !important;
   text-transform: none !important;
-  font-weight: 600 !important;
-  box-shadow: 0 4px 12px rgba(42, 157, 143, 0.3) !important;
+  font-weight: 500 !important;
+  font-size: 1rem !important;
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3) !important;
   transition: all 0.3s ease !important;
 }
 
-.add-album-button:hover {
-  background-color: #238b7e !important;
+.add-album-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(42, 157, 143, 0.4) !important;
+  box-shadow: 0 12px 40px rgba(139, 92, 246, 0.4) !important;
+}
+
+/* Search Section */
+.search-section {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
 }
 
 .search-field {
-  margin-top: 16px !important;
+  max-width: 600px;
+  width: 100%;
 }
 
 .search-field .MuiOutlinedInput-root {
-  border-radius: 25px !important;
-  background: rgba(255, 255, 255, 0.8) !important;
-  border: 1px solid rgba(42, 157, 143, 0.2) !important;
+  border-radius: 50px !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+  font-size: 1.1rem !important;
+  padding: 8px 20px !important;
+}
+
+.search-field .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border: none !important;
 }
 
 .search-field .MuiOutlinedInput-root:hover {
-  border-color: rgba(42, 157, 143, 0.4) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
 }
 
 .search-field .MuiOutlinedInput-root.Mui-focused {
-  border-color: #2a9d8f !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(139, 92, 246, 0.5) !important;
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.1) !important;
 }
 
-.empty-albums {
-  padding: 48px !important;
-  text-align: center !important;
-  border-radius: 20px !important;
-  background: rgba(255, 255, 255, 0.9) !important;
-  backdrop-filter: blur(10px);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1) !important;
+.search-field .MuiInputBase-input::placeholder {
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-size: 1.1rem !important;
 }
 
-.empty-icon {
-  font-size: 80px !important;
-  color: rgba(42, 157, 143, 0.5) !important;
-  margin-bottom: 16px;
+.search-icon {
+  color: rgba(255, 255, 255, 0.5) !important;
+  font-size: 24px !important;
 }
 
-.empty-albums-text {
-  color: #264653 !important;
-  font-weight: 600 !important;
-  margin-bottom: 8px !important;
-}
-
-.empty-albums-subtext {
-  color: rgba(0, 0, 0, 0.6) !important;
-  margin-bottom: 24px !important;
-}
-
-.create-album-button {
-  background-color: #2a9d8f !important;
-  border-radius: 12px !important;
-  padding: 12px 32px !important;
-  text-transform: none !important;
-  font-weight: 600 !important;
-  box-shadow: 0 4px 12px rgba(42, 157, 143, 0.3) !important;
-  transition: all 0.3s ease !important;
-}
-
-.create-album-button:hover {
-  background-color: #238b7e !important;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(42, 157, 143, 0.4) !important;
-}
-
+/* Albums Grid - Simple Layout like the image */
 .albums-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
 }
 
+/* Album Item - Minimal like the image */
 .album-item {
-  height: 300px;
-  border-radius: 20px;
-  overflow: hidden;
-  position: relative;
-  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   transition: all 0.3s ease;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
 }
 
 .album-item:hover {
-  transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  transform: translateY(-6px);
 }
 
-.album-background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  transition: transform 0.3s ease;
+/* Folder Icon - Colorful on transparent background */
+.folder-icon-wrapper {
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: all 0.3s ease;
+  background: transparent;
 }
 
-.album-item:hover .album-background {
-  transform: scale(1.1);
+.folder-icon-wrapper:hover {
+  transform: scale(1.05);
 }
 
-.album-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.3) 50%, rgba(0, 0, 0, 0.8) 100%);
+.folder-icon {
+  transition: all 0.3s ease;
+  display: block !important;
+}
+
+.folder-icon-wrapper:hover .folder-icon {
+  filter: drop-shadow(0 12px 24px rgba(59, 130, 246, 0.4)) !important;
+}
+
+/* Album Info - Simple text like the image */
+.album-info {
+  margin-bottom: 1.5rem;
+  min-height: 70px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 24px;
-  color: white;
+  justify-content: center;
+  align-items: center;
 }
 
-.album-content {
-  margin-top: auto;
-}
-
-.album-title {
-  font-weight: 700 !important;
+.album-name {
   color: white !important;
-  margin-bottom: 8px !important;
-  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  font-weight: 600 !important;
+  font-size: 1.2rem !important;
+  margin-bottom: 0.5rem !important;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
-.album-description {
-  color: rgba(255, 255, 255, 0.9) !important;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
-  line-height: 1.4;
+.album-name:hover {
+  background: linear-gradient(135deg, #f9a8d4, #c084fc, #a5b4fc);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
 }
 
+.album-count {
+  color: rgba(255, 255, 255, 0.7) !important;
+  font-size: 1rem !important;
+  font-weight: 400 !important;
+}
+
+/* Edit Form */
+.edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
+}
+
+.edit-title-field .MuiOutlinedInput-root,
+.edit-desc-field .MuiOutlinedInput-root {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 8px !important;
+  color: white !important;
+  font-size: 0.9rem !important;
+}
+
+.edit-title-field .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline,
+.edit-desc-field .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Action Buttons - Small and round like the image */
 .album-actions {
   display: flex;
-  justify-content: flex-end;
-  gap: 8px;
-  opacity: 0;
-  transition: opacity 0.3s ease;
+  gap: 0.75rem;
+  justify-content: center;
 }
 
-.album-item:hover .album-actions {
-  opacity: 1;
+.action-btn {
+  width: 40px !important;
+  height: 40px !important;
+  border-radius: 50% !important;
+  transition: all 0.3s ease !important;
+  font-size: 18px !important;
 }
 
-.action-button {
-  background: rgba(255, 255, 255, 0.2) !important;
+.action-btn:hover {
+  transform: translateY(-2px) scale(1.1);
+}
+
+.edit-btn {
+  background: linear-gradient(135deg, #3b82f6, #8b5cf6) !important;
   color: white !important;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.3) !important;
+}
+
+.edit-btn:hover {
+  background: linear-gradient(135deg, #2563eb, #7c3aed) !important;
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.4) !important;
+}
+
+.delete-btn {
+  background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+  color: white !important;
+}
+
+.delete-btn:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c) !important;
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4) !important;
+}
+
+.save-btn {
+  background: linear-gradient(135deg, #10b981, #059669) !important;
+  color: white !important;
+}
+
+.save-btn:hover {
+  background: linear-gradient(135deg, #059669, #047857) !important;
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4) !important;
+}
+
+.cancel-btn {
+  background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+  color: white !important;
+}
+
+.cancel-btn:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c) !important;
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.4) !important;
+}
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.empty-icon {
+  margin-bottom: 2rem !important;
+}
+
+.empty-title {
+  font-weight: 300 !important;
+  color: white !important;
+  margin-bottom: 1rem !important;
+}
+
+.empty-subtitle {
+  color: rgba(255, 255, 255, 0.6) !important;
+  margin-bottom: 2rem !important;
+  font-weight: 300 !important;
+}
+
+.create-first-btn {
+  border-radius: 50px !important;
+  padding: 1rem 3rem !important;
+  background: linear-gradient(135deg, #8b5cf6, #ec4899) !important;
+  text-transform: none !important;
+  font-weight: 500 !important;
+  font-size: 1.1rem !important;
+  box-shadow: 0 8px 32px rgba(139, 92, 246, 0.3) !important;
   transition: all 0.3s ease !important;
 }
 
-.action-button:hover {
-  background: rgba(255, 255, 255, 0.3) !important;
-  transform: scale(1.1);
+.create-first-btn:hover {
+  background: linear-gradient(135deg, #7c3aed, #db2777) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(139, 92, 246, 0.4) !important;
 }
 
-.edit-button:hover {
-  background: rgba(42, 157, 143, 0.8) !important;
-  border-color: #2a9d8f !important;
+/* Error Alert */
+.error-alert {
+  margin-bottom: 2rem !important;
+  border-radius: 16px !important;
+  background: rgba(239, 68, 68, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
+  border: 1px solid rgba(239, 68, 68, 0.2) !important;
+  color: white !important;
 }
 
-.delete-button:hover {
-  background: rgba(231, 111, 81, 0.8) !important;
-  border-color: #e76f51 !important;
+/* Dialog */
+.delete-dialog {
+  border-radius: 20px !important;
+  background: rgba(26, 11, 46, 0.95) !important;
+  backdrop-filter: blur(20px) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
 }
 
+.dialog-title {
+  font-weight: bold !important;
+  color: white !important;
+}
+
+.dialog-text {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.dialog-actions {
+  padding: 1.5rem !important;
+}
+
+.dialog-cancel-btn {
+  border-radius: 12px !important;
+  text-transform: none !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.dialog-delete-btn {
+  border-radius: 12px !important;
+  background: linear-gradient(135deg, #ef4444, #dc2626) !important;
+  text-transform: none !important;
+}
+
+.dialog-delete-btn:hover {
+  background: linear-gradient(135deg, #dc2626, #b91c1c) !important;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .albums-grid {
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 16px;
-  }
-
-  .album-item {
-    height: 250px;
-  }
-
-  .albums-header {
+  .albums-header-content {
     flex-direction: column;
-    align-items: flex-start;
+    gap: 1rem;
+    align-items: stretch;
   }
 
-  .add-album-button {
+  .add-album-btn {
     width: 100%;
+  }
+
+  .albums-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 2rem;
+  }
+
+  .search-field {
+    max-width: 100%;
   }
 }
 
 @media (max-width: 480px) {
   .albums-grid {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
   }
 
-  .album-item {
-    height: 200px;
+  .action-btn {
+    width: 36px !important;
+    height: 36px !important;
   }
 }
