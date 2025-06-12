@@ -1,12 +1,12 @@
-
-
 "use client"
+
+import * as React from "react"
 
 import { useState } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 import { ArrowRight, Sparkles, Camera, ImageIcon, Palette, Zap, Edit, Users, Star, X } from "lucide-react"
 import { Link } from "react-router-dom"
-import "../styles/HomePage.css" // Ensure you have the correct styles for the homepage
+import "../styles/HomePage.css" // Import your CSS styles
 
 const HomePage = () => {
   const [showWelcomePopup, setShowWelcomePopup] = useState(true)
@@ -87,6 +87,13 @@ const HomePage = () => {
     </motion.div>
   )
 
+  // קומפוננטה לאות S
+  const SProfileIcon = () => (
+    <div className="s-profile-icon">
+      <span className="s-letter">S</span>
+    </div>
+  )
+
   return (
     <div className="homepage-container">
       {/* Welcome Popup */}
@@ -158,45 +165,45 @@ const HomePage = () => {
           <div className="hero-image-placeholders-grid">
             <motion.div
               className="hero-image-card card-1"
-              initial={{ opacity: 0, y: 50, rotate: -16 }}
-              animate={{ opacity: 1, y: 0, rotate: -6 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3, ease: [0.25, 1, 0.5, 1] }}
             >
               <img
-                src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&h=300&fit=crop"
+                src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=200&h=200&fit=crop"
                 alt="Beautiful landscape"
               />
             </motion.div>
             <motion.div
               className="hero-image-card card-2"
-              initial={{ opacity: 0, y: 50, rotate: 13 }}
-              animate={{ opacity: 1, y: 0, rotate: 3 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 1, 0.5, 1] }}
             >
               <img
-                src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=400&h=300&fit=crop"
+                src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=200&h=200&fit=crop"
                 alt="Nature scene"
               />
             </motion.div>
             <motion.div
               className="hero-image-card card-3"
-              initial={{ opacity: 0, y: 50, rotate: 14 }}
-              animate={{ opacity: 1, y: 0, rotate: 4 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.5, ease: [0.25, 1, 0.5, 1] }}
             >
               <img
-                src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=400&h=300&fit=crop"
+                src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=200&h=200&fit=crop"
                 alt="Forest path"
               />
             </motion.div>
             <motion.div
               className="hero-image-card card-4"
-              initial={{ opacity: 0, y: 50, rotate: 8 }}
-              animate={{ opacity: 1, y: 0, rotate: -2 }}
+              initial={{ opacity: 0, y: 50 }}
+              animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.6, ease: [0.25, 1, 0.5, 1] }}
             >
               <img
-                src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=400&h=300&fit=crop"
+                src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?w=200&h=200&fit=crop"
                 alt="Ocean view"
               />
             </motion.div>
@@ -278,13 +285,13 @@ const HomePage = () => {
         <div className="gallery-grid">
           <GalleryItem
             title="Family Memories"
-            image="https://images.unsplash.com/photo-1511895426328-dc8714191300?w=400&h=300&fit=crop"
+            image="../images/c1.jpg"
             link="/Albums"
             delay={0}
           />
           <GalleryItem
             title="Wedding Dreams"
-            image="https://images.unsplash.com/photo-1519741497674-611481863552?w=400&h=300&fit=crop"
+            image="https://www.trask.co.il/wp-content/uploads/2023/07/weddings-1350x900.jpg"
             link="/Albums"
             delay={0.15}
           />
@@ -329,11 +336,7 @@ const HomePage = () => {
             incredible, and the results are always stunning!
           </p>
           <div className="testimonial-author-info">
-            <img
-              src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=100&h=100&fit=crop&crop=face"
-              alt="Sarah Johnson"
-              className="testimonial-author-avatar"
-            />
+            <SProfileIcon />
             <div>
               <h4 className="testimonial-author-name">Sarah Johnson</h4>
               <p className="testimonial-author-title">Professional Photographer</p>
@@ -368,10 +371,8 @@ const HomePage = () => {
           </Link>
         </motion.div>
       </section>
-
-
-  
     </div>
   )
 }
+
 export default HomePage
