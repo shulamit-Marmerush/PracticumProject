@@ -106,10 +106,10 @@ export default function CollageCreator() {
     setLoading(true)
     const newImages: HTMLImageElement[] = []
 
-    (Array.from(files) as File[]).forEach((file: File) => {
+    Array.from(files).forEach((file: File) => {
       const reader = new FileReader()
       reader.onload = () => {
-        const img = new Image()
+        const img = new window.Image() as HTMLImageElement
         img.onload = () => {
           newImages.push(img)
           if (newImages.length === files.length) {

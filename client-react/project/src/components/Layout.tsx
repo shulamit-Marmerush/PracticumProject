@@ -36,7 +36,6 @@ import {
   Layers,
   Sparkles,
   MessageCircle,
-  User,
 } from "lucide-react"
 import "../styles/Layout.css" // Import your custom styles
 
