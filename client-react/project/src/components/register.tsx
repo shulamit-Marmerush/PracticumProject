@@ -47,7 +47,6 @@ const Register = () => {
   const onSubmit: SubmitHandler<RegisterForm> = async (data) => {
     try {
       console.log("submitted")
-
       const response = await registerUser(data)
       console.log(response)
       localStorage.setItem("UserId", response.UserId.toString())

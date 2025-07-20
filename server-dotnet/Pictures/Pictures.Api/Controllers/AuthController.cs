@@ -221,6 +221,23 @@ namespace AuthServer.Controllers
             var token = CreateJWT(newUser, new[] { "temp_user" });
             return Ok(new { Token = token });
         }
+        //[HttpPost("verify-email")]
+        //public async Task<IActionResult> VerifyEmail([FromBody] EmailVerificationModel model)
+        //{
+        //    var user = await _dataContext.Users.FirstOrDefaultAsync(u => u.Email == model.Email);
+        //    if (user == null) return NotFound("User not found.");
+
+        //    if (user.EmailVerificationCode == model.Code)
+        //    {
+        //        user.IsEmailConfirmed = true;
+        //        user.EmailVerificationCode = null; // לנקות את הקוד לאחר האימות
+        //        await _dataContext.SaveChangesAsync();
+        //        return Ok("Email verified successfully.");
+        //    }
+
+        //    return BadRequest("Invalid verification code.");
+        //}
+
 
         private string CreateJWT(User user, string[] roles)
         {
@@ -244,6 +261,7 @@ namespace AuthServer.Controllers
             return new JwtSecurityTokenHandler().WriteToken(tokenOptions);
         }
     }
+
 
     public class LoginModel
     {
