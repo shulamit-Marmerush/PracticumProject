@@ -4,7 +4,7 @@ import * as React from "react"
 
 import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import "../styles/chat.css" // Ensure you have the correct path to your CSS file
+import "../styles/Chat.css" // Ensure you have the correct path to your CSS file
 import { Send, Bot, User, ImageIcon, Camera, Sparkles, Mic, Paperclip, MoreVertical, Trash2, Copy } from "lucide-react"
 
 interface Message {

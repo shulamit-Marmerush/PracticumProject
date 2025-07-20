@@ -15,10 +15,11 @@ namespace Pictures.Core.Models
         public string Phone { get; set; }
         public string Password { get; set; }
         public List<Roles> Roles { get; set; } // תפקידים של המשתמש
-        public List<Album> Albums { get; set; } 
-        
-        //public bool IsEmailConfirmed { get; set; } = false; // האם האימייל אומת
-        //public string EmailVerificationCode { get; set; }
+        public List<Album> Albums { get; set; }
+        public List<EmailVerificationModel> EmailVerifications { get; set; } // אימותי אימייל הקשורים למשתמש
+
+        public bool IsEmailConfirmed { get; set; } = false; // האם האימייל אומת
+       
 
         public User() { }
 

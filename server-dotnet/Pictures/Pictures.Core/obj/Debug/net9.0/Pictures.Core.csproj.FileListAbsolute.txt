@@ -1,4 +1,5 @@
 C:\Users\User\Saved Games\Desktop\פרויקט פרקטיקום\server-dotnet\Pictures\Pictures.Core\bin\Debug\net9.0\Pictures.Core.deps.json
+C:\Users\User\Saved Games\Desktop\פרויקט פרקטיקום\server-dotnet\Pictures\Pictures.Core\bin\Debug\net9.0\Pictures.Core.runtimeconfig.json
 C:\Users\User\Saved Games\Desktop\פרויקט פרקטיקום\server-dotnet\Pictures\Pictures.Core\bin\Debug\net9.0\Pictures.Core.dll
 C:\Users\User\Saved Games\Desktop\פרויקט פרקטיקום\server-dotnet\Pictures\Pictures.Core\bin\Debug\net9.0\Pictures.Core.pdb
 C:\Users\User\Saved Games\Desktop\פרויקט פרקטיקום\server-dotnet\Pictures\Pictures.Core\obj\Debug\net9.0\Pictures.Core.csproj.AssemblyReference.cache
@@ -10,4 +11,5 @@ C:\Users\User\Saved Games\Desktop\פרויקט פרקטיקום\server-dotnet\Pi
 C:\Users\User\Saved Games\Desktop\פרויקט פרקטיקום\server-dotnet\Pictures\Pictures.Core\obj\Debug\net9.0\Pictures.Core.dll
 C:\Users\User\Saved Games\Desktop\פרויקט פרקטיקום\server-dotnet\Pictures\Pictures.Core\obj\Debug\net9.0\refint\Pictures.Core.dll
 C:\Users\User\Saved Games\Desktop\פרויקט פרקטיקום\server-dotnet\Pictures\Pictures.Core\obj\Debug\net9.0\Pictures.Core.pdb
+C:\Users\User\Saved Games\Desktop\פרויקט פרקטיקום\server-dotnet\Pictures\Pictures.Core\obj\Debug\net9.0\Pictures.Core.genruntimeconfig.cache
 C:\Users\User\Saved Games\Desktop\פרויקט פרקטיקום\server-dotnet\Pictures\Pictures.Core\obj\Debug\net9.0\ref\Pictures.Core.dll
