@@ -181,7 +181,7 @@ const HomePage = () => {
               transition={{ duration: 0.8, delay: 0.4, ease: [0.25, 1, 0.5, 1] }}
             >
               <img
-                src="../images/waves.jpg"
+                src="https://images.unsplash.com/photo-1469474968028-56623f02e42e?w=200&h=200&fit=crop"
                 alt="Nature scene"
               />
             </motion.div>
