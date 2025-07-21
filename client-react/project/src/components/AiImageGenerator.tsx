@@ -300,38 +300,40 @@ export default function AiImageGenerator() {
 
             <Divider sx={{ borderColor: "rgba(255, 255, 255, 0.1)", mb: 4 }} />
 
-            <TextField
-              fullWidth
-              variant="outlined"
-              placeholder="Describe the image you want to create..."
-              value={prompt}
-              onChange={(e) => setPrompt(e.target.value)}
-              disabled={loading}
-              multiline
-              rows={3}
-              sx={{
-                mb: 3,
-                maxWidth: "600px",
-                mx: "auto",
-                "& .MuiOutlinedInput-root": {
-                  borderRadius: "12px",
-                  background: "rgba(255, 255, 255, 0.05)",
-                  color: "white",
-                  "& .MuiOutlinedInput-notchedOutline": {
-                    borderColor: "rgba(255, 255, 255, 0.2)",
+            <Box sx={{ display: "flex", justifyContent: "center" }}>
+              <TextField
+                fullWidth
+                variant="outlined"
+                placeholder="Describe the image you want to create..."
+                value={prompt}
+                onChange={(e) => setPrompt(e.target.value)}
+                disabled={loading}
+                multiline
+                rows={3}
+                sx={{
+                  mb: 3,
+                  maxWidth: "600px",
+                  mx: "auto",
+                  "& .MuiOutlinedInput-root": {
+                    borderRadius: "12px",
+                    background: "rgba(96, 158, 128, 0.23)",
+                    color: "white",
+                    "& .MuiOutlinedInput-notchedOutline": {
+                      borderColor: "rgba(255, 255, 255, 0.2)",
+                    },
+                    "&:hover .MuiOutlinedInput-notchedOutline": {
+                      borderColor: "rgba(255, 255, 255, 0.4)",
+                    },
+                    "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                      borderColor: "#8b5cf6",
+                    },
                   },
-                  "&:hover .MuiOutlinedInput-notchedOutline": {
-                    borderColor: "rgba(255, 255, 255, 0.4)",
+                  "& .MuiInputBase-input::placeholder": {
+                    color: "rgba(255, 255, 255, 0.6)",
                   },
-                  "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                    borderColor: "#8b5cf6",
-                  },
-                },
-                "& .MuiInputBase-input::placeholder": {
-                  color: "rgba(255, 255, 255, 0.6)",
-                },
-              }}
-            />
+                }}
+              />
+            </Box>
 
             <Box sx={{ display: "flex", justifyContent: "center" }}>
               <GenerateButton
