@@ -190,6 +190,32 @@ namespace Pictures.Data.Migrations
                     b.ToTable("CollagePhotos");
                 });
 
+            modelBuilder.Entity("Pictures.Core.Models.EmailVerificationModel", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Code")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("EmailVerifications");
+                });
+
             modelBuilder.Entity("Pictures.Core.Models.ImageProcessingResult", b =>
                 {
                     b.Property<int>("Id")
@@ -288,6 +314,9 @@ namespace Pictures.Data.Migrations
                     b.Property<string>("Email")
                         .IsRequired()
                         .HasColumnType("longtext");
+
+                    b.Property<bool>("IsEmailConfirmed")
+                        .HasColumnType("tinyint(1)");
 
                     b.Property<string>("Password")
                         .IsRequired()
@@ -433,6 +462,17 @@ namespace Pictures.Data.Migrations
                     b.Navigation("Photo");
                 });
 
+            modelBuilder.Entity("Pictures.Core.Models.EmailVerificationModel", b =>
+                {
+                    b.HasOne("Pictures.Core.Models.User", "User")
+                        .WithMany("EmailVerifications")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
+                });
+
             modelBuilder.Entity("Pictures.Core.Models.ImageProcessingResult", b =>
                 {
                     b.HasOne("Pictures.Core.Models.Photo", "Photo")
@@ -496,6 +536,8 @@ namespace Pictures.Data.Migrations
             modelBuilder.Entity("Pictures.Core.Models.User", b =>
                 {
                     b.Navigation("Albums");
+
+                    b.Navigation("EmailVerifications");
                 });
 #pragma warning restore 612, 618
         }

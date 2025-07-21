@@ -1,180 +1,168 @@
-.collage-page {
+.professional-collage-page {
   min-height: 100vh;
-  background: linear-gradient(135deg, #1a0b2e 0%, #2c0f42 50%, #1a0b2e 100%);
+  background: linear-gradient(135deg, #0f0f23 0%, #1a0b2e 25%, #2c0f42 50%, #1a0b2e 75%, #0f0f23 100%);
   position: relative;
 }
 
-.collage-page::before {
+.professional-collage-page::before {
   content: "";
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background: radial-gradient(circle at 20% 80%, rgba(147, 51, 234, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 50%);
+  background: radial-gradient(circle at 20% 80%, rgba(147, 51, 234, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 40% 40%, rgba(59, 130, 246, 0.1) 0%, transparent 50%);
   pointer-events: none;
 }
 
-.collage-header-card {
-  background: rgba(255, 255, 255, 0.08) !important;
-  backdrop-filter: blur(25px) !important;
+.professional-header-card {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(30px) !important;
   border-radius: 24px !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
   padding: 2rem !important;
-  margin-bottom: 2rem !important;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25) !important;
+  margin-bottom: 1.5rem !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
 }
 
-.collage-title {
+.professional-title {
   font-weight: 700 !important;
-  background: linear-gradient(135deg, #f9a8d4, #c084fc, #a5b4fc);
+  background: linear-gradient(135deg, #f9a8d4, #c084fc, #a5b4fc, #3b82f6);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
+  font-size: 2.5rem !important;
 }
 
-.control-card {
+.professional-card {
   background: rgba(255, 255, 255, 0.08) !important;
   backdrop-filter: blur(25px) !important;
   border-radius: 20px !important;
   border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2) !important;
+  transition: all 0.3s ease !important;
 }
 
-.control-section-title {
+.professional-card:hover {
+  background: rgba(255, 255, 255, 0.12) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25) !important;
+}
+
+.section-title {
   color: white !important;
   font-weight: 600 !important;
-  margin-bottom: 1rem !important;
   display: flex;
   align-items: center;
 }
 
-.upload-button {
+.upload-btn {
   background: linear-gradient(135deg, #8b5cf6, #ec4899) !important;
   border-radius: 16px !important;
-  padding: 1rem 1.5rem !important;
+  padding: 1rem 2rem !important;
   text-transform: none !important;
   font-weight: 600 !important;
+  font-size: 1.1rem !important;
   box-shadow: 0 15px 30px rgba(139, 92, 246, 0.4) !important;
   transition: all 0.3s ease !important;
 }
 
-.upload-button:hover {
+.upload-btn:hover {
   background: linear-gradient(135deg, #7c3aed, #db2777) !important;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: 0 20px 40px rgba(139, 92, 246, 0.5) !important;
 }
 
-.text-button {
+.text-btn {
   background: linear-gradient(135deg, #06b6d4, #3b82f6) !important;
   border-radius: 16px !important;
-  padding: 1rem 1.5rem !important;
+  padding: 1rem 2rem !important;
   text-transform: none !important;
   font-weight: 600 !important;
   box-shadow: 0 15px 30px rgba(6, 182, 212, 0.4) !important;
   transition: all 0.3s ease !important;
 }
 
-.text-button:hover {
+.text-btn:hover {
   background: linear-gradient(135deg, #0891b2, #2563eb) !important;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: 0 20px 40px rgba(6, 182, 212, 0.5) !important;
 }
 
-.thumbnails-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  margin-bottom: 1rem;
+.media-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 8px;
   max-height: 200px;
   overflow-y: auto;
-  padding: 0.5rem;
+  padding: 8px;
   border-radius: 12px;
   background: rgba(0, 0, 0, 0.2);
 }
 
-.thumbnails-container::-webkit-scrollbar {
+.media-grid::-webkit-scrollbar {
   width: 6px;
 }
 
-.thumbnails-container::-webkit-scrollbar-track {
+.media-grid::-webkit-scrollbar-track {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 10px;
 }
 
-.thumbnails-container::-webkit-scrollbar-thumb {
+.media-grid::-webkit-scrollbar-thumb {
   background: linear-gradient(135deg, #8b5cf6, #ec4899);
   border-radius: 10px;
 }
 
-.thumbnail {
-  width: 70px;
-  height: 70px;
-  border-radius: 12px;
-  object-fit: cover;
-  border: 2px solid transparent;
-  transition: all 0.3s ease;
+.media-item {
+  background: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+  overflow: hidden;
+  transition: all 0.3s ease !important;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
-.thumbnail:hover {
+.media-item:hover {
   transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3);
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.3) !important;
 }
 
-.thumbnail.selected {
-  border-color: #8b5cf6;
-  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3);
-  transform: scale(1.05);
+.media-thumbnail {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  display: block;
 }
 
-.dimension-input .MuiOutlinedInput-root {
+.template-card {
   background: rgba(255, 255, 255, 0.08) !important;
   border-radius: 12px !important;
-  color: white !important;
+  cursor: pointer;
+  transition: all 0.3s ease !important;
+  border: 2px solid transparent !important;
 }
 
-.dimension-input .MuiInputLabel-root {
-  color: rgba(255, 255, 255, 0.7) !important;
+.template-card:hover {
+  background: rgba(255, 255, 255, 0.15) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(139, 92, 246, 0.2) !important;
 }
 
-.control-select .MuiOutlinedInput-root {
-  background: rgba(255, 255, 255, 0.08) !important;
-  border-radius: 12px !important;
-  color: white !important;
+.template-card.selected {
+  border-color: #8b5cf6 !important;
+  background: rgba(139, 92, 246, 0.2) !important;
+  box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.3) !important;
 }
 
-.control-select .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
-  border-color: rgba(255, 255, 255, 0.2) !important;
-}
-
-.control-select .MuiInputLabel-root {
-  color: rgba(255, 255, 255, 0.7) !important;
-}
-
-.color-input .MuiOutlinedInput-root {
-  background: rgba(255, 255, 255, 0.08) !important;
-  border-radius: 12px !important;
-  height: 44px !important;
-}
-
-.control-slider .MuiSlider-thumb {
-  background: #8b5cf6 !important;
-  border: 2px solid rgba(255, 255, 255, 0.2) !important;
-  width: 20px !important;
-  height: 20px !important;
-}
-
-.control-slider .MuiSlider-track {
-  background: linear-gradient(135deg, #8b5cf6, #ec4899) !important;
-  height: 6px !important;
-}
-
-.control-slider .MuiSlider-rail {
-  background: rgba(255, 255, 255, 0.2) !important;
-  height: 6px !important;
+.template-preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 8px;
 }
 
 .canvas-card {
@@ -182,103 +170,94 @@
   backdrop-filter: blur(25px) !important;
   border-radius: 20px !important;
   border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
-}
-
-.empty-canvas-card {
-  background: rgba(255, 255, 255, 0.08) !important;
-  backdrop-filter: blur(25px) !important;
-  border-radius: 20px !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2) !important;
 }
 
 .canvas-container {
   display: flex;
   justify-content: center;
-  margin-bottom: 2rem;
-  padding: 1.5rem;
+  align-items: center;
+  padding: 2rem;
   border-radius: 16px;
   background: rgba(0, 0, 0, 0.3);
-  box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.4);
+  box-shadow: inset 0 0 30px rgba(0, 0, 0, 0.5);
   overflow: auto;
   max-height: 600px;
+  margin-bottom: 1rem;
 }
 
-.canvas {
+.professional-canvas {
   max-width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  max-height: 100%;
+  border-radius: 16px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
 }
 
-.zoom-btn {
-  background: rgba(255, 255, 255, 0.1) !important;
-  color: rgba(255, 255, 255, 0.8) !important;
-  border-radius: 8px !important;
-  transition: all 0.3s ease !important;
+.professional-canvas:hover {
+  box-shadow: 0 20px 50px rgba(139, 92, 246, 0.3);
 }
 
-.zoom-btn:hover {
-  background: rgba(255, 255, 255, 0.2) !important;
-  color: white !important;
-  transform: scale(1.05);
-}
-
-.actions-container {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.action-button {
+.update-btn {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899) !important;
   border-radius: 16px !important;
   padding: 1rem 2rem !important;
   text-transform: none !important;
   font-weight: 600 !important;
-  transition: all 0.3s ease !important;
-  min-width: 160px !important;
-}
-
-.generate-button {
-  background: linear-gradient(135deg, #8b5cf6, #ec4899) !important;
   box-shadow: 0 15px 30px rgba(139, 92, 246, 0.4) !important;
+  transition: all 0.3s ease !important;
 }
 
-.generate-button:hover {
+.update-btn:hover {
   background: linear-gradient(135deg, #7c3aed, #db2777) !important;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: 0 20px 40px rgba(139, 92, 246, 0.5) !important;
 }
 
-.download-button {
+.download-btn {
   background: linear-gradient(135deg, #10b981, #059669) !important;
+  border-radius: 16px !important;
+  padding: 1rem 2rem !important;
+  text-transform: none !important;
+  font-weight: 600 !important;
   box-shadow: 0 15px 30px rgba(16, 185, 129, 0.4) !important;
+  transition: all 0.3s ease !important;
 }
 
-.download-button:hover {
+.download-btn:hover {
   background: linear-gradient(135deg, #059669, #047857) !important;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
   box-shadow: 0 20px 40px rgba(16, 185, 129, 0.5) !important;
 }
 
-/* Dialog Styles */
-.MuiDialog-paper {
-  background: rgba(26, 11, 46, 0.95) !important;
-  backdrop-filter: blur(25px) !important;
-  border-radius: 20px !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+/* MUI Component Overrides */
+.MuiTabs-root {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-radius: 12px !important;
+  margin-bottom: 1rem !important;
 }
 
-.MuiDialogTitle-root {
-  background: rgba(139, 92, 246, 0.1) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+.MuiTab-root {
+  color: rgba(255, 255, 255, 0.7) !important;
+  text-transform: none !important;
+  font-weight: 500 !important;
+}
+
+.MuiTab-root.Mui-selected {
+  color: white !important;
+}
+
+.MuiTabs-indicator {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899) !important;
+  height: 3px !important;
+  border-radius: 3px !important;
 }
 
 .MuiTextField-root .MuiOutlinedInput-root {
   background: rgba(255, 255, 255, 0.08) !important;
   border-radius: 12px !important;
+  color: white !important;
 }
 
 .MuiTextField-root .MuiInputLabel-root {
@@ -289,6 +268,14 @@
   border-color: rgba(255, 255, 255, 0.2) !important;
 }
 
+.MuiTextField-root .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+.MuiTextField-root .MuiOutlinedInput-root.Mui-focused .MuiOutlinedInput-notchedOutline {
+  border-color: #8b5cf6 !important;
+}
+
 .MuiFormControl-root .MuiInputLabel-root {
   color: rgba(255, 255, 255, 0.7) !important;
 }
@@ -296,33 +283,97 @@
 .MuiSelect-root {
   background: rgba(255, 255, 255, 0.08) !important;
   border-radius: 12px !important;
+  color: white !important;
+}
+
+.MuiSlider-root {
+  color: #8b5cf6 !important;
+}
+
+.MuiSlider-thumb {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899) !important;
+  border: 2px solid rgba(255, 255, 255, 0.2) !important;
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.MuiSlider-track {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899) !important;
+  height: 8px !important;
+}
+
+.MuiSlider-rail {
+  background: rgba(255, 255, 255, 0.2) !important;
+  height: 8px !important;
+}
+
+.MuiChip-root {
+  background: rgba(139, 92, 246, 0.2) !important;
+  color: white !important;
+  border: 1px solid rgba(139, 92, 246, 0.3) !important;
+}
+
+.MuiChip-root.MuiChip-filled {
+  background: rgba(139, 92, 246, 0.4) !important;
+}
+
+.MuiDialog-paper {
+  background: rgba(26, 11, 46, 0.95) !important;
+  backdrop-filter: blur(30px) !important;
+  border-radius: 20px !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+}
+
+.MuiDialogTitle-root {
+  background: rgba(139, 92, 246, 0.1) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+}
+
+.MuiDialogContent-root {
+  color: white !important;
+}
+
+.MuiButtonGroup-root .MuiButton-root {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.MuiButtonGroup-root .MuiButton-root:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+}
+
+.MuiSpeedDial-fab {
+  background: linear-gradient(135deg, #8b5cf6, #ec4899) !important;
+}
+
+.MuiSpeedDialAction-fab {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px) !important;
+  color: white !important;
 }
 
 @media (max-width: 768px) {
-  .collage-header-card {
+  .professional-header-card {
     padding: 1.5rem !important;
   }
 
-  .actions-container {
-    flex-direction: column;
-  }
-
-  .action-button {
-    width: 100%;
-    min-width: auto !important;
-  }
-
-  .thumbnails-container {
-    max-height: 150px;
-  }
-
-  .thumbnail {
-    width: 60px;
-    height: 60px;
+  .professional-title {
+    font-size: 2rem !important;
   }
 
   .canvas-container {
     padding: 1rem;
     max-height: 400px;
+  }
+
+  .media-grid {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    max-height: 150px;
+  }
+
+  .media-thumbnail {
+    height: 60px;
   }
 }

@@ -299,7 +299,7 @@ export default function ProfessionalCollageCreator() {
 
   const arrangeInMosaic = (
     newImages: HTMLImageElement[],
-    __totalImages: number,
+    _totalImages: number,
     template: CollageTemplate,
   ): ImageElement[] => {
     const sizes = [120, 150, 180, 200, 160]
@@ -503,7 +503,7 @@ export default function ProfessionalCollageCreator() {
       saveToHistory()
     }
   }
-
+';'
   const drawCollage = () => {
     const canvas = canvasRef.current
     if (!canvas) return
