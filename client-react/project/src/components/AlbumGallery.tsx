@@ -79,7 +79,7 @@ const AlbumModal = ({
     setLoading(true)
     try {
       const token = localStorage.getItem("token")
-      const response = await axios.get(`https://localhost:7259/api/Albums/${albumId}/photos`, {
+      const response = await axios.get(`https://practicumproject-server.onrender.com/Albums/${albumId}/photos`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },

@@ -18,7 +18,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.ApplicationInsights.AspNetCore.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Configuration.AddJsonFile("secret.json", optional: true, reloadOnChange: true);
+//builder.Configuration.AddJsonFile("secret.json", optional: true, reloadOnChange: true);
+builder.Configuration.AddJsonFile("/etc/secrets/secret.json", optional: true, reloadOnChange: true);
 
 
 

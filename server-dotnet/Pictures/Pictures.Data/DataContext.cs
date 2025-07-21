@@ -37,6 +37,9 @@ namespace Pictures.Data
         public DbSet<ImageProcessingResult> ImageProcessingResults { get; set; }
         public DbSet<Collage> Collages { get; set; }
         public DbSet<CollagePhoto> CollagePhotos { get; set; }
+        public DbSet<EmailVerificationModel> EmailVerifications { get; set; }
+
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

@@ -1,7 +1,7 @@
 "use client"
 
-import * as React from "react";
-import { type ReactNode, useState, useEffect } from "react";
+import type * as React from "react"
+import { type ReactNode, useState, useEffect } from "react"
 import { Link, useLocation, Link as RouterLink } from "react-router-dom"
 import {
   AppBar,
@@ -37,9 +37,9 @@ import {
   Sparkles,
   MessageCircle,
 } from "lucide-react"
-import '../styles/Layout.css'; // Import the CSS file
+import "../styles/Layout.css" // Import your custom styles
 
-const StyledAppBar = styled(AppBar)(({  }) => ({
+const StyledAppBar = styled(AppBar)(({}) => ({
   background: "rgba(26, 11, 46, 0.8)",
   backdropFilter: "blur(20px)",
   boxShadow: "none",
@@ -49,48 +49,47 @@ const StyledAppBar = styled(AppBar)(({  }) => ({
     background: "rgba(26, 11, 46, 0.95)",
     boxShadow: "0 4px 20px rgba(0, 0, 0, 0.3)",
   },
-}));
+}))
 
-const StyledDrawer = styled(Drawer)(({ }) => ({
+const StyledDrawer = styled(Drawer)(({}) => ({
   "& .MuiDrawer-paper": {
-    width: 280,
+    width: 260,
     background: "rgba(26, 11, 46, 0.95)",
     backdropFilter: "blur(20px)",
     color: "white",
     borderLeft: "1px solid rgba(255, 255, 255, 0.1)",
+    overflowX: "hidden",
   },
-}));
+}))
 
 interface NavButtonProps {
-  to: string;
-  children: React.ReactNode;
-  className?: string;
+  to: string
+  children: React.ReactNode
+  className?: string
 }
 
-const NavButton = styled(
-  ({ to, children, className }: NavButtonProps) => (
-    <RouterLink to={to} className={className}>
-      <Button
-        sx={{
-          color: "rgba(255, 255, 255, 0.9)",
-          fontWeight: 500,
-          position: "relative",
-          padding: "0.5rem 1rem",
-          borderRadius: "20px",
-          transition: "all 0.3s ease",
-          textTransform: "none",
-          fontSize: "0.95rem",
-          display: "flex",
-          alignItems: "center",
-          gap: "0.5rem",
-          textDecoration: "none",
-        }}
-      >
-        {children}
-      </Button>
-    </RouterLink>
-  )
-)(({  }) => ({
+const NavButton = styled(({ to, children, className }: NavButtonProps) => (
+  <RouterLink to={to} className={className}>
+    <Button
+      sx={{
+        color: "rgba(255, 255, 255, 0.9)",
+        fontWeight: 500,
+        position: "relative",
+        padding: "0.5rem 1rem",
+        borderRadius: "20px",
+        transition: "all 0.3s ease",
+        textTransform: "none",
+        fontSize: "0.95rem",
+        display: "flex",
+        alignItems: "center",
+        gap: "0.5rem",
+        textDecoration: "none",
+      }}
+    >
+      {children}
+    </Button>
+  </RouterLink>
+))(({}) => ({
   "& .MuiButton-root": {
     color: "rgba(255, 255, 255, 0.9)",
     fontWeight: 500,
@@ -113,8 +112,7 @@ const NavButton = styled(
       color: "white",
     },
   },
-}));
-
+}))
 
 interface LayoutProps {
   children: ReactNode
@@ -165,7 +163,7 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
   ]
 
   const drawer = (
-    <Box sx={{ height: "100%" }}>
+    <Box sx={{ height: "100%", overflowX: "hidden" }}>
       <Box
         sx={{
           display: "flex",
@@ -194,9 +192,9 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
       </Box>
       <Divider sx={{ borderColor: "rgba(255, 255, 255, 0.1)" }} />
 
-      <List>
+      <List sx={{ overflowX: "hidden" }}>
         {allNavItems.map((item) => {
-          const IconComponent = item.icon;
+          const IconComponent = item.icon
           return (
             <ListItem
               key={item.name}
@@ -207,12 +205,15 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
               sx={{
                 textDecoration: "none",
                 color: "rgba(255, 255, 255, 0.9)",
-                padding: "1rem 1.5rem",
-                margin: "0.25rem 1rem",
+                padding: "0.75rem 1rem",
+                margin: "0.25rem 0.5rem",
                 borderRadius: "12px",
                 transition: "all 0.3s ease",
                 borderLeft: "3px solid transparent",
                 cursor: "pointer",
+                minWidth: 0,
+                whiteSpace: "nowrap",
+                overflow: "hidden",
                 "&:hover": {
                   background: "rgba(139, 92, 246, 0.2)",
                   borderLeftColor: "#8b5cf6",
@@ -226,10 +227,20 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
                 },
               }}
             >
-              <IconComponent size={20} style={{ marginRight: "12px" }} />
-              <ListItemText primary={item.name} />
+              <IconComponent size={18} style={{ marginRight: "8px", flexShrink: 0 }} />
+              <ListItemText
+                primary={item.name}
+                sx={{
+                  "& .MuiListItemText-primary": {
+                    fontSize: "0.9rem",
+                    whiteSpace: "nowrap",
+                    overflow: "hidden",
+                    textOverflow: "ellipsis",
+                  },
+                }}
+              />
             </ListItem>
-          );
+          )
         })}
       </List>
     </Box>
@@ -437,10 +448,18 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
                 Quick Links
               </Typography>
               <Box sx={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
-                <Link to="/" className="footer-link">Home</Link>
-                <Link to="/Albums" className="footer-link">Albums</Link>
-                <Link to="/UploadFile" className="footer-link">Upload Photos</Link>
-                <Link to="/AddAlbum" className="footer-link">Create Album</Link>
+                <Link to="/" className="footer-link">
+                  Home
+                </Link>
+                <Link to="/Albums" className="footer-link">
+                  Albums
+                </Link>
+                <Link to="/UploadFile" className="footer-link">
+                  Upload Photos
+                </Link>
+                <Link to="/AddAlbum" className="footer-link">
+                  Create Album
+                </Link>
               </Box>
             </Box>
 
@@ -467,10 +486,18 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
                 Connect With Us
               </Typography>
               <Box sx={{ display: "flex", gap: "0.75rem" }}>
-                <IconButton className="social-icon"><Facebook /></IconButton>
-                <IconButton className="social-icon"><Instagram /></IconButton>
-                <IconButton className="social-icon"><Twitter /></IconButton>
-                <IconButton className="social-icon"><Linkedin /></IconButton>
+                <IconButton className="social-icon">
+                  <Facebook />
+                </IconButton>
+                <IconButton className="social-icon">
+                  <Instagram />
+                </IconButton>
+                <IconButton className="social-icon">
+                  <Twitter />
+                </IconButton>
+                <IconButton className="social-icon">
+                  <Linkedin />
+                </IconButton>
               </Box>
             </Box>
           </Box>
@@ -492,4 +519,4 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
   )
 }
 
-export default Layout;
+export default Layout

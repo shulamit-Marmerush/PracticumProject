@@ -1,8 +1,10 @@
 "use client"
 
+import * as React from "react"
+
 import { useState, useRef, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
-import "../styles/Chat.css"
+import "../styles/Chat.css" // Ensure you have the correct path to your CSS file
 import { Send, Bot, User, ImageIcon, Camera, Sparkles, Mic, Paperclip, MoreVertical, Trash2, Copy } from "lucide-react"
 
 interface Message {
@@ -55,38 +57,38 @@ const ChatPage = () => {
     setIsTyping(true)
 
     try {
-      const response = await fetch('https://localhost:7259/api/Chat/send', {
-        method: 'POST',
+      const response = await fetch("https://practicumproject-server.onrender.com/api/Chat/send", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Content-Type": "application/json",
         },
         body: JSON.stringify({
           Messages: [
             {
               Role: "user",
-              Content: inputValue
-            }
-          ]
+              Content: inputValue,
+            },
+          ],
         }),
-      });
+      })
 
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error("Network response was not ok")
       }
 
-      const data = await response.json();
+      const data = await response.json()
       const botResponse: Message = {
         id: (Date.now() + 1).toString(),
         type: "bot",
         content: data.reply,
         timestamp: new Date(),
-      };
+      }
 
-      setMessages((prev) => [...prev, botResponse]);
+      setMessages((prev) => [...prev, botResponse])
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error)
     } finally {
-      setIsTyping(false);
+      setIsTyping(false)
     }
   }
 
@@ -246,7 +248,7 @@ const ChatPage = () => {
               placeholder="Ask me anything - from photo editing to cooking, travel, science, and more..."
               value={inputValue}
               onChange={(e) => setInputValue(e.target.value)}
-              onKeyPress={handleKeyPress}
+              onKeyDown={handleKeyPress}
               rows={1}
             />
             <button className="send-btn" onClick={handleSendMessage} disabled={!inputValue.trim() && !selectedImage}>

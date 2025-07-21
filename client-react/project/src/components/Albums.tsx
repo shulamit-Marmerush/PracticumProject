@@ -1,17 +1,13 @@
 "use client"
 
+import * as React from "react"
 import { useEffect, useState } from "react"
 import axios from "axios"
 import {
-  Grid,
   CircularProgress,
   Typography,
   Button,
   TextField,
-  Checkbox,
-  Card,
-  CardContent,
-  CardActions,
   Box,
   IconButton,
   Dialog,
@@ -20,90 +16,55 @@ import {
   DialogContentText,
   DialogTitle,
   Alert,
-  Paper,
   Fade,
-  Zoom,
   Container,
   InputAdornment,
 } from "@mui/material"
-import { styled } from "@mui/material/styles"
 import EditIcon from "@mui/icons-material/Edit"
 import DeleteIcon from "@mui/icons-material/Delete"
-import FolderIcon from "@mui/icons-material/Folder"
 import CheckIcon from "@mui/icons-material/Check"
 import CloseIcon from "@mui/icons-material/Close"
 import AddIcon from "@mui/icons-material/Add"
 import SearchIcon from "@mui/icons-material/Search"
-import PhotoLibraryIcon from "@mui/icons-material/PhotoLibrary"
 import { useNavigate } from "react-router-dom"
+import "../styles/FolderList.css"
 
-const GradientBackground = styled(Box)(({  }) => ({
-  minHeight: "100vh",
-  background: "linear-gradient(135deg, #1A0B2E 0%, #2C0F42 50%, #1A0B2E 100%)",
-  position: "relative",
-  "&::before": {
-    content: '""',
-    position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    background:
-      "radial-gradient(circle at 20% 80%, rgba(147, 51, 234, 0.1) 0%, transparent 50%), radial-gradient(circle at 80% 20%, rgba(236, 72, 153, 0.1) 0%, transparent 50%)",
-    pointerEvents: "none",
-  },
-}))
+// קומפוננטה מעודכנת לאיקון תיקיה עם הצבעים שלך
+interface GradientFolderIconProps {
+  className?: string
+  size?: number
+}
 
-const AlbumCard = styled(Card)(({ }) => ({
-  borderRadius: "20px",
-  background: "rgba(255, 255, 255, 0.05)",
-  backdropFilter: "blur(20px)",
-  border: "1px solid rgba(255, 255, 255, 0.1)",
-  transition: "all 0.3s ease",
-  cursor: "pointer",
-  overflow: "hidden",
-  position: "relative",
-  boxShadow: "0 10px 25px rgba(0, 0, 0, 0.1)",
-  "&:hover": {
-    transform: "translateY(-8px) scale(1.02)",
-    boxShadow: "0 20px 40px rgba(0, 0, 0, 0.2)",
-  },
-}))
+const GradientFolderIcon: React.FC<GradientFolderIconProps> = ({ className, size = 120 }: GradientFolderIconProps) => {
+  const uniqueId = `gradient-${Math.random().toString(36).substr(2, 9)}`
 
-const AlbumIcon = styled(Box)(({ }) => ({
-  height: 160,
-  background: "linear-gradient(135deg, #8b5cf6, #ec4899)",
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  position: "relative",
-  overflow: "hidden",
-  "&::before": {
-    content: '""',
-    position: "absolute",
-    top: 0,
-    left: 0,
-    right: 0,
-    bottom: 0,
-    background: "radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.3) 0%, transparent 70%)",
-  },
-  "& svg": {
-    fontSize: 64,
-    color: "white",
-    zIndex: 1,
-    position: "relative",
-  },
-}))
-
-const HeaderCard = styled(Paper)(({  }) => ({
-  background: "rgba(255, 255, 255, 0.05)",
-  backdropFilter: "blur(20px)",
-  borderRadius: "24px",
-  border: "1px solid rgba(255, 255, 255, 0.1)",
-  padding: "32px",
-  marginBottom: "32px",
-  boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-}))
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      className={className ? className : "folder-icon"}
+      style={{ filter: "drop-shadow(0 8px 16px rgba(59, 130, 246, 0.3))" }}
+    >
+      <defs>
+        <linearGradient id={uniqueId} x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" style={{ stopColor: "#3b82f6", stopOpacity: 1 }} />
+          <stop offset="25%" style={{ stopColor: "#8b5cf6", stopOpacity: 1 }} />
+          <stop offset="50%" style={{ stopColor: "#c084fc", stopOpacity: 1 }} />
+          <stop offset="75%" style={{ stopColor: "#f9a8d4", stopOpacity: 1 }} />
+          <stop offset="100%" style={{ stopColor: "#ec4899", stopOpacity: 1 }} />
+        </linearGradient>
+      </defs>
+      <path
+        d="M10 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V8a2 2 0 00-2-2h-8l-2-2z"
+        fill={`url(#${uniqueId})`}
+        stroke="none"
+      />
+    </svg>
+  )
+}
 
 interface IFolder {
   albumId: number
@@ -118,11 +79,7 @@ interface FolderListProps {
   onToggleSelect: (albumId: number) => void
 }
 
-const FolderList: React.FC<FolderListProps> = ({
-  showCheckboxes,
-  selectedAlbums,
-  onToggleSelect,
-}) => {
+const FolderList: React.FC<FolderListProps> = () => {
   const [folders, setFolders] = useState<IFolder[]>([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
@@ -153,7 +110,7 @@ const FolderList: React.FC<FolderListProps> = ({
       }
 
       try {
-        const response = await axios.get("https://localhost:7259/api/album", {
+        const response = await axios.get("https://practicumproject-server.onrender.com/api/album", {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -197,7 +154,7 @@ const FolderList: React.FC<FolderListProps> = ({
     }
 
     try {
-      await axios.delete(`https://localhost:7259/api/album/${folderToDelete}`, {
+      await axios.delete(`https://practicumproject-server.onrender.com/api/album/${folderToDelete}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -238,7 +195,7 @@ const FolderList: React.FC<FolderListProps> = ({
 
     try {
       await axios.put(
-        `https://localhost:7259/api/album/${folderId}`,
+        `https://practicumproject-server.onrender.com/api/album/${folderId}`,
         {
           albumId: folderId,
           title: newTitle,
@@ -271,391 +228,180 @@ const FolderList: React.FC<FolderListProps> = ({
 
   if (loading)
     return (
-      <GradientBackground>
-        <Container maxWidth="lg" sx={{ pt: 4 }}>
+      <div className="albums-page">
+        <Container maxWidth="xl" sx={{ pt: 4 }}>
           <Box sx={{ display: "flex", justifyContent: "center", alignItems: "center", minHeight: "60vh" }}>
             <CircularProgress size={60} sx={{ color: "#8B5CF6" }} />
           </Box>
         </Container>
-      </GradientBackground>
+      </div>
     )
 
   return (
-    <GradientBackground>
-      <Container maxWidth="lg" sx={{ pt: 4, pb: 4, position: "relative", zIndex: 1 }}>
-        <HeaderCard elevation={0}>
-          <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: 3 }}>
-            <Box sx={{ display: "flex", alignItems: "center", gap: 2 }}>
-              <PhotoLibraryIcon sx={{ fontSize: 40, color: "#8B5CF6" }} />
-              <Box>
-                <Typography
-                  variant="h4"
-                  component="h1"
-                  sx={{
-                    fontWeight: 700,
-                    background: "linear-gradient(135deg, #f9a8d4, #c084fc, #a5b4fc)",
-                    WebkitBackgroundClip: "text",
-                    backgroundClip: "text",
-                    color: "transparent",
-                  }}
-                >
-                  Your Albums
-                </Typography>
-                <Typography variant="body1" sx={{ color: "rgba(255, 255, 255, 0.8)" }}>
-                  Organize and manage your photo collections
-                </Typography>
-              </Box>
-            </Box>
+    <div className="albums-page">
+      <Container maxWidth="xl" sx={{ pt: 4, pb: 4 }}>
+        {/* Header */}
+        <div className="albums-header">
+          <div className="albums-header-content">
+            <Typography variant="h3" className="albums-title">
+              My Albums
+            </Typography>
             <Button
               variant="contained"
               startIcon={<AddIcon />}
               onClick={() => navigate("/AddAlbum")}
-              sx={{
-                borderRadius: "12px",
-                px: 3,
-                py: 1.5,
-                background: "linear-gradient(135deg, #8b5cf6, #ec4899)",
-                textTransform: "none",
-                fontWeight: 600,
-                boxShadow: "0 10px 25px rgba(139, 92, 246, 0.3)",
-                transition: "all 0.3s ease",
-                "&:hover": {
-                  background: "linear-gradient(135deg, #7c3aed, #db2777)",
-                  transform: "translateY(-2px)",
-                  boxShadow: "0 15px 35px rgba(139, 92, 246, 0.4)",
-                },
-              }}
+              className="add-album-btn"
             >
-              Create New Album
+              Add New Album
             </Button>
-          </Box>
+          </div>
+        </div>
 
+        {/* Search */}
+        <div className="search-section">
           <TextField
-            fullWidth
             placeholder="Search albums..."
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value)}
+            className="search-field"
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
-                  <SearchIcon sx={{ color: "#8B5CF6" }} />
+                  <SearchIcon className="search-icon" />
                 </InputAdornment>
               ),
             }}
-            sx={{
-              "& .MuiOutlinedInput-root": {
-                borderRadius: "12px",
-                background: "rgba(255, 255, 255, 0.05)",
-                color: "white",
-                "& .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "rgba(255, 255, 255, 0.2)",
-                },
-                "&:hover .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "rgba(255, 255, 255, 0.4)",
-                },
-                "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
-                  borderColor: "#8b5cf6",
-                },
-              },
-              "& .MuiInputBase-input::placeholder": {
-                color: "rgba(255, 255, 255, 0.6)",
-              },
-            }}
           />
-        </HeaderCard>
+        </div>
 
         {error && (
-          <Alert
-            severity="error"
-            sx={{
-              mb: 3,
-              borderRadius: "12px",
-              background: "rgba(239, 68, 68, 0.1)",
-              backdropFilter: "blur(10px)",
-              border: "1px solid rgba(239, 68, 68, 0.2)",
-            }}
-          >
+          <Alert severity="error" className="error-alert">
             {error}
           </Alert>
         )}
 
+        {/* Albums Grid */}
         {folders.length === 0 ? (
           <Fade in={true} timeout={1000}>
-            <Paper
-              sx={{
-                p: 6,
-                textAlign: "center",
-                borderRadius: "24px",
-                background: "rgba(255, 255, 255, 0.05)",
-                backdropFilter: "blur(20px)",
-                border: "1px solid rgba(255, 255, 255, 0.1)",
-                boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.25)",
-              }}
-            >
-              <FolderIcon sx={{ fontSize: 80, color: "#8B5CF6", mb: 2 }} />
-              <Typography variant="h5" sx={{ fontWeight: 700, color: "white", mb: 2 }}>
+            <div className="empty-state">
+              <GradientFolderIcon size={140} className="empty-icon" />
+              <Typography variant="h4" className="empty-title">
                 No albums yet
               </Typography>
-              <Typography variant="body1" sx={{ color: "rgba(255, 255, 255, 0.8)", mb: 4 }}>
+              <Typography variant="h6" className="empty-subtitle">
                 Create your first album to start organizing your photos
               </Typography>
-              <Button
-                variant="contained"
-                onClick={() => navigate("/AddAlbum")}
-                sx={{
-                  borderRadius: "12px",
-                  px: 4,
-                  py: 1.5,
-                  background: "linear-gradient(135deg, #8b5cf6, #ec4899)",
-                  textTransform: "none",
-                  fontWeight: 600,
-                  fontSize: "1rem",
-                  boxShadow: "0 10px 25px rgba(139, 92, 246, 0.3)",
-                  transition: "all 0.3s ease",
-                  "&:hover": {
-                    background: "linear-gradient(135deg, #7c3aed, #db2777)",
-                    transform: "translateY(-2px)",
-                    boxShadow: "0 15px 35px rgba(139, 92, 246, 0.4)",
-                  },
-                }}
-              >
+              <Button variant="contained" onClick={() => navigate("/AddAlbum")} className="create-first-btn">
                 Create Your First Album
               </Button>
-            </Paper>
+            </div>
           </Fade>
         ) : (
-          <Grid container spacing={4}>
+          <div className="albums-grid">
             {filteredFolders.map((folder, index) => (
-              <Grid  key={folder.albumId}>
-                <Zoom in={true} style={{ transitionDelay: `${index * 100}ms` }}>
-                  <AlbumCard onClick={() => openFolder(folder.albumId)}>
-                    {showCheckboxes && (
-                      <Box sx={{ position: "absolute", top: 12, right: 12, zIndex: 2 }}>
-                        <Checkbox
-                          checked={selectedAlbums.includes(folder.albumId)}
-                          onChange={() => onToggleSelect(folder.albumId)}
-                          onClick={(e) => e.stopPropagation()}
-                          sx={{
-                            color: "white",
-                            background: "rgba(139, 92, 246, 0.2)",
-                            borderRadius: "8px",
-                          }}
+              <Fade key={folder.albumId} in={true} timeout={300} style={{ transitionDelay: `${index * 100}ms` }}>
+                <div className="album-item">
+                  {/* Folder Icon */}
+                  <div className="folder-icon-wrapper" onClick={() => openFolder(folder.albumId)}>
+                    <GradientFolderIcon size={120} />
+                  </div>
+
+                  {/* Album Info */}
+                  <div className="album-info">
+                    {editingFolderId === folder.albumId ? (
+                      <div className="edit-form">
+                        <TextField
+                          value={newTitle}
+                          onChange={(e) => setNewTitle(e.target.value)}
+                          variant="outlined"
+                          size="small"
+                          fullWidth
+                          placeholder="Album Title"
+                          className="edit-title-field"
                         />
-                      </Box>
+                        <TextField
+                          value={currentDescription}
+                          onChange={(e) => setCurrentDescription(e.target.value)}
+                          variant="outlined"
+                          size="small"
+                          fullWidth
+                          placeholder="Description"
+                          className="edit-desc-field"
+                        />
+                      </div>
+                    ) : (
+                      <>
+                        <Typography className="album-name" onClick={() => openFolder(folder.albumId)}>
+                          {folder.title}
+                        </Typography>
+                        <Typography className="album-count">{Math.floor(Math.random() * 50) + 1}</Typography>
+                      </>
                     )}
+                  </div>
 
-                    <AlbumIcon>
-                      <FolderIcon />
-                    </AlbumIcon>
-
-                    <CardContent sx={{ p: 3 }}>
-                      {editingFolderId === folder.albumId ? (
-                        <Box onClick={(e) => e.stopPropagation()}>
-                          <TextField
-                            value={newTitle}
-                            onChange={(e) => setNewTitle(e.target.value)}
-                            variant="outlined"
-                            size="small"
-                            fullWidth
-                            label="Album Title"
-                            sx={{
-                              mb: 2,
-                              "& .MuiOutlinedInput-root": {
-                                background: "rgba(255, 255, 255, 0.05)",
-                                borderRadius: "8px",
-                                color: "white",
-                                "& .MuiOutlinedInput-notchedOutline": {
-                                  borderColor: "rgba(255, 255, 255, 0.2)",
-                                },
-                              },
-                              "& .MuiInputLabel-root": {
-                                color: "rgba(255, 255, 255, 0.7)",
-                              },
-                            }}
-                          />
-                          <TextField
-                            value={currentDescription}
-                            onChange={(e) => setCurrentDescription(e.target.value)}
-                            variant="outlined"
-                            size="small"
-                            fullWidth
-                            label="Description"
-                            multiline
-                            rows={2}
-                            sx={{
-                              "& .MuiOutlinedInput-root": {
-                                background: "rgba(255, 255, 255, 0.05)",
-                                borderRadius: "8px",
-                                color: "white",
-                                "& .MuiOutlinedInput-notchedOutline": {
-                                  borderColor: "rgba(255, 255, 255, 0.2)",
-                                },
-                              },
-                              "& .MuiInputLabel-root": {
-                                color: "rgba(255, 255, 255, 0.7)",
-                              },
-                            }}
-                          />
-                        </Box>
-                      ) : (
-                        <Box>
-                          <Typography variant="h6" sx={{ fontWeight: 700, color: "white", mb: 1 }}>
-                            {folder.title}
-                          </Typography>
-                          {folder.description && (
-                            <Typography
-                              variant="body2"
-                              sx={{
-                                color: "rgba(255, 255, 255, 0.7)",
-                                display: "-webkit-box",
-                                WebkitLineClamp: 2,
-                                WebkitBoxOrient: "vertical",
-                                overflow: "hidden",
-                                textOverflow: "ellipsis",
-                              }}
-                            >
-                              {folder.description}
-                            </Typography>
-                          )}
-                        </Box>
-                      )}
-                    </CardContent>
-
-                    <CardActions sx={{ p: 3, pt: 0, justifyContent: "flex-end" }}>
-                      {editingFolderId === folder.albumId ? (
-                        <>
-                          <IconButton
-                            size="small"
-                            onClick={(e) => saveTitle(folder.albumId, e)}
-                            sx={{
-                              margin: "0 0.25rem",
-                              transition: "all 0.3s ease",
-                              borderRadius: "8px",
-                              background: "linear-gradient(135deg, #10b981, #059669)",
-                              color: "white",
-                              "&:hover": {
-                                background: "linear-gradient(135deg, #059669, #047857)",
-                                transform: "translateY(-2px)",
-                              },
-                            }}
-                          >
-                            <CheckIcon fontSize="small" />
-                          </IconButton>
-                          <IconButton
-                            size="small"
-                            onClick={(e) => {
-                              e.stopPropagation()
-                              cancelEditing()
-                            }}
-                            sx={{
-                              margin: "0 0.25rem",
-                              transition: "all 0.3s ease",
-                              borderRadius: "8px",
-                              background: "linear-gradient(135deg, #ef4444, #dc2626)",
-                              color: "white",
-                              "&:hover": {
-                                background: "linear-gradient(135deg, #dc2626, #b91c1c)",
-                                transform: "translateY(-2px)",
-                              },
-                            }}
-                          >
-                            <CloseIcon fontSize="small" />
-                          </IconButton>
-                        </>
-                      ) : (
-                        <>
-                          <IconButton
-                            size="small"
-                            onClick={(e) => startEditing(folder, e)}
-                            sx={{
-                              margin: "0 0.25rem",
-                              transition: "all 0.3s ease",
-                              borderRadius: "8px",
-                              background: "linear-gradient(135deg, #8b5cf6, #ec4899)",
-                              color: "white",
-                              "&:hover": {
-                                background: "linear-gradient(135deg, #7c3aed, #db2777)",
-                                transform: "translateY(-2px)",
-                              },
-                            }}
-                          >
-                            <EditIcon fontSize="small" />
-                          </IconButton>
-                          <IconButton
-                            size="small"
-                            onClick={(e) => handleDeleteClick(folder.albumId, e)}
-                            sx={{
-                              margin: "0 0.25rem",
-                              transition: "all 0.3s ease",
-                              borderRadius: "8px",
-                              background: "linear-gradient(135deg, #ef4444, #dc2626)",
-                              color: "white",
-                              "&:hover": {
-                                background: "linear-gradient(135deg, #dc2626, #b91c1c)",
-                                transform: "translateY(-2px)",
-                              },
-                            }}
-                          >
-                            <DeleteIcon fontSize="small" />
-                          </IconButton>
-                        </>
-                      )}
-                    </CardActions>
-                  </AlbumCard>
-                </Zoom>
-              </Grid>
+                  {/* Action Buttons */}
+                  <div className="album-actions">
+                    {editingFolderId === folder.albumId ? (
+                      <>
+                        <IconButton onClick={(e) => saveTitle(folder.albumId, e)} className="action-btn save-btn">
+                          <CheckIcon />
+                        </IconButton>
+                        <IconButton
+                          onClick={(e) => {
+                            e.stopPropagation()
+                            cancelEditing()
+                          }}
+                          className="action-btn cancel-btn"
+                        >
+                          <CloseIcon />
+                        </IconButton>
+                      </>
+                    ) : (
+                      <>
+                        <IconButton onClick={(e) => startEditing(folder, e)} className="action-btn edit-btn">
+                          <EditIcon />
+                        </IconButton>
+                        <IconButton
+                          onClick={(e) => handleDeleteClick(folder.albumId, e)}
+                          className="action-btn delete-btn"
+                        >
+                          <DeleteIcon />
+                        </IconButton>
+                      </>
+                    )}
+                  </div>
+                </div>
+              </Fade>
             ))}
-          </Grid>
+          </div>
         )}
 
+        {/* Delete Dialog */}
         <Dialog
           open={deleteDialogOpen}
           onClose={() => setDeleteDialogOpen(false)}
           PaperProps={{
-            sx: {
-              borderRadius: "16px",
-              background: "rgba(26, 11, 46, 0.95)",
-              backdropFilter: "blur(20px)",
-              border: "1px solid rgba(255, 255, 255, 0.1)",
-            },
+            className: "delete-dialog",
           }}
         >
-          <DialogTitle sx={{ fontWeight: "bold", color: "white" }}>Delete Album</DialogTitle>
+          <DialogTitle className="dialog-title">Delete Album</DialogTitle>
           <DialogContent>
-            <DialogContentText sx={{ color: "rgba(255, 255, 255, 0.8)" }}>
+            <DialogContentText className="dialog-text">
               Are you sure you want to delete this album? This action cannot be undone and all photos in this album will
               be lost.
             </DialogContentText>
           </DialogContent>
-          <DialogActions sx={{ p: 3 }}>
-            <Button
-              onClick={() => setDeleteDialogOpen(false)}
-              sx={{
-                borderRadius: "8px",
-                textTransform: "none",
-                color: "rgba(255, 255, 255, 0.8)",
-              }}
-            >
+          <DialogActions className="dialog-actions">
+            <Button onClick={() => setDeleteDialogOpen(false)} className="dialog-cancel-btn">
               Cancel
             </Button>
-            <Button
-              onClick={deleteFolder}
-              variant="contained"
-              sx={{
-                borderRadius: "8px",
-                background: "linear-gradient(135deg, #ef4444, #dc2626)",
-                textTransform: "none",
-                "&:hover": {
-                  background: "linear-gradient(135deg, #dc2626, #b91c1c)",
-                },
-              }}
-            >
+            <Button onClick={deleteFolder} variant="contained" className="dialog-delete-btn">
               Delete
             </Button>
           </DialogActions>
         </Dialog>
       </Container>
-    </GradientBackground>
+    </div>
   )
 }
 

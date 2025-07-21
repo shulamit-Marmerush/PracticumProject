@@ -19,6 +19,5 @@
 
 .social-icon:hover {
   transform: translateY(-5px);
-  background: #3b5998; /* Change this for different icons */
+  background: #3b5998;
 }
-

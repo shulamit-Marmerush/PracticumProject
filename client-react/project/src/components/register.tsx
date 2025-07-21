@@ -47,7 +47,6 @@ const Register = () => {
   const onSubmit: SubmitHandler<RegisterForm> = async (data) => {
     try {
       console.log("submitted")
-
       const response = await registerUser(data)
       console.log(response)
       localStorage.setItem("UserId", response.UserId.toString())
@@ -61,7 +60,7 @@ const Register = () => {
 
   const registerUser = async (user: RegisterForm): Promise<UserType> => {
     try {
-      const response = await axios.post<{ userId: number }>("https://localhost:7259/api/User/register", user, {
+      const response = await axios.post<{ userId: number }>("https://practicumproject-server.onrender.com/api/User/register", user, {
         headers: {
           "Content-Type": "application/json",
         },

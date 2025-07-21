@@ -59,7 +59,7 @@ const Login = () => {
         "Content-Type": "application/json",
       }
 
-      const response = await axios.post<LoginResponse>("https://localhost:7259/api/Auth/login", user, { headers })
+      const response = await axios.post<LoginResponse>("https://practicumproject-server.onrender.com/api/Auth/login", user, { headers })
       return response.data
     } catch (error) {
       console.error("Login error:", error)
@@ -75,7 +75,7 @@ const Login = () => {
         return null
       }
 
-      const response = await axios.get<User>(`https://localhost:7259/api/User/${userId}`, {
+      const response = await axios.get<User>(`https://practicumproject-server.onrender.com/api/User/${userId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
