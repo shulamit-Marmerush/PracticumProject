@@ -274,7 +274,7 @@ body {
 .hero-image-card {
   position: relative;
   border-radius: 16px;
-  overflow: visible;
+  overflow: visible; /* מאפשר למסגרת לצאת מגבולות הקופסה */
   transition: transform 0.3s ease;
   aspect-ratio: 1;
   width: 100%;
@@ -289,7 +289,7 @@ body {
   right: -4px;
   bottom: -4px;
   border-radius: 20px;
-  z-index: 0;
+  z-index: 0; /* מתחת לתמונה */
   animation: border-animation 3s linear infinite;
 }
 
@@ -337,11 +337,11 @@ body {
   height: 100%;
   object-fit: cover;
   border-radius: 16px;
-  z-index: 1;
+  z-index: 1; /* מעל המסגרת */
 }
 
 .hero-image-card:hover {
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 
 /* S Profile Icon */
@@ -583,8 +583,8 @@ body {
   max-width: 72rem;
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
 }
 
 .gallery-item {
@@ -651,26 +651,8 @@ body {
 
 .gallery-title {
   font-size: 1.25rem;
-  font-weight: 600;
-  color: white;
-  text-align: center;
-  background: linear-gradient(45deg, #f9a8d4, #c084fc, #a5b4fc);
-  background-size: 200% 200%;
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  animation: title-gradient-animation 3s ease-in-out infinite;
-  margin-top: 1rem;
-}
-
-@keyframes title-gradient-animation {
-  0%,
-  100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
+  font-weight: 500;
+  color: #ddd6fe;
 }
 
 /* Testimonial Section */
