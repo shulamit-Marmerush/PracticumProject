@@ -2,7 +2,7 @@
 
 import type * as React from "react"
 import { type ReactNode, useState, useEffect } from "react"
-import { Link, useLocation, Link as RouterLink } from "react-router-dom"
+import { Link, useLocation, Link as RouterLink, useNavigate } from "react-router-dom"
 import {
   AppBar,
   Toolbar,
@@ -30,6 +30,7 @@ import {
   Linkedin,
   Home,
   LogInIcon as Login,
+  LogOut,
   UserPlus,
   Upload,
   FolderPlus,
@@ -38,6 +39,7 @@ import {
   MessageCircle,
 } from "lucide-react"
 import "../styles/Layout.css" // Import your custom styles
+import { useUserContext } from "../context/UserContext" // ייבוא ה-Context
 
 const StyledAppBar = styled(AppBar)(({}) => ({
   background: "rgba(26, 11, 46, 0.8)",
@@ -63,14 +65,41 @@ const StyledDrawer = styled(Drawer)(({}) => ({
 }))
 
 interface NavButtonProps {
-  to: string
+  to?: string
   children: React.ReactNode
   className?: string
+  onClick?: () => void
 }
 
-const NavButton = styled(({ to, children, className }: NavButtonProps) => (
-  <RouterLink to={to} className={className}>
+const NavButton = styled(({ to, children, className, onClick }: NavButtonProps) => {
+  if (to) {
+    return (
+      <RouterLink to={to} className={className}>
+        <Button
+          sx={{
+            color: "rgba(255, 255, 255, 0.9)",
+            fontWeight: 500,
+            position: "relative",
+            padding: "0.5rem 1rem",
+            borderRadius: "20px",
+            transition: "all 0.3s ease",
+            textTransform: "none",
+            fontSize: "0.95rem",
+            display: "flex",
+            alignItems: "center",
+            gap: "0.5rem",
+            textDecoration: "none",
+          }}
+        >
+          {children}
+        </Button>
+      </RouterLink>
+    )
+  }
+  return (
     <Button
+      onClick={onClick}
+      className={className}
       sx={{
         color: "rgba(255, 255, 255, 0.9)",
         fontWeight: 500,
@@ -88,8 +117,8 @@ const NavButton = styled(({ to, children, className }: NavButtonProps) => (
     >
       {children}
     </Button>
-  </RouterLink>
-))(({}) => ({
+  )
+})(({}) => ({
   "& .MuiButton-root": {
     color: "rgba(255, 255, 255, 0.9)",
     fontWeight: 500,
@@ -124,6 +153,8 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down("md"))
   const location = useLocation()
+  const navigate = useNavigate()
+  const { myUser, setMyUser } = useUserContext() // שימוש ב-Context של המשתמש
 
   useEffect(() => {
     const handleScroll = () => {
@@ -144,23 +175,47 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
     setMobileOpen(!mobileOpen)
   }
 
-  const topNavItems = [
-    { name: "Home", path: "/", icon: Home },
-    { name: "Login", path: "/login", icon: Login },
-    { name: "Register", path: "/register", icon: UserPlus },
-  ]
+  const handleLogout = () => {
+    localStorage.clear()
+    setMyUser(null)
+    navigate("/")
+  }
 
-  const allNavItems = [
-    { name: "Home", path: "/", icon: Home },
-    { name: "Albums", path: "/Albums", icon: Camera },
-    { name: "Upload", path: "/UploadFile", icon: Upload },
-    { name: "Add Album", path: "/AddAlbum", icon: FolderPlus },
-    { name: "Collage", path: "/College", icon: Layers },
-    { name: "AI Generator", path: "/AiImageGenerator", icon: Sparkles },
-    { name: "Chat", path: "/chat", icon: MessageCircle },
-    { name: "Login", path: "/login", icon: Login },
-    { name: "Register", path: "/register", icon: UserPlus },
-  ]
+  // סינון דינמי של תפריט עליון
+  const topNavItems = !myUser
+    ? [
+        { name: "Home", path: "/", icon: Home },
+        { name: "Login", path: "/login", icon: Login },
+        { name: "Register", path: "/register", icon: UserPlus },
+      ]
+    : [
+        { name: "Home", path: "/", icon: Home },
+        { name: "Logout", onClick: handleLogout, icon: LogOut },
+      ]
+
+  // סינון דינמי של תפריט צד (Drawer)
+  const allNavItems = !myUser
+    ? [
+        { name: "Home", path: "/", icon: Home },
+        { name: "Albums", path: "/Albums", icon: Camera },
+        { name: "Upload", path: "/UploadFile", icon: Upload },
+        { name: "Add Album", path: "/AddAlbum", icon: FolderPlus },
+        { name: "Collage", path: "/College", icon: Layers },
+        { name: "AI Generator", path: "/AiImageGenerator", icon: Sparkles },
+        { name: "Chat", path: "/chat", icon: MessageCircle },
+        { name: "Login", path: "/login", icon: Login },
+        { name: "Register", path: "/register", icon: UserPlus },
+      ]
+    : [
+        { name: "Home", path: "/", icon: Home },
+        { name: "Albums", path: "/Albums", icon: Camera },
+        { name: "Upload", path: "/UploadFile", icon: Upload },
+        { name: "Add Album", path: "/AddAlbum", icon: FolderPlus },
+        { name: "Collage", path: "/College", icon: Layers },
+        { name: "AI Generator", path: "/AiImageGenerator", icon: Sparkles },
+        { name: "Chat", path: "/chat", icon: MessageCircle },
+        { name: "Logout", onClick: handleLogout, icon: LogOut },
+      ]
 
   const drawer = (
     <Box sx={{ height: "100%", overflowX: "hidden" }}>
@@ -195,13 +250,16 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
       <List sx={{ overflowX: "hidden" }}>
         {allNavItems.map((item) => {
           const IconComponent = item.icon
+          const isAction = "onClick" in item
+
           return (
             <ListItem
               key={item.name}
-              component={RouterLink}
-              to={item.path}
-              className={location.pathname === item.path ? "active" : ""}
-              onClick={handleDrawerToggle}
+              {...(isAction 
+                ? { onClick: () => { item.onClick?.(); handleDrawerToggle(); } }
+                : { component: RouterLink, to: item.path, onClick: handleDrawerToggle }
+              )}
+              className={!isAction && location.pathname === item.path ? "active" : ""}
               sx={{
                 textDecoration: "none",
                 color: "rgba(255, 255, 255, 0.9)",
@@ -316,8 +374,10 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
                   return (
                     <NavButton
                       key={item.name}
-                      to={item.path}
-                      className={location.pathname === item.path ? "active" : ""}
+                      {...("path" in item 
+                        ? { to: item.path, className: location.pathname === item.path ? "active" : "" } 
+                        : { onClick: item.onClick }
+                      )}
                     >
                       <IconComponent size={18} />
                       {item.name}
@@ -505,7 +565,7 @@ const Layout: React.FC<LayoutProps> = ({ children }: LayoutProps) => {
           <Box
             sx={{
               borderTop: "1px solid rgba(255, 255, 255, 0.1)",
-              paddingTop: "1.5rem",
+              padding: "1.5rem",
               textAlign: "center",
             }}
           >
