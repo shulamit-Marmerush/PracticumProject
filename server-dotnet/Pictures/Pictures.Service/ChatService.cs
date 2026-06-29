@@ -20,7 +20,7 @@ public class ChatService : IChatService
 
         var payload = new
         {
-            model = "openai/gpt-3.5-turbo",
+            model = "openai/gpt-4o-mini",
             messages = messagePayload
         };
 
