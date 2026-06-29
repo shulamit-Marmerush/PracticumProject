@@ -152,53 +152,40 @@ export default function AiImageGenerator() {
   }
 
   const generateImage = async (): Promise<void> => {
-    if (!prompt) return
+  if (!prompt) return
+  setLoading(true)
+  
+  try {
+    const token = import.meta.env.VITE_OPENROUTER_TOKEN;
+    const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Authorization": `Bearer ${token}`,
+        "Content-Type": "application/json",
+        "HTTP-Referer": window.location.origin,
+        "X-Title": "AI Image Generator",
+      },
+      body: JSON.stringify({
+        model: "openai/dall-e-3", // מודל תמונה מובהק שעובד טוב יותר עם ה-API הזה
+        messages: [{ role: "user", content: prompt }]
+      }),
+    })
 
-    setLoading(true)
-    setError("")
-    try {
-      const token = import.meta.env.VITE_HUGGINGFACE_TOKEN; // עדכון כאן לשימוש במשתנה סביבתי של Vite
-      // עדכון כאן לשימוש במשתנה סביבתי של Next.js
-      if (!token) {
-        console.error("Hugging Face token is not set.")
-        setError("Hugging Face token is not set.")
-        setLoading(false)
-        return
-      }
-
-      const response = await fetch(
-        "https://api-inference.huggingface.co/models/stabilityai/stable-diffusion-xl-base-1.0",
-        {
-          method: "POST",
-          headers: {
-            Authorization: "Bearer " + token,
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ inputs: prompt }),
-        },
-      )
-
-      if (!response.ok) {
-        const data = await response.json()
-        console.error("Error from model:", data)
-        setError(data.error || "An unexpected error occurred.")
-        setLoading(false)
-        return
-      }
-
-      const blob = await response.blob()
-      const imageObjectUrl = URL.createObjectURL(blob)
-      setImageUrl(imageObjectUrl)
-
-      setSnackbarMessage("Image generated successfully!")
-      setSnackbarOpen(true)
-    } catch (error) {
-      console.error("General error:", error)
-      setError("An error occurred while generating the image.")
+    const data = await response.json()
+    
+    // ב-DALL-E 3, ה-URL מגיע בתוך דאטה מורכב יותר
+    if (data.choices?.[0]?.message?.content) {
+      setImageUrl(data.choices[0].message.content)
+    } else if (data.error) {
+      console.error("OpenRouter Error:", data.error.message)
+      alert("Error: " + data.error.message)
     }
+  } catch (err) {
+    console.error("Fetch Error:", err)
+  } finally {
     setLoading(false)
   }
-
+}
   const downloadImage = (): void => {
     if (!imageUrl) return
 
