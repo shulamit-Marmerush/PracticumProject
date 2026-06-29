@@ -18,7 +18,7 @@ namespace Pictures.Core.Models
         public List<Album> Albums { get; set; }
         public List<EmailVerificationModel> EmailVerifications { get; set; } // אימותי אימייל הקשורים למשתמש
 
-        public bool IsEmailConfirmed { get; set; } = false; // האם האימייל אומת
+        // public bool IsEmailConfirmed { get; set; } = false; // האם האימייל אומת
        
 
         public User() { }
